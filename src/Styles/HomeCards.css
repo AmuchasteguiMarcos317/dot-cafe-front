@@ -1,0 +1,48 @@
+.homeCardsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homeCardColor {
+    width: 100%;
+    background-color: #e4f5eb;
+    display: flex;
+    justify-content: center;
+}
+.homeCardColor:nth-child(even) {
+    background-color: #a3bbad;
+}
+.homeCardColor:nth-child(even) .homeCardPhotoContainer{
+    order: 1;
+}
+.homeCardContainer {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+}
+.homeCardPhotoContainer{
+    padding: 1rem;
+}
+.homeCardPhotoContainer img {
+    width: auto;
+    height: 20rem;
+    object-fit: contain;
+    border-radius: 1rem;
+    box-shadow: .5rem .3rem 1rem #956031;
+}
+.homeCardInfo {
+    width: 50%;
+    padding: 0 2rem;
+}
+.homeCardInfo h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.homeCardInfo p {
+    font-size: .9rem;
+    text-align: justify;
+}
