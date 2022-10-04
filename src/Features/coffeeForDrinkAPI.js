@@ -10,7 +10,7 @@ export const coffeeForDrinkAPI = createApi({
     
     endpoints: (builder) => ({
         getAllCoffeeForDrink: builder.query({
-            query: () => '/kits'
+            query: () => '/coffee'
         }),
     })
 })
