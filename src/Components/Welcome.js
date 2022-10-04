@@ -5,8 +5,8 @@ export default function Welcome() {
     return (
         <>
             <div className="Welcome-main">
-                <h1>Bienvenidxs </h1>
-                <h2>Café de especialidad</h2>
+                <h2>Hacé un punto y</h2>
+                <h2>tomate un café</h2>
             </div>
         </>
     )
