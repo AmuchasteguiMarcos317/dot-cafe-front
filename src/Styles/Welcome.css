@@ -32,9 +32,15 @@
         align-items: center;
         padding-top: 2rem;
     }
-    .Welcome-main h1, .Welcome-main h2{
+    .Welcome-main h2{
         margin: 0;
         padding: 0;
         font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Welcome-main h2{
+        font-size: 1.5rem;
     }
 }
