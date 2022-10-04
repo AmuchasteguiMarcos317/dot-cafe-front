@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import userReducer from './userSlice'
+import userReducer from './usersSlice'
 import reloadSlice from './reloadSlice'
 import usersAPI from './usersAPI'
 import kitsAPI from './kitsAPI'
