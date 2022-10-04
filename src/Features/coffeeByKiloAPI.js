@@ -10,7 +10,7 @@ export const coffeeByKiloAPI = createApi({
     
     endpoints: (builder) => ({
         getAllCoffeeByKilo: builder.query({
-            query: () => '/kits'
+            query: () => '/coffee-kilogram'
         }),
     })
 })
