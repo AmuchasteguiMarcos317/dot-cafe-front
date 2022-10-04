@@ -78,6 +78,8 @@ span{
 }
 .me-auto{
     align-items: baseline;
+    display: flex;
+    align-items: center;
 }
 .navAll{
     color: #fff;
