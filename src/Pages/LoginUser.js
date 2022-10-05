@@ -15,7 +15,7 @@ function LoginUser() {
         e.preventDefault()
         const dataform = new FormData(fromData.current)
         const values = Object.fromEntries(dataform)
-        if(values.email != '' || values.password != ''){
+        if(values.email !== '' || values.password !== ''){
             values.from = 'form'
             login(values)
         }else {

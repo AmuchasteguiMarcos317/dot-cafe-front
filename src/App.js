@@ -7,6 +7,7 @@ import Details from './Pages/Details';
 import CoffeeMachines from './Pages/CoffeeMachines';
 import GiftCards from './Pages/GiftCards';
 import VerificationMail from './Pages/VerificationMail';
+import Coffees from './Pages/Coffees';
 import LoginUser from './Pages/LoginUser';
 import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
@@ -46,8 +47,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/details' element={<Details />} />
-            <Route path='/coffee-machine' element={<CoffeeMachines />} />
-            <Route path='/giftcard' element={<GiftCards />} />
+            <Route path='/cafes' element={<Coffees />} />
+            <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
+            <Route path='/giftcards' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
             <Route path='/login' element={<LoginUser />} />
             <Route path='/notfound' element={<NotFound />} />

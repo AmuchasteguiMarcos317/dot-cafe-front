@@ -111,46 +111,30 @@ export default function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Máquinas" id="basic-nav-dropdown">
-                <NavDropdown.Item className="navDrop" href="#action/3.1">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/6415/6415865.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>Cápsula</p>
+              <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "capsula" }}><NavDropdown.Item className='navDrop' href="#action/3.1">
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/6415/6415865.png' alt='icon' />
+                  <div className='navText'>
+                      <p>Cápsula</p>
                   </div>
-                </NavDropdown.Item>
-                <NavDropdown.Item className="navDrop" href="#action/3.2">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/6415/6415920.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>Italiana</p>
+              </NavDropdown.Item></LinkRouter>
+              <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "italiana" }}><NavDropdown.Item className='navDrop' href="#action/3.2">
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/6415/6415920.png' alt='icon' />
+                  <div className='navText'>
+                      <p>Italiana</p>
                   </div>
-                </NavDropdown.Item>
-                <NavDropdown.Item className="navDrop" href="#action/3.3">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/1269/1269081.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>Barista</p>
+              </NavDropdown.Item></LinkRouter>
+              <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "barista" }}><NavDropdown.Item className='navDrop' href="#action/3.3">
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/1269/1269081.png' alt='icon' />
+                  <div className='navText'>
+                      <p>Barista</p>
                   </div>
-                </NavDropdown.Item>
-                <NavDropdown.Item className="navDrop" href="#action/3.1">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/672/672449.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>Con filtro</p>
+              </NavDropdown.Item></LinkRouter>
+              <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "filtro" }}><NavDropdown.Item className='navDrop' href="#action/3.1">
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/672/672449.png' alt='icon' />
+                  <div className='navText'>
+                      <p>Con filtro</p>
                   </div>
-                </NavDropdown.Item>
+              </NavDropdown.Item></LinkRouter>
               </NavDropdown>
               <NavDropdown title="Accesorios" id="basic-nav-dropdown">
                 <NavDropdown.Item className="navDrop" href="#action/3.1">
@@ -219,7 +203,7 @@ export default function Header() {
                   </div>
                 </NavDropdown.Item>
 
-                <LinkRouter to="/giftcard">
+                <LinkRouter to="/giftcards">
                   <NavDropdown.Item className="navDrop" href="#action/3.4">
                     <img
                       className="headerIcon"
