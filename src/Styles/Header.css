@@ -61,10 +61,11 @@ span{
 .navText{
     display: flex !important;
     align-items: flex-end;
+    font-weight: bolder;
 }
 
 #basic-nav-dropdown{
-    color: #fff;
+    color: #faffd8;
     font-weight: 500;
     letter-spacing: 1.3px;
     border:1.2px solid #45230f;
