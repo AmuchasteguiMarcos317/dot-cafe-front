@@ -102,6 +102,7 @@ span{
     width: 100% !important;
 }
 
+
 @media (max-width: 1200px) {
     .dropdown{
         justify-content: end !important;
