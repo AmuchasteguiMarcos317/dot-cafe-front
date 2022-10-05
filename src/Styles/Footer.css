@@ -19,6 +19,11 @@
     border-radius: 50%;
     margin-top: 1rem;
 }
+.footerLogo button{
+    border: none;
+    width: 0;
+
+}
 .footerText{
     display: flex;
     flex-direction: column;
