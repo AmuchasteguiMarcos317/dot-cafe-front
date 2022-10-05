@@ -12,6 +12,8 @@ import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
+import NotFound from './Pages/NotFound';
+
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -48,6 +50,7 @@ function App() {
             <Route path='/giftcard' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
             <Route path='/login' element={<LoginUser />} />
+            <Route path='/notfound' element={<NotFound />} />
           </Routes>
         </CafeLayout>
       </BrowserRouter>

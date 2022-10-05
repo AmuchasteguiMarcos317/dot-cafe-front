@@ -30,7 +30,12 @@
     padding: .8rem;
     font-size: 1.3rem;
     text-align: center;
-    border-radius: 1rem;
-    background-color: #45230f;
+    border-radius: 15px;
+    background-color: #204d48;
     color: #faffd8;
+}
+
+.VerificationContainer a:hover{
+    background-color: #faffd8;
+    color: #45230f;
 }
