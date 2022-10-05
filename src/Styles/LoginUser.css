@@ -1,9 +1,22 @@
 .form-login-user {
-    min-height: 58vh;
+    min-height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url('../../public/cafe-fondo6.jpg');
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: center;
+    background-size: cover;
+}
+
+.tittleLogin {
+    text-align: center;
+    color: #FAFFD8;
+    border-bottom: #FAFFD8 solid;
+    width: 50%;
+    padding-bottom: 1rem;
 }
 
 .form-login-user form {
@@ -11,9 +24,9 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    background-color: #eee;
-    height: 300px;
-    width: 350px;
+    background-color: rgba(0, 0, 0, 0.591);
+    min-height: 400px;
+    width: 50%;
     border-radius: 0.5rem;
 }
 
@@ -23,3 +36,58 @@
     gap: .5rem;
 }
 
+#email {
+    font-size: 1.3rem;
+    color: #FAFFD8;
+    text-align: center;
+}
+
+#pass {
+    font-size: 1.3rem;
+    color: #FAFFD8;
+    text-align: center;
+}
+
+.inputEmail {
+    width: 30vw;
+    height: 3rem;
+    border-radius: .5rem;
+}
+
+.inputPass {
+    width: 30vw;
+    height: 3rem;
+    border-radius: .5rem;
+}
+.formBoton {
+    width: 50%;
+    height: 3rem;
+    background-color: #204D48;
+    border-radius: .8rem;
+    color: #FAFFD8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px){
+    .inputEmail {
+        width: 40vw;
+    }
+    
+    .inputPass {
+        width: 40vw;
+    }
+}
+@media screen and (max-width: 425px){
+    .form-login-user form {
+        width: 90%;
+    }
+    .inputEmail {
+        width: 60vw;
+    }
+    .inputPass {
+        width: 60vw;
+    }
+}

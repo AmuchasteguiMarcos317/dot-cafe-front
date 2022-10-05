@@ -43,17 +43,17 @@ function LoginUser() {
 
   return (
     <div className='form-login-user'>
-        <h1>Login User</h1>
         <form ref={fromData} onSubmit={handleSubmit}>
+        <h1 className='tittleLogin'>Login User</h1>
             <div>
                 <label htmlFor='email' id='email'>Email</label>
-                <input id='email' type="email" name='email' placeholder='Ingrese su email'/>
+                <input id='email' className='inputEmail' type="email" name='email' placeholder='Ingrese su email'/>
             </div>
             <div>
-                <label id='pass'>Contrasena</label>
-                <input id='pass' type="password" name='password' placeholder='password'/>
+                <label id='pass'>Contraseña</label>
+                <input id='pass' className='inputPass' type="password" name='password' placeholder='password'/>
             </div>
-            <button type='submit'>Iniciar Sesion</button>
+            <button className="formBoton" type='submit'>Iniciar Sesion</button>
         </form>
     </div>
   )
