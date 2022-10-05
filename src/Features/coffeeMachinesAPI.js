@@ -12,8 +12,11 @@ export const coffeeMachinesAPI = createApi({
         getAllCoffeeMachines: builder.query({
             query: () => '/coffee-machine'
         }),
+        getTypeCoffeeMachines: builder.query({
+            query: (type) => '/coffee-machine?type=' + type
+        }),
     })
 })
 
 export default coffeeMachinesAPI;
-export const { useGetAllCoffeeMachinesQuery } = coffeeMachinesAPI
+export const { useGetAllCoffeeMachinesQuery, useGetTypeCoffeeMachinesQuery } = coffeeMachinesAPI

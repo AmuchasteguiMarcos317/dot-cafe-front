@@ -17,7 +17,7 @@ export default function CoffeeMachines() {
         <>
             <main>
                 <div class="AllCardsContainer">
-                    <h2 className="CardsTitle">Tipo de cafeteras: {type === "filtro"? "con " + type : type}</h2>
+                    <h2 className="CardsTitle">Tipo de cafeteras: {type == "filtro"? "con " + type : type}</h2>
                     <div className="CardsContainer">
                         {coffeeMachines?.cofMachine.map(machine => <ProductCard data={machine} linkTo={machine._id} />)}
                     </div>
