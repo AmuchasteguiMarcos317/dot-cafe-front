@@ -7,6 +7,7 @@ import Details from './Pages/Details';
 import CoffeeMachines from './Pages/CoffeeMachines';
 import GiftCards from './Pages/GiftCards';
 import VerificationMail from './Pages/VerificationMail';
+import SignUp from './Pages/SignUp';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='/coffee-machine' element={<CoffeeMachines />} />
             <Route path='/giftcard' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
+            <Route path='/signup' element={<SignUp />} />
           </Routes>
         </CafeLayout>
       </BrowserRouter>
