@@ -116,7 +116,7 @@ export default function header() {
                                 </NavDropdown.Item>
 
                                 <LinkRouter to='/giftcard'><NavDropdown.Item className='navDrop' href="#action/3.4">
-                                    <img className='headerIcon' src='' alt='icon' />
+                                    <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/4965/4965109.png' alt='icon' />
                                     <div className='navText'>
                                         <p>TODAS</p>
                                     </div>
