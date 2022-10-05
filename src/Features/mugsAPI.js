@@ -1,19 +1,19 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import apiURL from '../api';
 
-export const coffeeMugsAPI = createApi({
-    reducerPath: "coffeeMugsAPI",
+export const mugsAPI = createApi({
+    reducerPath: "mugsAPI",
 
     baseQuery: fetchBaseQuery({
         baseUrl: apiURL
     }),
     
     endpoints: (builder) => ({
-        getAllCoffeeMugs: builder.query({
+        getAllMugs: builder.query({
             query: () => '/mugs'
         }),
     })
 })
 
-export default coffeeMugsAPI;
-export const { useGetAllCoffeeMugsQuery } = coffeeMugsAPI
+export default mugsAPI;
+export const { useGetAllMugsQuery } = mugsAPI

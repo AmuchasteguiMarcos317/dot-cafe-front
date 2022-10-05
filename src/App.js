@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CafeLayout from './Layouts/CafeLayout';
@@ -10,11 +9,14 @@ import VerificationMail from './Pages/VerificationMail';
 import SignUp from './Pages/SignUp';
 import Coffees from './Pages/Coffees';
 import LoginUser from './Pages/LoginUser';
+import NotFound from './Pages/NotFound';
+import Mugs from './Pages/Mugs';
+import Filters from './Pages/Filters';
 import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
-import NotFound from './Pages/NotFound';
+
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
   const dispatch = useDispatch()
@@ -49,6 +51,8 @@ function App() {
             <Route path='/details' element={<Details />} />
             <Route path='/cafes' element={<Coffees />} />
             <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
+            <Route path='/filtros-sustentables' element={<Filters />} />
+            <Route path='/tazas' element={<Mugs />} />
             <Route path='/giftcards' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
             <Route path='/signup' element={<SignUp />} />
