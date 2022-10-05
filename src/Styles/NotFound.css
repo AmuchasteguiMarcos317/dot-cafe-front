@@ -26,15 +26,10 @@
     flex-direction: column;
 }
 .notFound-404{
-    /* position: absolute;
-    top: 15rem;
-    left: 40rem; */
     font-size: 2rem;
     font-weight: bold;
 }
 .notFound-error{
-    /* position: absolute;
-    bottom: 6rem; */
     font-size: 2rem;
     font-weight: bold;
     padding-bottom: 1rem;
