@@ -7,6 +7,7 @@ import Details from './Pages/Details';
 import CoffeeMachines from './Pages/CoffeeMachines';
 import GiftCards from './Pages/GiftCards';
 import VerificationMail from './Pages/VerificationMail';
+import SignUp from './Pages/SignUp';
 import Coffees from './Pages/Coffees';
 import LoginUser from './Pages/LoginUser';
 import { useUserLoginTokenMutation } from './Features/usersAPI';
@@ -14,7 +15,6 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
 import NotFound from './Pages/NotFound';
-
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
   const dispatch = useDispatch()
@@ -51,6 +51,7 @@ function App() {
             <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
             <Route path='/giftcards' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
+            <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<LoginUser />} />
             <Route path='/notfound' element={<NotFound />} />
           </Routes>
