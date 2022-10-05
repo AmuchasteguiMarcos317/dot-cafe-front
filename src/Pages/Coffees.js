@@ -1,5 +1,7 @@
 import React from 'react'
+import CoffeeCard from '../Components/CoffeeCard'
 import { useGetAllCoffeeForDrinkQuery } from '../Features/coffeeForDrinkAPI'
+import '../Styles/CoffeeCard.css'
 
 export default function Coffees() {
     const {data: coffees} = useGetAllCoffeeForDrinkQuery()
@@ -7,10 +9,10 @@ export default function Coffees() {
     return (
         <>
             <main>
-                <div class="AllCardsContainer">
-                    <h2 className="">Pedite uno de nuestros cafés de especialidad</h2>
+                <div className="AllCardsContainer">
+                    <h2 className="cofeeTitle">Pedite uno de nuestros cafés de especialidad</h2>
                     <div className="">
-                        {coffees?.response.map(coffee => console.log(coffee))}
+                        {coffees?.response.map(coffee => <CoffeeCard data={coffee} />)}
                     </div>
                 </div>
             </main>

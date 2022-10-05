@@ -1,0 +1,79 @@
+.CoffeeCard-Container{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.237);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.coffeeDescriptionContain{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+.coffeeH6{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: justify;
+}
+.coffeeTextContain{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.coffeeDescripText{
+    display: flex;
+    text-align: center;
+}
+.coffeeDescripText p{
+    padding-top: .2rem;
+    padding-left: .5rem;
+}
+.coffeeTitle{
+    font-weight: bold;
+}
+.coffeeText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.237);
+    padding: .5rem;
+}
+.coffeeCardImg{
+    width: 150px;
+    height: 150px;
+}
+.cofeeTitle{
+    text-align: center;
+    background-color: #45230ffd;
+    width: 100%;
+    color: #faffd8;
+    font-weight: 100;
+    padding: .6rem;
+    border-radius: 6px;
+}
+.coffeeCart{
+    display: flex;
+    gap: 2rem;
+    align-self: flex-end;
+}
+.coffeePrice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.coffeeBtn{
+    align-self: flex-end;
+    margin-bottom: 1rem;
+}
+.coffeeBtn a{
+    background-color: #204d48;
+    padding: .7rem;
+    margin-top: 15rem;
+    border-radius: 15px;
+    color: #faffd8;
+}
+.coffeeBtn a:hover{
+    background-color: #faffd8;
+    color: #45230f;
+    font-weight: 600;
+}
