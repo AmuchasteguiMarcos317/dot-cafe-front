@@ -25,9 +25,10 @@
     border-radius: 15px;
     padding: 4px;
     position: absolute;
-    margin-top: 30px;
+    margin-top: -25px;
     z-index: 2;
 }
+
 .header p{
     font-weight: bold;
     letter-spacing: 2px;
