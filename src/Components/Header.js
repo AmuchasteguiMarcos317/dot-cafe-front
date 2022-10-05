@@ -23,8 +23,6 @@ export default function Header() {
     }
 };
 
-{/* <img src={userData.photo} onClick={handleOpenMenu} /> */}
-{/* <img src="user-cafe-removebg-preview.png"onClick={handleOpenMenu}/> */}
   return (
     <>
       <Container fluid className="headerContain">
