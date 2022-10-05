@@ -6,7 +6,7 @@ export default function InputUsers(props) {
 
     return (
         <>
-            <label key={inputs._id} className="formLabel"><h3 className='titleInput'>{inputs.name} :</h3>
+            <label key={inputs._id} className="formLabel"><h3 className='titleInput'>{inputs.label}</h3>
                 <input className="formInput" type={inputs.type} name={inputs.name} defaultValue={values? values: ""} placeholder={inputs.ph} required />
             </label>
         </>
