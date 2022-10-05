@@ -34,9 +34,6 @@ export default function Header() {
           <p>
             Pedi tu<span className="headerSpan"> .</span>Café
           </p>
-          {/* <div className="container-avatar">
-          </div> */}
-
           {
             logged
             ?
