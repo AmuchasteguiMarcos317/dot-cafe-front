@@ -4,9 +4,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CafeLayout from './Layouts/CafeLayout';
 import Home from './Pages/Home'
 import Details from './Pages/Details';
-import FilterCoffeeMachines from './Pages/FilterCoffeeMachines';
+import CoffeeMachines from './Pages/CoffeeMachines';
 import GiftCards from './Pages/GiftCards';
 import VerificationMail from './Pages/VerificationMail';
+import Coffees from './Pages/Coffees';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/details' element={<Details />} />
-            <Route path='/coffee-machine?type=filtro' element={<FilterCoffeeMachines />} />
-            <Route path='/giftcard' element={<GiftCards />} />
+            <Route path='/cafes' element={<Coffees />} />
+            <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
+            <Route path='/giftcards' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
           </Routes>
         </CafeLayout>

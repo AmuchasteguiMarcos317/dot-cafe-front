@@ -1,0 +1,14 @@
+.AllCardsContainer{
+    width: 75%;
+    padding: 2rem 0;
+}  
+.CardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+.CardsTitle{
+    font-size: 1.5rem;
+    align-self: flex-start;
+}
