@@ -5,14 +5,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Header from '../Styles/Header.css';
-import {Link as LinkRouter} from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom'
 
 export default function header() {
     return (
         <>
             <Container fluid className='headerContain'>
                 <Container fluid className='header'>
-                    <img src='logo1.png' alt='image' />
+                    <LinkRouter to='/'><img src='logo1.png' alt='image' />
+                    </LinkRouter>
                     <Navbar.Brand className='headText' href="#home"><span></span> </Navbar.Brand>
                     <p>Pedi tu<span className='headerSpan'> .</span>Café</p>
                 </Container>
