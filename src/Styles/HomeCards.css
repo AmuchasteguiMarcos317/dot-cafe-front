@@ -1,0 +1,70 @@
+.homeCardsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homeCardColor {
+    width: 100%;
+    background-color: #e4f5eb;
+    display: flex;
+    justify-content: center;
+}
+.homeCardColor:nth-child(even) {
+    background-color: #a3bbad;
+}
+.homeCardColor:nth-child(even) .homeCardPhotoContainer{
+    order: 1;
+}
+.homeCardContainer {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+}
+.homeCardPhotoContainer{
+    width: 50%;
+    padding: 0 2rem;
+}
+.homeCardPhotoContainer img {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    
+    border-radius: 1rem;
+    box-shadow: .5rem .3rem 1rem #956031;
+}
+.homeCardInfo {
+    width: 50%;
+    padding: 0 2rem;
+}
+.homeCardInfo h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.homeCardInfo p {
+    font-size: .9rem;
+    text-align: justify;
+}
+
+@media screen and (max-width: 1024px) {
+    .homeCardContainer {
+        flex-direction: column;
+        width: 90%;
+    }
+    .homeCardPhotoContainer{
+        width: 100%;
+    }
+    .homeCardInfo {
+        padding-top: 2rem;
+        width: 100%;
+    }
+    .homeCardColor:nth-child(even) .homeCardPhotoContainer{
+        order: 0;
+    }
+    .homeCardColor:nth-child(even) .homeCardInfo h3, .homeCardColor:nth-child(even) .homeCardInfo p{
+        text-align: end;
+    }
+}
