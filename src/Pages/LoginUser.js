@@ -4,12 +4,14 @@ import { useUserLoginMutation } from '../Features/usersAPI'
 import { useDispatch } from 'react-redux'
 import { setCredentials } from '../Features/usersSlice'
 import { reload } from '../Features/reloadSlice'
+import { useNavigate } from 'react-router-dom'
 
 function LoginUser() {
 
     const fromData = useRef()
     const [loginUser] = useUserLoginMutation()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -31,7 +33,7 @@ function LoginUser() {
                 dispatch(setCredentials(data))
                 dispatch(reload())
                 localStorage.setItem('token', res.data.response.token)
-                console.log('Login...')
+                navigate("/", {replace: true})
             }
         } catch (error) {
             console.log(error)

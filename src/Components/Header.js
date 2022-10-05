@@ -5,12 +5,18 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "../Styles/Header.css";
-import { Link as LinkRouter } from "react-router-dom";
+import { Link as LinkRouter, useNavigate } from "react-router-dom";
+import { useUserLogoutMutation } from "../Features/usersAPI";
+import { reload } from "../Features/reloadSlice";
+import { deleteCredentials } from "../Features/usersSlice";
 
 export default function Header() {
   const userData = useSelector((state) => state.auth.user);
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const logged = useSelector((state) => state.auth.logged);
+  const [singOutUser] = useUserLogoutMutation()
 
   const handleOpenMenu = () => {
     if (open === true) {
@@ -19,6 +25,25 @@ export default function Header() {
       setOpen(true);
     }
   };
+
+  async function handleClick() {
+    const sendEmail = {
+      email: userData.email
+    } 
+    try {
+      let res = await singOutUser(sendEmail)
+      if(res.data.success){
+        dispatch(reload)
+        dispatch(deleteCredentials())
+        localStorage.removeItem('token')
+        navigate("/", {replace: true})
+
+      }
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -40,9 +65,9 @@ export default function Header() {
               </div>
               {open ? (
                 <>
-                  <a>{userData.firstName}</a>
-                  <a>Tu Cuenta</a>
-                  <a>Salir</a>
+                  <LinkRouter>{userData.firstName}</LinkRouter>
+                  <LinkRouter to="#">Tu Cuenta</LinkRouter>
+                  <LinkRouter to="#" onClick={handleClick}>Salir</LinkRouter>
                 </>
               ) : null}
             </>
@@ -56,8 +81,8 @@ export default function Header() {
               </div>
               {open ? (
                 <>
-                  <a>Iniciar Sesion</a>
-                  <a>Registrarse</a>
+                  <LinkRouter to="/signup">Registrarse</LinkRouter>
+                  <LinkRouter to="/login">Iniciar Sesion</LinkRouter>
                 </>
               ) : null}
             </>

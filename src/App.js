@@ -6,6 +6,7 @@ import Details from './Pages/Details';
 import CoffeeMachines from './Pages/CoffeeMachines';
 import GiftCards from './Pages/GiftCards';
 import VerificationMail from './Pages/VerificationMail';
+import SignUp from './Pages/SignUp';
 import Coffees from './Pages/Coffees';
 import LoginUser from './Pages/LoginUser';
 import NotFound from './Pages/NotFound';
@@ -54,6 +55,7 @@ function App() {
             <Route path='/tazas' element={<Mugs />} />
             <Route path='/giftcards' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
+            <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<LoginUser />} />
             <Route path='/notfound' element={<NotFound />} />
           </Routes>
