@@ -1,0 +1,36 @@
+/* .VerificationContainer {
+    width: 100%;
+    min-height: 80vh;
+    background-image: url('../../public/cafe-fondo1.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: revert;
+    background-size: cover;
+} */
+
+.VerificationContainer {
+    width: 70%;
+    min-height: 80vh;
+    background-image: url('../../public/cafe-fondo2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 3rem;
+}
+.VerificationContainer h2, .VerificationContainer a{
+    color: #45230f;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.VerificationContainer a{
+    width: 10rem;
+    padding: .8rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: #45230f;
+    color: #faffd8;
+}

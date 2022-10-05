@@ -1,11 +1,11 @@
 import React from 'react'
-import '../Styles/ProductCards.css'
+import '../Styles/ProductCard.css'
 
 const cardsProduct = [
     { key: "100", name: "Cafetera moulines dolce gusto piccolo", photo: "https://moulinexar.vtexassets.com/arquivos/ids/155830-1200-1200?v=637985929762900000&width=1200&height=1200&aspect=true", stock: 5, price: 39995, type: "capsula" },
 ]
 
-export default function ProductCards() {
+export default function ProductCard() {
     return (
         <>
             {cardsProduct.map(card => (

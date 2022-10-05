@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Header from '../Styles/Header.css';
-
+import {Link as LinkRouter} from 'react-router-dom'
 
 export default function header() {
     return (
@@ -32,7 +32,7 @@ export default function header() {
                                         <p>1 Kg.</p>
                                     </div>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item className='navDrop' href="#action/3.2">
+                                <NavDropdown.Item className='navDrop'>
                                     <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/6415/6415916.png' />
                                     <div className='navText'>
                                         <p>500 Grs.</p>
@@ -85,7 +85,7 @@ export default function header() {
                                     </div>
                                 </NavDropdown.Item>
                             </NavDropdown>
-                            <NavDropdown title="Gif Cards" id="basic-nav-dropdown">
+                            <NavDropdown title="Gift Cards" id="basic-nav-dropdown">
 
                                 <NavDropdown.Item className='navDrop' href="#action/3.1">
                                     <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/4965/4965109.png' alt='icon' />
@@ -114,6 +114,13 @@ export default function header() {
                                         <p>$10.000</p>
                                     </div>
                                 </NavDropdown.Item>
+
+                                <LinkRouter to='/giftcard'><NavDropdown.Item className='navDrop' href="#action/3.4">
+                                    <img className='headerIcon' src='' alt='icon' />
+                                    <div className='navText'>
+                                        <p>TODAS</p>
+                                    </div>
+                                </NavDropdown.Item></LinkRouter>
 
                             </NavDropdown>
                             <NavDropdown title="Reciclaje" id="basic-nav-dropdown">
