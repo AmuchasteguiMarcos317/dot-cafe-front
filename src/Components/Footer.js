@@ -13,11 +13,9 @@ export default function footer() {
         <>
             <div className='footerContainer'>
                 <div className='footer'>
-                    <div className='footerLogo'>
-                        <button onClick={scrollTopUp}>
+                        <button className='footerLogo' onClick={scrollTopUp}>
                             <img src='logo1.png' alt="logo" />
                         </button>
-                    </div>
                     <div className='footerText'>
                         <h2>PRODUCTOS</h2>
                         <p>Cafe</p>
