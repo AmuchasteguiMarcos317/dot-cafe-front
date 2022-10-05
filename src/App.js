@@ -8,8 +8,38 @@ import CoffeeMachines from './Pages/CoffeeMachines';
 import GiftCards from './Pages/GiftCards';
 import VerificationMail from './Pages/VerificationMail';
 import Coffees from './Pages/Coffees';
+import LoginUser from './Pages/LoginUser';
+import { useUserLoginTokenMutation } from './Features/usersAPI';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { setCredentials } from './Features/usersSlice';
+import NotFound from './Pages/NotFound';
 
 function App() {
+  const [loginToken] = useUserLoginTokenMutation()
+  const dispatch = useDispatch()
+
+  const loginAgain = async () => {
+    try {
+      let res = await loginToken(localStorage.getItem('token'))
+      if(res.data.success){
+        let data = res.data.response.user
+        dispatch(setCredentials(data))
+      }else {
+        localStorage.removeItem('token')
+      }
+    } catch (error) {
+      console.log(error) 
+      localStorage.removeItem('token')
+    }
+  }
+
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      loginAgain()
+    }
+  }, [])
+  
   return (
     <>
       <BrowserRouter>
@@ -21,6 +51,8 @@ function App() {
             <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
             <Route path='/giftcards' element={<GiftCards />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
+            <Route path='/login' element={<LoginUser />} />
+            <Route path='/notfound' element={<NotFound />} />
           </Routes>
         </CafeLayout>
       </BrowserRouter>
