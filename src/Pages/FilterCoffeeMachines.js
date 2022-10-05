@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCard from '../Components/ProductCard'
 import { useGetAllCoffeeMachinesQuery } from '../Features/coffeeMachinesAPI'
 
-export default function CoffeeMachines() {
+export default function FilterCoffeeMachines() {
     const {data: coffeeMachines} = useGetAllCoffeeMachinesQuery()
     
     return (
