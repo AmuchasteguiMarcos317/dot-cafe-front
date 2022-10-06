@@ -19,17 +19,17 @@ export default function footer() {
                         </button>
                     <div className='footerText'>
                         <h2>PRODUCTOS</h2>
+                        <LinkRouter to='/'>Home</LinkRouter>
                         <LinkRouter to='/cafes' href='#topCoffee'>Cafe</LinkRouter>
                         <LinkRouter to='/granel/peso' state={{ kilo: "1000" }}>Granel</LinkRouter>
                         <LinkRouter to='/'>Maquinas</LinkRouter>
                         <LinkRouter to='/tazas'>Accesorios</LinkRouter>
-                        <LinkRouter to=''>Reciclaje</LinkRouter>
                     </div>
                     <div className='footerText'>
                         <h2>SOBRE NOSOTROS</h2>
                         <LinkRouter>Historia</LinkRouter>
                         <LinkRouter>Contacto</LinkRouter>
-                        <LinkRouter>Ubicacion</LinkRouter>
+                        <LinkRouter>Reciclaje</LinkRouter>
                         <LinkRouter>Preguntas Frecuentes</LinkRouter>
                         <LinkRouter>Politicas de Envio</LinkRouter>
 
