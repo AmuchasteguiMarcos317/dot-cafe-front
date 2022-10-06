@@ -52,7 +52,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/details' element={<Details />} />
             <Route path='/cafes' element={<Coffees />} />
-            <Route path='/granel/origen' element={<CoffeeByKilo />} />
+            <Route path='/granel/peso' element={<CoffeeByKilo />} />
             <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
             <Route path='/filtros-sustentables' element={<Filters />} />
             <Route path='/tazas' element={<Mugs />} />
