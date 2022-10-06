@@ -29,63 +29,58 @@ export default function Header() {
   async function handleClick() {
     const sendEmail = {
       email: userData.email
-    } 
+    }
     try {
       let res = await singOutUser(sendEmail)
-      if(res.data.success){
+      if (res.data.success) {
         dispatch(reload)
         dispatch(deleteCredentials())
         localStorage.removeItem('token')
-        navigate("/", {replace: true})
-
+        navigate("/", { replace: true })
       }
-      
     } catch (error) {
       console.log(error)
     }
   }
-
   return (
     <>
       <Container fluid className="headerContain">
         <Container fluid className="header">
-          <LinkRouter to="/">
-            <img src="logo1.png" alt="image" />
+          <LinkRouter className="headerLogo" to="/">
+            <img className="headerLogoCafe" src="logo1.png" alt="image" />
           </LinkRouter>
           <Navbar.Brand className="headText" href="#home">
             <span></span>{" "}
           </Navbar.Brand>
-          <p>
-            Pedi tu<span className="headerSpan"> .</span>Café
-          </p>
+          <div className="headerLogged">
+            <LinkRouter className="headerPedi" to='/cafes'>
+              Pedí tu<span className="headerSpan"> .</span>Café
+              <img src="https://cdn-icons-png.flaticon.com/512/3361/3361122.png" alt="icon" />
+            </LinkRouter>
+            <div className="container-avatar">
+              <img src={logged ? userData.photo : 'user.png'} onClick={handleOpenMenu} />
+            </div>
+            <div className="headerCart">
+              <img src='https://cdn-icons-png.flaticon.com/512/8070/8070478.png' alt='icon'/>
+            </div>
+          </div>
           {logged ? (
-            <>
-              <div className="container-avatar">
-                <img src={userData.photo} onClick={handleOpenMenu} />
+
+            open ? (
+              <div className="headerPrueba">
+                <LinkRouter>{userData.firstName}</LinkRouter>
+                <LinkRouter to="#">Tu Cuenta</LinkRouter>
+                <LinkRouter to="#" onClick={handleClick}>Salir</LinkRouter>
               </div>
-              {open ? (
-                <>
-                  <LinkRouter>{userData.firstName}</LinkRouter>
-                  <LinkRouter to="#">Tu Cuenta</LinkRouter>
-                  <LinkRouter to="#" onClick={handleClick}>Salir</LinkRouter>
-                </>
-              ) : null}
-            </>
+            ) : null
+
           ) : (
-            <>
-              <div className="container-avatar">
-                <img
-                  src="user-cafe-removebg-preview.png"
-                  onClick={handleOpenMenu}
-                />
+            open ? (
+              <div className="headerPrueba">
+                <LinkRouter className="headerSesion" to="/signup">Registrarse</LinkRouter>
+                <LinkRouter className="headerSesion" to="/login">Iniciar Sesion</LinkRouter>
               </div>
-              {open ? (
-                <>
-                  <LinkRouter to="/signup">Registrarse</LinkRouter>
-                  <LinkRouter to="/login">Iniciar Sesion</LinkRouter>
-                </>
-              ) : null}
-            </>
+            ) : null
           )}
         </Container>
       </Container>
@@ -139,28 +134,28 @@ export default function Header() {
               </NavDropdown>
               <NavDropdown title="Máquinas" id="basic-nav-dropdown">
                 <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "capsula" }}><NavDropdown.Item className='navDrop' href="#action/3.1">
-                    <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/6415/6415865.png' alt='icon' />
-                    <div className='navText'>
-                        <p>Cápsula</p>
-                    </div>
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/6415/6415865.png' alt='icon' />
+                  <div className='navText'>
+                    <p>Cápsula</p>
+                  </div>
                 </NavDropdown.Item></LinkRouter>
                 <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "italiana" }}><NavDropdown.Item className='navDrop' href="#action/3.2">
-                    <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/6415/6415920.png' alt='icon' />
-                    <div className='navText'>
-                        <p>Italiana</p>
-                    </div>
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/6415/6415920.png' alt='icon' />
+                  <div className='navText'>
+                    <p>Italiana</p>
+                  </div>
                 </NavDropdown.Item></LinkRouter>
                 <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "barista" }}><NavDropdown.Item className='navDrop' href="#action/3.3">
-                    <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/1269/1269081.png' alt='icon' />
-                    <div className='navText'>
-                        <p>Barista</p>
-                    </div>
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/1269/1269081.png' alt='icon' />
+                  <div className='navText'>
+                    <p>Barista</p>
+                  </div>
                 </NavDropdown.Item></LinkRouter>
                 <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "filtro" }}><NavDropdown.Item className='navDrop' href="#action/3.1">
-                    <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/672/672449.png' alt='icon' />
-                    <div className='navText'>
-                        <p>Con filtro</p>
-                    </div>
+                  <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/672/672449.png' alt='icon' />
+                  <div className='navText'>
+                    <p>Con filtro</p>
+                  </div>
                 </NavDropdown.Item></LinkRouter>
               </NavDropdown>
               <NavDropdown title="Accesorios" id="basic-nav-dropdown">

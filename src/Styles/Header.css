@@ -9,26 +9,78 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 .headerSpan{
-    color: #955f31;
+    color: white;
     font-size: 2rem;
     text-align: end;
+}
+.headerPedi img{
+    width: 25px !important;
+    height: 25px !important;
+    margin-bottom: 6px;
 }
 .headerP{
     padding-top: 1em;
 }
-
-.header img{
+.headerLogged{
+    display: flex;
+    gap: 2rem;
+}
+.headerPedi{
+    color: #955f31;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+.headerPedi:hover{
+    color: white;
+}
+.headerLogo img{
     width: 100px;
     height: 100px;
     border-radius: 15px;
-    padding: 4px;
+    padding: 8px;
     position: absolute;
     margin-top: -25px;
     z-index: 2;
 }
-
+.container-avatar{
+    padding: 5px 0;
+}
+.container-avatar img{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.headerCart{
+    display: flex;
+    align-items: center;
+}
+.headerCart img{
+    width: 35px !important;
+    height: 35px !important;
+}
+.headerPrueba{
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    z-index: 2;
+    top: 3.5rem;
+    right: 13.7rem;
+    background-color: whitesmoke ;
+    padding: .5rem;
+    border-radius: 5px;
+}
+.headerSesion{
+    color:#45230f;
+    font-weight: 700;
+}
+.headerSesion:hover{
+    color: #955f31;
+}
 .header p{
     font-weight: bold;
     letter-spacing: 2px;
@@ -53,7 +105,9 @@ span{
     height: 70px;
     margin-right: 1rem;
 }
-
+.navbar-brand{
+    margin: 0!important;
+}
 .navDrop{
     margin: 1rem 0;
     display: flex !important;
@@ -129,17 +183,34 @@ span{
         flex-direction: column !important;
         align-items: center !important;
         font-size: 1rem !important;
-        
-    } 
+    }
     .navText {
         padding-top: 1rem !important;
-    }  
+    }
+    .headerPrueba{
+        top: 3.5rem;
+        right: 11rem;
+    } 
 }
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .navDrop img{
         color: #204d48 !important;
     }
-    
+    .headerLogoCafe{
+        margin-left: -12%;
+        top: 70px;
+        width: 85px !important;
+        height: 85px !important;
+    }
+    .container-avatar{
+        display: flex !important;
+        align-items: center !important;
+    }
+    .headerCart{
+        width: 20px;
+        height: 20px;
+        align-self: center;
+    }
 }
 @media (max-width: 550px) {
     .navDrop{
@@ -147,31 +218,54 @@ span{
     }
     .navText{
         font-size: 14px;
-    }
-    
+    }    
 }
-@media (max-width: 425px) {
-    .header img{
-        margin-left: -9%;
+@media (max-width: 500px){
+    .headerLogoCafe{
+        margin-left: 6%;
     }
+    .headerPedi{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 465px) {
     .navText{
         display: flex !important;
         flex-direction: column !important;
         flex-wrap: wrap !important;
-    }    
-}
-@media (max-width: 380px) {
-    .header img{
-        margin-left: -15%;
-    } 
-    .navText{
-        font-size: 12px;
+    }
+    .headerPrueba{
+        top: 3.5rem;
+        right: 9rem;
+    }
+    .headerPedi img{
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .container-avatar img{
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .headerPedi{
+        font-size: .7rem;
     }   
 }
-@media (max-width: 350px) {
-    .header img{
-        margin-left: -17%;
-        width: 85px;
-        height: 85px;
-    }    
+@media (max-width: 400px) {
+    .navText{
+        font-size: 12px;
+    }
+    .headerLogoCafe{
+        top: 4.5rem;
+        left: 1rem;
+        width: 80px !important;
+        height: 80px !important;
+    } 
 }
+@media (max-width: 340px){
+    .headerLogoCafe{
+        top: 7.5rem;
+        width: 80px !important;
+        height: 80px !important;
+    }
+}
+
