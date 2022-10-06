@@ -44,14 +44,14 @@ function LoginUser() {
   return (
     <div className='form-login-user'>
         <form ref={fromData} onSubmit={handleSubmit}>
-        <h1 className='tittleLogin'>Login User</h1>
+        <h1 className='tittleLogin'>INICIAR SESIÓN</h1>
             <div>
-                <label htmlFor='email' id='email'>Email</label>
+                <label htmlFor='email' id='email'><h5>Email</h5></label>
                 <input id='email' className='inputEmail' type="email" name='email' placeholder='Ingrese su email'/>
             </div>
             <div>
-                <label id='pass'>Contraseña</label>
-                <input id='pass' className='inputPass' type="password" name='password' placeholder='password'/>
+                <label id='pass'><h5>Contraseña</h5></label>
+                <input id='pass' className='inputPass' type="password" name='password' placeholder='Contraseña'/>
             </div>
             <button className="formBoton" type='submit'>Iniciar Sesion</button>
         </form>

@@ -47,6 +47,12 @@
     color: black;
     text-align: center;
 }
+#email h5{
+    color:  #ffe1b9;
+}
+#pass h5{
+    color: #ffe1b9;
+}
 
 .inputEmail {
     width: 30vw;
@@ -69,6 +75,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+.formBoton:hover{
+    background-color: #39736c;
+    color: #FAFFD8;
+    border: #204D48 solid;
+    transition: .6s;
 }
 
 @media screen and (max-width: 1024px){
