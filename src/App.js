@@ -18,6 +18,7 @@ import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
+import CircularEconomy from './Pages/CircularEconomy';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -62,6 +63,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<LoginUser />} />
             <Route path='/notfound' element={<NotFound />} />
+            <Route path='/economia-circular' element={< CircularEconomy />} />
           </Routes>
         </CafeLayout>
       </BrowserRouter>
