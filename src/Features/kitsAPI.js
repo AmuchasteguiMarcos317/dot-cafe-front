@@ -12,8 +12,14 @@ export const kitsAPI = createApi({
         getAllKits: builder.query({
             query: () => '/kits'
         }),
+        getKitsByField: builder.mutation({
+            query: () => ({
+                url : '/kits/all',
+                method: 'GET'
+            })
+        })
     })
 })
 
 export default kitsAPI;
-export const { useGetAllKitsQuery } = kitsAPI
+export const { useGetAllKitsQuery, useGetKitsByFieldMutation } = kitsAPI

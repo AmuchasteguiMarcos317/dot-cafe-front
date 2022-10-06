@@ -19,7 +19,9 @@ import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
+import VerTodo from './Pages/VerTodo';
 import ScrollToTop from './Components/ScrollToTop';
+
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -61,10 +63,10 @@ function App() {
             <Route path='/filtros-sustentables' element={<Filters />} />
             <Route path='/tazas' element={<Mugs />} />
             <Route path='/giftcards' element={<GiftCards />} />
-            <Route path='/cart' element={<Cart />} />
             <Route path='/verification-mail' element={<VerificationMail />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<LoginUser />} />
+            <Route path='/ver-todo' element={<VerTodo />} />
             <Route path='/notfound' element={<NotFound />} />
           </Routes>
         </CafeLayout>

@@ -259,7 +259,7 @@ export default function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
               <Navbar.Brand href="#home">
-                <span className="navAll">Ver todo</span>
+                <LinkRouter to="/ver-todo" className="navAll">Ver todo</LinkRouter>
               </Navbar.Brand>
             </Nav>
           </Navbar.Collapse>
