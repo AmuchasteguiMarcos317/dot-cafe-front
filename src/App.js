@@ -19,6 +19,7 @@ import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -48,6 +49,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
         <CafeLayout>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -67,6 +69,7 @@ function App() {
           </Routes>
         </CafeLayout>
       </BrowserRouter>
+      
     </>
   );
 }
