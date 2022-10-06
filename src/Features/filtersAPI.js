@@ -12,8 +12,14 @@ export const filtersAPI = createApi({
         getAllFilters: builder.query({
             query: () => '/coffee-filters'
         }),
+        getFiltersByField: builder.mutation({
+            query: () => ({
+                url: '/coffee-filters/all',
+                method: 'GET'
+            })
+        })
     })
 })
 
 export default filtersAPI;
-export const { useGetAllFiltersQuery } = filtersAPI
+export const { useGetAllFiltersQuery, useGetFiltersByFieldMutation } = filtersAPI
