@@ -53,7 +53,7 @@
     width: 150px;
     height: 150px;
 }
-.cofeeTitle{
+.coffeesTitle{
     text-align: center;
     background-color: #45230ffd;
     width: 100%;
@@ -78,6 +78,14 @@
     background-color: #204d48 !important;
     color: #faffd8 !important;
     border: none !important;
+}
+.coffeesInputs{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.coffeesRadios label{
+    padding-left: 1rem;
 }
 .coffeeBtn{
     align-self: flex-end;
