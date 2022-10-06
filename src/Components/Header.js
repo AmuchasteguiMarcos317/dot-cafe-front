@@ -100,37 +100,42 @@ export default function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Granel" id="basic-nav-dropdown">
-                <NavDropdown.Item
-                  className="navDrop"
-                  variant="primary"
-                  href="#action/3.1"
-                >
+                <LinkRouter to='/granel/origen' state={{ region: "Colombia" }}><NavDropdown.Item className="navDrop" variant="primary" href="#action/3.1">
                   <img
                     className="headerIcon"
                     src="https://cdn-icons-png.flaticon.com/512/6415/6415916.png"
                   />
                   <div className="navText">
-                    <p>1 Kg.</p>
+                    <p>Colombia</p>
                   </div>
-                </NavDropdown.Item>
-                <NavDropdown.Item className="navDrop">
+                </NavDropdown.Item></LinkRouter>
+                <LinkRouter to='/granel/origen' state={{ region: "Brasil" }}><NavDropdown.Item className="navDrop" href="#action/3.2">
                   <img
                     className="headerIcon"
                     src="https://cdn-icons-png.flaticon.com/512/6415/6415916.png"
                   />
                   <div className="navText">
-                    <p>500 Grs.</p>
+                    <p>Brasil</p>
                   </div>
-                </NavDropdown.Item>
-                <NavDropdown.Item className="navDrop" href="#action/3.3">
+                </NavDropdown.Item></LinkRouter>
+                <LinkRouter to='/granel/origen' state={{ region: "Ruanda" }}><NavDropdown.Item className="navDrop" href="#action/3.3">
                   <img
                     className="headerIcon"
                     src="https://cdn-icons-png.flaticon.com/512/6415/6415902.png"
                   />
                   <div className="navText">
-                    <p>250 Grs.</p>
+                    <p>Ruanda</p>
                   </div>
-                </NavDropdown.Item>
+                </NavDropdown.Item></LinkRouter>
+                <LinkRouter to='/granel/origen' state={{ region: "Blend" }}><NavDropdown.Item className="navDrop" href="#action/3.4">
+                  <img
+                    className="headerIcon"
+                    src="https://cdn-icons-png.flaticon.com/512/6415/6415902.png"
+                  />
+                  <div className="navText">
+                    <p>Blend</p>
+                  </div>
+                </NavDropdown.Item></LinkRouter>
               </NavDropdown>
               <NavDropdown title="Máquinas" id="basic-nav-dropdown">
                 <LinkRouter to='/maquinas-cafe/tipo' state={{ type: "capsula" }}><NavDropdown.Item className='navDrop' href="#action/3.1">

@@ -12,8 +12,14 @@ export const coffeeByKiloAPI = createApi({
         getAllCoffeeByKilo: builder.query({
             query: () => '/coffee-kilogram'
         }),
+        getCoffeeByWeight: builder.query({
+            query: (kilo) => '/coffee-kilogram?weight=' + kilo
+        }),
+        getCoffeeByOrigin: builder.query({
+            query: (region) => '/coffee-kilogram?origin=' + region
+        }),
     })
 })
 
 export default coffeeByKiloAPI;
-export const { useGetAllCoffeeByKiloQuery } = coffeeByKiloAPI
+export const { useGetAllCoffeeByKiloQuery, useGetCoffeeByWeightQuery, useGetCoffeeByOriginQuery } = coffeeByKiloAPI

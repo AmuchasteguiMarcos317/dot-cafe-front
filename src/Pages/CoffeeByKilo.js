@@ -2,24 +2,25 @@ import React from 'react'
 import '../Styles/AllCards.css'
 import { useLocation } from 'react-router-dom'
 import ProductCard from '../Components/ProductCard'
+import { useGetCoffeeByOriginQuery } from '../Features/coffeeByKiloAPI'
 
 export default function CoffeeByKilo() {
     const location = useLocation()
-    let type
+    let region
     if (location.state) {
-        type = location.state.type
+        region = location.state.region
     }
     
-    // const {data: coffeeMachines} = useGetTypeCoffeeMachinesQuery(type)
+    const {data: coffeesbykilo} = useGetCoffeeByOriginQuery(region)
     
     return (
         <>
             <main>
                 <div class="AllCardsContainer">
-                    {/* <h2 className="CardsTitle">Tipo de cafeteras: {type == "filtro"? "con " + type : type}</h2>
+                    <h2 className="CardsTitle">Café por origen: {region}</h2>
                     <div className="CardsContainer">
-                        {coffeeMachines?.cofMachine.map(machine => <ProductCard data={machine} linkTo={machine._id} />)}
-                    </div> */}
+                        {coffeesbykilo?.coffeeByKi.map(coffee => <ProductCard data={coffee} linkTo={coffee._id} />)}
+                    </div>
                 </div>
             </main>
         </>
