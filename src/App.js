@@ -14,6 +14,7 @@ import Mugs from './Pages/Mugs';
 import Filters from './Pages/Filters';
 import Cart from './Pages/Cart';
 import CoffeeByKilo from './Pages/CoffeeByKilo';
+import AllMachine from './Pages/AllMachine'; 
 import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -54,6 +55,7 @@ function App() {
             <Route path='/cafes' element={<Coffees />} />
             <Route path='/granel/origen' element={<CoffeeByKilo />} />
             <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
+            <Route path='/maquinas' element={<AllMachine />}/>
             <Route path='/filtros-sustentables' element={<Filters />} />
             <Route path='/tazas' element={<Mugs />} />
             <Route path='/giftcards' element={<GiftCards />} />

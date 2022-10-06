@@ -35,11 +35,11 @@ button{
     font-size: 1.5rem;
     text-shadow: #204D48 2px 2px;
 }
-.footerText p{
+.footerText a{
     color:#FAFFD8 ;
     text-align: center;
 }
-.footerText p:hover{
+.footerText a:hover{
     color:#a3bbad;
     transform: translateX(.5rem);
     transition:.5s;

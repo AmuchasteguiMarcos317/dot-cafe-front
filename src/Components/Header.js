@@ -157,6 +157,12 @@ export default function Header() {
                     <p>Con filtro</p>
                   </div>
                 </NavDropdown.Item></LinkRouter>
+                <LinkRouter to='/maquinas'><NavDropdown.Item className='navDrop' href="#action/3.1">
+                  <img className='headerIcon' src='http://drive.google.com/uc?export=view&id=1M2qcrvdj060ZYw6jO6UV3FGYTnbkck6y' alt='icon' />
+                  <div className='navText'>
+                    <p>Todas</p>
+                  </div>
+                </NavDropdown.Item></LinkRouter>
               </NavDropdown>
               <NavDropdown title="Accesorios" id="basic-nav-dropdown">
                 <LinkRouter to='/tazas'><NavDropdown.Item className="navDrop" href="#action/3.1">
@@ -233,7 +239,7 @@ export default function Header() {
                       alt="icon"
                     />
                     <div className="navText">
-                      <p>TODAS</p>
+                      <p>Todas</p>
                     </div>
                   </NavDropdown.Item>
                 </LinkRouter>
