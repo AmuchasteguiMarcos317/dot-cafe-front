@@ -55,6 +55,14 @@
     border-radius: 30px;
     cursor: pointer;
 }
+.headerCart{
+    display: flex;
+    align-items: center;
+}
+.headerCart img{
+    width: 35px !important;
+    height: 35px !important;
+}
 .headerPrueba{
     display: flex !important;
     flex-direction: column !important;
@@ -97,7 +105,9 @@ span{
     height: 70px;
     margin-right: 1rem;
 }
-
+.navbar-brand{
+    margin: 0!important;
+}
 .navDrop{
     margin: 1rem 0;
     display: flex !important;
@@ -173,8 +183,7 @@ span{
         flex-direction: column !important;
         align-items: center !important;
         font-size: 1rem !important;
-        
-    } 
+    }
     .navText {
         padding-top: 1rem !important;
     }
@@ -183,18 +192,9 @@ span{
         right: 11rem;
     } 
 }
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .navDrop img{
         color: #204d48 !important;
-    }
-    
-}
-@media (max-width: 550px) {
-    .navDrop{
-        width: auto !important;
-    }
-    .navText{
-        font-size: 14px;
     }
     .headerLogoCafe{
         margin-left: -12%;
@@ -202,15 +202,33 @@ span{
         width: 85px !important;
         height: 85px !important;
     }
-    
+    .container-avatar{
+        display: flex !important;
+        align-items: center !important;
+    }
+    .headerCart{
+        width: 20px;
+        height: 20px;
+        align-self: center;
+    }
 }
-@media (max-width: 465px) {
+@media (max-width: 550px) {
+    .navDrop{
+        width: auto !important;
+    }
+    .navText{
+        font-size: 14px;
+    }    
+}
+@media (max-width: 500px){
     .headerLogoCafe{
-        margin-left: -14%;
+        margin-left: 6%;
     }
     .headerPedi{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
+}
+@media (max-width: 465px) {
     .navText{
         display: flex !important;
         flex-direction: column !important;
@@ -219,23 +237,35 @@ span{
     .headerPrueba{
         top: 3.5rem;
         right: 9rem;
-    }    
-}
-@media (max-width: 380px) {
-    .navText{
-        font-size: 12px;
+    }
+    .headerPedi img{
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .container-avatar img{
+        width: 30px !important;
+        height: 30px !important;
     }
     .headerPedi{
         font-size: .7rem;
-    }
-    .headerPrueba{
-        top: 3.5rem;
-        right: 7rem;
+    }   
+}
+@media (max-width: 400px) {
+    .navText{
+        font-size: 12px;
     }
     .headerLogoCafe{
-        width: 70px !important;
-        height: 70px !important;
-        top: 80px;
-    }  
+        top: 4.5rem;
+        left: 1rem;
+        width: 80px !important;
+        height: 80px !important;
+    } 
+}
+@media (max-width: 340px){
+    .headerLogoCafe{
+        top: 7.5rem;
+        width: 80px !important;
+        height: 80px !important;
+    }
 }
 

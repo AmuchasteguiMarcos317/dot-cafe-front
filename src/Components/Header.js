@@ -60,6 +60,9 @@ export default function Header() {
             <div className="container-avatar">
               <img src={logged ? userData.photo : 'user.png'} onClick={handleOpenMenu} />
             </div>
+            <div className="headerCart">
+              <img src='https://cdn-icons-png.flaticon.com/512/8070/8070478.png' alt='icon'/>
+            </div>
           </div>
           {logged ? (
 
