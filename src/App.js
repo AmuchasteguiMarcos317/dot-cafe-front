@@ -19,6 +19,7 @@ import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
+import CircularEconomy from './Pages/CircularEconomy';
 import VerTodo from './Pages/VerTodo';
 import ScrollToTop from './Components/ScrollToTop';
 
@@ -68,6 +69,7 @@ function App() {
             <Route path='/login' element={<LoginUser />} />
             <Route path='/ver-todo' element={<VerTodo />} />
             <Route path='/notfound' element={<NotFound />} />
+            <Route path='/economia-circular' element={< CircularEconomy />} />
           </Routes>
         </CafeLayout>
       </BrowserRouter>
