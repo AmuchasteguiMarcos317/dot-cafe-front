@@ -6,8 +6,8 @@
 }
 .coffeeDescriptionContain{
     display: flex;
-    justify-content: space-around;
-    width: 35%;
+    width: 30%;
+    height: 10rem;
     align-items: center;
 }
 .coffeeH6{
@@ -79,7 +79,6 @@
     color: #faffd8 !important;
     border: none !important;
 }
-
 .coffeeBtn{
     align-self: flex-end;
     margin-bottom: 1rem;
@@ -95,4 +94,60 @@
     background-color: #faffd8;
     color: #45230f;
     font-weight: 600;
+}
+@media (max-width: 1720px){
+    .coffeeH6{
+        width: 100%;
+        height: 15rem;
+        padding-left: 10px;
+        justify-content: center;
+        gap: 1rem;
+        padding-left: 1.5rem;
+    }
+    .coffeeBtn{
+        align-self: flex-end;
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+    .coffeeDescriptionContain{
+        width: 30%;
+    }
+    .coffeeTextContain{
+        width: 80%;
+    }
+    .coffeeCart{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 1300px){
+    .coffeeTextContain{
+        padding-left: 1rem;
+    }
+}
+@media (max-width: 1000px){
+    .coffeeDescriptionContain{
+        width: 100%;
+    }
+    .CoffeeCard-Container{
+        flex-direction: column;
+    }
+    .coffeeDescripText{
+        flex-direction: column;
+        align-items: center;
+    }
+    .coffeeCart{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .coffeeBtn a{
+        font-size: small;
+    }
+    .coffeeH6 {
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
 }
