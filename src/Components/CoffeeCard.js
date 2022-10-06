@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link as LinkRouter } from "react-router-dom";
+import Form from 'react-bootstrap/Form'
 
 export default function CoffeeCard({ data }) {
     return (
@@ -21,7 +22,7 @@ export default function CoffeeCard({ data }) {
                         <p className='coffeeTitle'>Marca</p>
                         <p>{data?.brand}</p>
                     </div>
-                    <div className='coffeeText'>
+                    <div className='coffeeText1'>
                         <p className='coffeeTitle'>Tipo</p>
                         <p>{data?.type}</p>
                     </div>
@@ -29,8 +30,11 @@ export default function CoffeeCard({ data }) {
             </div>
             <div className='coffeeCart'>
                 <div className='coffeePrice'>
-                    <h6>Vaso sustentable $ {data?.pricePerCup}</h6>
-                    <h6>Taza $ {data?.pricePerMug}</h6>
+                    <Form.Select className='coffeeForm' aria-label="Default select example">
+                        <option>Elegi una opcion </option>
+                        <option value="1">Vaso sustentable $ {data?.pricePerCup}</option>
+                        <option value="2">Taza Ecológica $ {data?.pricePerMug}</option>
+                    </Form.Select>
                 </div>
                 <div className='coffeeBtn' >
                     <LinkRouter>Agregar al Carrito</LinkRouter>

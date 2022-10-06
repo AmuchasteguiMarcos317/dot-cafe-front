@@ -7,13 +7,17 @@
 .coffeeDescriptionContain{
     display: flex;
     justify-content: space-around;
-    width: 25%;
+    width: 35%;
+    align-items: center;
 }
 .coffeeH6{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     text-align: justify;
+    width: 100%;
+    padding-left: 4rem;
 }
 .coffeeTextContain{
     display: flex;
@@ -36,8 +40,15 @@
     flex-direction: column;
     justify-content: center;
     border-right: 1px solid rgba(0, 0, 0, 0.237);
+    padding: 1rem;
+}
+.coffeeText1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: .5rem;
 }
+    
 .coffeeCardImg{
     width: 150px;
     height: 150px;
@@ -61,6 +72,14 @@
     flex-direction: column;
     align-items: flex-end;
 }
+.coffeeForm{
+    margin-bottom: 8px !important ;
+    border-radius: 10px !important;
+    background-color: #204d48 !important;
+    color: #faffd8 !important;
+    border: none !important;
+}
+
 .coffeeBtn{
     align-self: flex-end;
     margin-bottom: 1rem;
