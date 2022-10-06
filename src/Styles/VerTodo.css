@@ -1,0 +1,41 @@
+.ver-todo-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 57.7vh;
+}
+
+.container-all-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+    padding: 1em 0 3em 0;
+}
+
+.container-search {
+    padding: 2em;
+    text-align: center;
+}
+
+.container-search input{
+    border-radius: 1rem;
+    border: none;
+    background-color: #eee;
+    padding: .5em 2em .5em 1em;
+    width: 350px;
+}
+.allProductContain{
+    width: 75%;
+    padding: 2rem 0 0;
+}
+.allProduct{
+    text-align: center;
+    background-color: #45230ffd;
+    width: 100%;
+    color: #faffd8;
+    font-weight: 100;
+    padding: .6rem;
+    border-radius: 6px;
+}

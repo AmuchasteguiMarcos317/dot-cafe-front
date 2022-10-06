@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../Styles/Footer.css'
+import { Link as LinkRouter } from 'react-router-dom';
 
 export default function footer() {
 
@@ -18,28 +19,28 @@ export default function footer() {
                         </button>
                     <div className='footerText'>
                         <h2>PRODUCTOS</h2>
-                        <p>Cafe</p>
-                        <p>Granel</p>
-                        <p>Maquinas</p>
-                        <p>Accesorios</p>
-                        <p>Reciclaje</p>
+                        <LinkRouter to='/'>Home</LinkRouter>
+                        <LinkRouter to='/cafes' href='#topCoffee'>Cafe</LinkRouter>
+                        <LinkRouter to='/granel/peso' state={{ kilo: "1000" }}>Granel</LinkRouter>
+                        <LinkRouter to='/'>Maquinas</LinkRouter>
+                        <LinkRouter to='/tazas'>Accesorios</LinkRouter>
                     </div>
                     <div className='footerText'>
                         <h2>SOBRE NOSOTROS</h2>
-                        <p>Historia</p>
-                        <p>Contacto</p>
-                        <p>Ubicacion</p>
-                        <p>Preguntas Frecuentes</p>
-                        <p>Politicas de Envio</p>
+                        <LinkRouter>Historia</LinkRouter>
+                        <LinkRouter>Contacto</LinkRouter>
+                        <LinkRouter>Reciclaje</LinkRouter>
+                        <LinkRouter>Preguntas Frecuentes</LinkRouter>
+                        <LinkRouter>Politicas de Envio</LinkRouter>
 
                     </div>
                     <div className='footerText'>
                         <h2>CLIENTE</h2>
-                        <p>Mi Cuenta</p>
-                        <p>Mis Favoritos</p>
-                        <p>Acceso Clientes</p>
-                        <p>Registrarse</p>
-                        <p>Mis Puntos</p>
+                        <LinkRouter>Mi Cuenta</LinkRouter>
+                        <LinkRouter>Mis Favoritos</LinkRouter>
+                        <LinkRouter to='/login'>Acceso Clientes</LinkRouter>
+                        <LinkRouter to='/signup'>Registrarse</LinkRouter>
+                        <LinkRouter>Mis Puntos</LinkRouter>
                     </div>
                 </div>
                 <div className='footerSocial'>

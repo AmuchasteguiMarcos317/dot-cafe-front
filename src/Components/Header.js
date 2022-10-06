@@ -95,40 +95,31 @@ export default function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Granel" id="basic-nav-dropdown">
-                <LinkRouter to='/granel/origen' state={{ region: "Colombia" }}><NavDropdown.Item className="navDrop" variant="primary" href="#action/3.1">
+                <LinkRouter to='/granel/peso' state={{ kilo: "1000" }}><NavDropdown.Item className="navDrop" variant="primary" href="#action/3.1">
                   <img
                     className="headerIcon"
                     src="https://cdn-icons-png.flaticon.com/512/6415/6415916.png"
                   />
                   <div className="navText">
-                    <p>Colombia</p>
+                    <p>1 Kg.</p>
                   </div>
                 </NavDropdown.Item></LinkRouter>
-                <LinkRouter to='/granel/origen' state={{ region: "Brasil" }}><NavDropdown.Item className="navDrop" href="#action/3.2">
+                <LinkRouter to='/granel/peso' state={{ kilo: "500" }}><NavDropdown.Item className="navDrop" href="#action/3.2">
                   <img
                     className="headerIcon"
                     src="https://cdn-icons-png.flaticon.com/512/6415/6415916.png"
                   />
                   <div className="navText">
-                    <p>Brasil</p>
+                    <p>500 Grs.</p>
                   </div>
                 </NavDropdown.Item></LinkRouter>
-                <LinkRouter to='/granel/origen' state={{ region: "Ruanda" }}><NavDropdown.Item className="navDrop" href="#action/3.3">
+                <LinkRouter to='/granel/peso' state={{ kilo: "250" }}><NavDropdown.Item className="navDrop" href="#action/3.3">
                   <img
                     className="headerIcon"
                     src="https://cdn-icons-png.flaticon.com/512/6415/6415902.png"
                   />
                   <div className="navText">
-                    <p>Ruanda</p>
-                  </div>
-                </NavDropdown.Item></LinkRouter>
-                <LinkRouter to='/granel/origen' state={{ region: "Blend" }}><NavDropdown.Item className="navDrop" href="#action/3.4">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/6415/6415902.png"
-                  />
-                  <div className="navText">
-                    <p>Blend</p>
+                    <p>250 Grs.</p>
                   </div>
                 </NavDropdown.Item></LinkRouter>
               </NavDropdown>
@@ -155,6 +146,12 @@ export default function Header() {
                   <img className='headerIcon' src='https://cdn-icons-png.flaticon.com/512/672/672449.png' alt='icon' />
                   <div className='navText'>
                     <p>Con filtro</p>
+                  </div>
+                </NavDropdown.Item></LinkRouter>
+                <LinkRouter to='/maquinas'><NavDropdown.Item className='navDrop' href="#action/3.1">
+                  <img className='headerIcon' src='http://drive.google.com/uc?export=view&id=1M2qcrvdj060ZYw6jO6UV3FGYTnbkck6y' alt='icon' />
+                  <div className='navText'>
+                    <p>Todas</p>
                   </div>
                 </NavDropdown.Item></LinkRouter>
               </NavDropdown>
@@ -233,7 +230,7 @@ export default function Header() {
                       alt="icon"
                     />
                     <div className="navText">
-                      <p>TODAS</p>
+                      <p>Todas</p>
                     </div>
                   </NavDropdown.Item>
                 </LinkRouter>
@@ -262,7 +259,7 @@ export default function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
               <Navbar.Brand href="#home">
-                <span className="navAll">Ver todo</span>
+                <LinkRouter to="/ver-todo" className="navAll">Ver todo</LinkRouter>
               </Navbar.Brand>
             </Nav>
           </Navbar.Collapse>
