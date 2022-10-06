@@ -16,6 +16,7 @@
 
 .container-search {
     padding: 2em;
+    text-align: center;
 }
 
 .container-search input{
@@ -24,4 +25,17 @@
     background-color: #eee;
     padding: .5em 2em .5em 1em;
     width: 350px;
+}
+.allProductContain{
+    width: 75%;
+    padding: 2rem 0 0;
+}
+.allProduct{
+    text-align: center;
+    background-color: #45230ffd;
+    width: 100%;
+    color: #faffd8;
+    font-weight: 100;
+    padding: .6rem;
+    border-radius: 6px;
 }
