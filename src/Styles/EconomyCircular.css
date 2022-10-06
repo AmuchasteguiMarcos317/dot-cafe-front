@@ -1,0 +1,110 @@
+.bannerCoffeeEconomy {
+    background-image: url(http://drive.google.com/uc?export=view&id=1nuCy4xHuM2QjmFKleCDtmFkiuUpavHiA);
+    min-height: 40vh;
+    background-repeat: no-repeat;
+}
+
+.divLogoBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.divLogoEcoFriendly{
+    background-color: aqua;
+    align-self: flex-end;
+}
+
+.logoEcoFriendly {
+    width: 15rem;
+    position: absolute;
+    right: 10.5rem;
+}
+.divLogoDotCoffee{
+    background-color: aqua;
+    align-self: flex-end;
+}
+
+.logoNameDotCoffee {
+    width: 33rem;
+    position: absolute;
+    
+    top: 21rem;
+
+}
+@media  only screen and (max-width: 1440px) {
+
+    .logoEcoFriendly {
+        width: 10rem;
+    }
+    .logoNameDotCoffee {
+        width: 30rem;
+        top: 18rem;
+        right: 2rem;
+    }
+}
+@media  only screen and (max-width: 1024px) {
+
+    .logoEcoFriendly {
+        width: 10rem;
+        right: 25rem;
+    }
+    .logoNameDotCoffee {
+        width: 30rem;
+        top: 18rem;
+        right: 16rem;
+    }
+}
+
+@media  only screen and (max-width: 768px) {
+
+    .logoEcoFriendly {
+        width: 10rem;
+        right: 17rem;
+    }
+    .logoNameDotCoffee {
+        width: 28rem;
+        top: 18rem;
+        right: 9rem;
+    }
+}
+
+@media  only screen and (max-width: 425px) {
+
+    .logoEcoFriendly {
+        width: 8rem;
+        right: 8.5rem;
+    }
+    .logoNameDotCoffee {
+        width: 22rem;
+        top: 18rem;
+        right: 2rem;
+    }
+}
+
+@media  only screen and (max-width: 375px) {
+
+    .logoEcoFriendly {
+        width: 8rem;
+        right: 7.5rem;
+    }
+    .logoNameDotCoffee {
+        width: 21rem;
+        top: 18rem;
+        right: 1rem;
+    }
+}
+@media  only screen and (max-width: 320px) {
+
+    .logoEcoFriendly {
+        width: 8rem;
+        right: 5.5rem;
+        top: 14rem;
+    }
+    .logoNameDotCoffee {
+        width: 18rem;
+        top: 22rem;
+        right: 1rem;
+    }
+}
