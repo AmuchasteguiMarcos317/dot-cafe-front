@@ -68,6 +68,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<LoginUser />} />
             <Route path='/ver-todo' element={<VerTodo />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/notfound' element={<NotFound />} />
             <Route path='/economia-circular' element={< CircularEconomy />} />
           </Routes>
