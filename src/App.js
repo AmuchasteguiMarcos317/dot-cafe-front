@@ -14,10 +14,12 @@ import Mugs from './Pages/Mugs';
 import Filters from './Pages/Filters';
 import Cart from './Pages/Cart';
 import CoffeeByKilo from './Pages/CoffeeByKilo';
+import AllMachine from './Pages/AllMachine'; 
 import { useUserLoginTokenMutation } from './Features/usersAPI';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -47,6 +49,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
         <CafeLayout>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -54,6 +57,7 @@ function App() {
             <Route path='/cafes' element={<Coffees />} />
             <Route path='/granel/peso' element={<CoffeeByKilo />} />
             <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
+            <Route path='/maquinas' element={<AllMachine />}/>
             <Route path='/filtros-sustentables' element={<Filters />} />
             <Route path='/tazas' element={<Mugs />} />
             <Route path='/giftcards' element={<GiftCards />} />
@@ -65,6 +69,7 @@ function App() {
           </Routes>
         </CafeLayout>
       </BrowserRouter>
+      
     </>
   );
 }
