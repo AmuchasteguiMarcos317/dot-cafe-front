@@ -9,7 +9,7 @@ export default function Filters() {
     return (
         <>
             <main>
-                <div class="AllCardsContainer">
+                <div className="AllCardsContainer">
                     <h2 className="CardsTitle">Filtros sustentables:</h2>
                     <div className="CardsContainer">
                         {filters?.allFilters.map(filter => <ProductCard data={filter} linkTo={filter._id} />)}

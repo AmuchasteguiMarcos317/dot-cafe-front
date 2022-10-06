@@ -10,7 +10,7 @@ export default function Coffees() {
         <>
             <main>
                 <div className="AllCardsContainer">
-                    <h2 className="cofeeTitle">Pedite uno de nuestros cafés de especialidad</h2>
+                    <h2 className="cofeeTitle" id='topCoffee'>Pedite uno de nuestros cafés de especialidad</h2>
                     <div className="">
                         {coffees?.response.map(coffee => <CoffeeCard data={coffee} />)}
                     </div>

@@ -15,9 +15,6 @@ export const coffeeByKiloAPI = createApi({
         getCoffeeByWeight: builder.query({
             query: (kilo) => '/coffee-kilogram?weight=' + kilo
         }),
-        getCoffeeByOrigin: builder.query({
-            query: (region) => '/coffee-kilogram?origin=' + region
-        }),
         getCaffeeByField: builder.mutation({
             query: () => ({
                 url: '/coffee-kilogram/all',
@@ -26,6 +23,6 @@ export const coffeeByKiloAPI = createApi({
         })
     })
 })
-
 export default coffeeByKiloAPI;
-export const { useGetAllCoffeeByKiloQuery, useGetCoffeeByWeightQuery, useGetCoffeeByOriginQuery, useGetCaffeeByFieldMutation } = coffeeByKiloAPI
+export const { useGetAllCoffeeByKiloQuery, useGetCoffeeByWeightQuery, useGetCaffeeByFieldMutation } = coffeeByKiloAPI
+
