@@ -9,26 +9,70 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 .headerSpan{
-    color: #955f31;
+    color: white;
     font-size: 2rem;
     text-align: end;
+}
+.headerPedi img{
+    width: 25px !important;
+    height: 25px !important;
+    margin-bottom: 6px;
 }
 .headerP{
     padding-top: 1em;
 }
-
-.header img{
+.headerLogged{
+    display: flex;
+    gap: 2rem;
+}
+.headerPedi{
+    color: #955f31;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+.headerPedi:hover{
+    color: white;
+}
+.headerLogo img{
     width: 100px;
     height: 100px;
     border-radius: 15px;
-    padding: 4px;
+    padding: 8px;
     position: absolute;
     margin-top: -25px;
     z-index: 2;
 }
-
+.container-avatar{
+    padding: 5px 0;
+}
+.container-avatar img{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.headerPrueba{
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    z-index: 2;
+    top: 3.5rem;
+    right: 13.7rem;
+    background-color: whitesmoke ;
+    padding: .5rem;
+    border-radius: 5px;
+}
+.headerSesion{
+    color:#45230f;
+    font-weight: 700;
+}
+.headerSesion:hover{
+    color: #955f31;
+}
 .header p{
     font-weight: bold;
     letter-spacing: 2px;
@@ -133,7 +177,11 @@ span{
     } 
     .navText {
         padding-top: 1rem !important;
-    }  
+    }
+    .headerPrueba{
+        top: 3.5rem;
+        right: 11rem;
+    } 
 }
 @media (max-width: 600px) {
     .navDrop img{
@@ -148,30 +196,46 @@ span{
     .navText{
         font-size: 14px;
     }
+    .headerLogoCafe{
+        margin-left: -12%;
+        top: 70px;
+        width: 85px !important;
+        height: 85px !important;
+    }
     
 }
-@media (max-width: 425px) {
-    .header img{
-        margin-left: -9%;
+@media (max-width: 465px) {
+    .headerLogoCafe{
+        margin-left: -14%;
+    }
+    .headerPedi{
+        font-size: 1.2rem;
     }
     .navText{
         display: flex !important;
         flex-direction: column !important;
         flex-wrap: wrap !important;
+    }
+    .headerPrueba{
+        top: 3.5rem;
+        right: 9rem;
     }    
 }
 @media (max-width: 380px) {
-    .header img{
-        margin-left: -15%;
-    } 
     .navText{
         font-size: 12px;
-    }   
+    }
+    .headerPedi{
+        font-size: .7rem;
+    }
+    .headerPrueba{
+        top: 3.5rem;
+        right: 7rem;
+    }
+    .headerLogoCafe{
+        width: 70px !important;
+        height: 70px !important;
+        top: 80px;
+    }  
 }
-@media (max-width: 350px) {
-    .header img{
-        margin-left: -17%;
-        width: 85px;
-        height: 85px;
-    }    
-}
+
