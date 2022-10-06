@@ -2,22 +2,22 @@ import React from 'react'
 import '../Styles/AllCards.css'
 import { useLocation } from 'react-router-dom'
 import ProductCard from '../Components/ProductCard'
-import { useGetCoffeeByOriginQuery } from '../Features/coffeeByKiloAPI'
+import { useGetCoffeeByWeightQuery } from '../Features/coffeeByKiloAPI'
 
 export default function CoffeeByKilo() {
     const location = useLocation()
-    let region
+    let kilo
     if (location.state) {
-        region = location.state.region
+        kilo = location.state.kilo
     }
     
-    const {data: coffeesbykilo} = useGetCoffeeByOriginQuery(region)
+    const {data: coffeesbykilo} = useGetCoffeeByWeightQuery(kilo)
     
     return (
         <>
             <main>
-                <div class="AllCardsContainer">
-                    <h2 className="CardsTitle">Café por origen: {region}</h2>
+                <div className="AllCardsContainer">
+                    <h2 className="CardsTitle">Café por kilo: {kilo}</h2>
                     <div className="CardsContainer">
                         {coffeesbykilo?.coffeeByKi.map(coffee => <ProductCard data={coffee} linkTo={coffee._id} />)}
                     </div>
