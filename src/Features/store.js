@@ -9,6 +9,7 @@ import mugsAPI from './mugsAPI'
 import coffeeMachinesAPI from './coffeeMachinesAPI'
 import coffeeForDrinkAPI from './coffeeForDrinkAPI'
 import coffeeByKiloAPI from './coffeeByKiloAPI'
+import  cartReducer from './cartSlice'
 
 export default configureStore ({
     reducer: {
@@ -21,7 +22,8 @@ export default configureStore ({
         [coffeeForDrinkAPI.reducerPath] : coffeeForDrinkAPI.reducer,
         [coffeeByKiloAPI.reducerPath] : coffeeByKiloAPI.reducer,
         auth: userReducer,
-        reload: reloadSlice
+        reload: reloadSlice,
+        cart: cartReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         immutableCheck: false,
