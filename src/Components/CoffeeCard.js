@@ -3,6 +3,13 @@ import { Link as LinkRouter } from "react-router-dom";
 import Form from 'react-bootstrap/Form'
 
 export default function CoffeeCard({ data }) {
+
+
+
+    
+
+
+
     return (
         <div className='CoffeeCard-Container'>
             <div className='coffeeDescriptionContain'>
@@ -32,8 +39,8 @@ export default function CoffeeCard({ data }) {
                 <div className='coffeePrice'>
                     <Form.Select className='coffeeForm' aria-label="Default select example">
                         <option>Elegi una opcion </option>
-                        <option value="1">Vaso sustentable $ {data?.pricePerCup}</option>
-                        <option value="2">Taza Ecológica $ {data?.pricePerMug}</option>
+                        <option value={data?.pricePerCup}>Vaso sustentable $ {data?.pricePerCup}</option>
+                        <option value={data?.pricePerMug}>Taza Ecológica $ {data?.pricePerMug}</option>
                     </Form.Select>
                 </div>
                 <div className='coffeeBtn' >
