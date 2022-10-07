@@ -4,13 +4,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../Features/cartSlice'
 
 export default function ProductCard({data}) {
+
 console.log(data)
 const dispatch = useDispatch()
+let photoProduct = typeof(data?.photo) == "string"? data.photo : data.photo[0]
 
 const handleAddToCart =  async (data) =>{
     dispatch(addToCart({
         _id: data._id,
-        photo: data.photo,
+        photo: photoProduct,
         price: data.price,
         name:data.name
     }))
@@ -20,7 +22,7 @@ const handleAddToCart =  async (data) =>{
         <>
             <div key={data._id} className='cardContainer'>
                 <div className='imgContainer'>
-                    <img className='imgCard' src={typeof(data?.photo) == "string"? data.photo : data.photo[0]} alt="cafe" />
+                    <img className='imgCard' src={photoProduct} alt="cafe" />
                 </div>
                 <div className="cardInfoContainer">
                     { data.name &&
