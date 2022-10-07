@@ -1,0 +1,113 @@
+.imgItemCard{
+    width: 7%;
+}
+.buttonCant{
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0.311);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    align-items: center;
+}
+.buttonleft{
+    width: 2rem;
+    height: 2rem;
+    background-color: #204D48;
+    color: #fff;
+}
+.counter{
+    width: 2rem;
+    text-align: center;
+    margin: 0;
+    
+}
+.buttonright{
+    width: 2rem;
+    height: 2rem;
+    background-color: #204D48;
+    color: #fff;
+}
+.itemCardContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #45230f;
+    border-bottom: 1px solid ;
+    padding: 10px 0 10px 0;
+}
+.delete{
+    background-color: #fff;
+    border-radius: 10px;
+}
+.imgDelete{
+    width: 2rem;
+    background-color: #fff;
+    
+}
+.buttonleft:hover{
+    background-color: #a3bbad;
+    color: black;
+}
+.buttonright:hover{
+    background-color: #a3bbad;
+    color: black;
+}
+.descripCard{
+    width: 63%;
+    text-align: center;
+}
+.priceItemCard{
+    width: 10%;
+    text-align: center;
+}
+.totalItemCard{
+    width: 10%;
+    text-align: center;
+}
+.descripCard p{
+    margin: 0;
+}
+.priceItemCard p{
+    margin: 0;
+}
+.totalItemCard p{
+    margin:0;
+}
+
+@media screen and (max-width: 1440px){
+    .descripCard{
+        width: 43%;
+        
+    }
+    .priceItemCard{
+        width: 20%;
+        text-align: center;
+    }
+    .totalItemCard{
+        width: 10%;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 555px){
+    .itemCardContainer{
+        flex-direction: column;
+    }
+    .imgItemCard{
+        width: 20%;
+        padding: 1rem 0 1rem 0;
+    }
+    .totalItemCard{
+        display: none;
+    }
+    .descripCard{
+        padding: 1rem 0 1rem 0;
+    }
+    .priceItemCard{
+        padding: 1rem 0 1rem 0;
+    }
+    .itemCardContainer{
+        border-top: none;
+    }
+}

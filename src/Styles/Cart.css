@@ -1,0 +1,178 @@
+.CartContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    min-height: 60vh;
+    background-color: #a3bbad;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    align-items: flex-end;
+}
+.trolleyContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    min-height: 58vh;
+    background-color:#fff;
+    border-radius: 1rem 0 0 1rem;
+}
+.additionContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    min-height: 58vh;
+    background-color: #a3bbad;
+    border-radius:0 1rem 1rem 0;
+}
+.detailProcuctContainer{
+    width: 95%;
+    min-height: 50vh;
+    background-color:#fff;
+    border-radius: 1rem;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    min-height: 58vh;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius:0 1rem 1rem 0;
+}
+.purchaseValue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    min-height: 25vh;
+    background-color: #a3bbad;
+    padding: .5rem;
+    border-radius: 1rem 1rem 0 0;
+    color: #fff;
+}
+.finishBuy{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 25vh;
+    background-color: #a3bbad;
+    border-radius:0 0 1rem 1rem ;
+    border-top: 1px solid #fff;
+}
+.buttonBuy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 3rem;
+    background-color: #204D48;
+    border-radius: .8rem;
+    color: #a3bbad;
+    display: flex;
+}
+.buttonBuy:hover{
+    background-color: #39736c;
+    color: #FAFFD8;
+    border: #204D48 solid;
+    transition: .6s;
+}
+.buttonBuy p{
+    margin: 0;
+}
+.value{
+    display: flex;
+    justify-content: space-between;
+}
+.priceTotal{
+    width:40%;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: 204D48;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+.priceTotal p{
+    margin: 0;
+}
+.itemCard{
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+}
+.productItem{
+    width: 70%;
+    margin: 0;
+}
+.cantItem{
+    width: 10%;
+    margin: 0;
+}
+.valueItem{
+    width: 10%;
+    margin: 0;
+}
+.totalItem{
+    width: 10%;
+    margin: 0;
+}
+
+@media screen and (max-width: 1440px){
+    .productItem{
+        width: 50%;
+    }
+    .cantItem{
+        width: 20%;
+        margin: 0;
+    }
+    .valueItem{
+        width: 15%;
+        margin: 0;
+    }
+    .totalItem{
+        width: 15%;
+        margin: 0;
+    }
+    .buttonBuy{
+        text-align: center;
+    }
+
+}
+@media screen and (max-width: 768px){
+    .CartContainer{
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+    .trolleyContainer{
+        width: 95%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+    }
+    .additionContainer{
+        width: 95%;
+    }
+    .total{
+        border-radius: 1rem;
+    }
+}
+@media screen and (max-width: 555px){
+    .itemCard{
+        display: none;
+    }
+
+}

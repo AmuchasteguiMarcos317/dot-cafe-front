@@ -1,0 +1,51 @@
+.notFound-contain {
+    width: 100%;
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("https://cdn.discordapp.com/attachments/988787727187206194/1027221803757740143/call-me-fred--oansmPx1Ww-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: center;
+    background-size: cover;
+}
+
+.img img{
+    width: 100%;
+    
+}
+
+.NotFound-text{
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.notFound-404{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.notFound-error{
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.notFound-btn{
+    background-color: #204d48;
+    padding: .5rem;
+    margin-top: 15rem;
+    border-radius: 15px;
+    font-size: x-large;
+    color: #faffd8;
+}
+
+.notFound-btn:hover{
+    background-color: #faffd8;
+    color: #45230f;
+    font-weight: 600;
+}
+

@@ -10,7 +10,6 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  min-height: 75vh;
 }
 a {
   text-decoration: none !important;
@@ -18,4 +17,3 @@ a {
 .App {
   text-align: center;
 }
-

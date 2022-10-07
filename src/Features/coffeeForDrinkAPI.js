@@ -12,8 +12,11 @@ export const coffeeForDrinkAPI = createApi({
         getAllCoffeeForDrink: builder.query({
             query: () => '/coffee'
         }),
+        getCoffeeSearch: builder.query({
+            query: (input) => `/coffee?size=${input[0]}&type=${input[1]}` 
+        }),
     })
 })
 
 export default coffeeForDrinkAPI;
-export const { useGetAllCoffeeForDrinkQuery } = coffeeForDrinkAPI
+export const { useGetAllCoffeeForDrinkQuery, useGetCoffeeSearchQuery } = coffeeForDrinkAPI
