@@ -178,59 +178,15 @@ export default function Header() {
                 </NavDropdown.Item></LinkRouter>
               </NavDropdown>
               <NavDropdown title="Gift Cards" id="basic-nav-dropdown">
-                <NavDropdown.Item className="navDrop" href="#action/3.1">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/4965/4965109.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>$1.000</p>
-                  </div>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item className="navDrop" href="#action/3.2">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/4965/4965109.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>$2.000</p>
-                  </div>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item className="navDrop" href="#action/3.3">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/4965/4965109.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>$5.000</p>
-                  </div>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item className="navDrop" href="#action/3.4">
-                  <img
-                    className="headerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/4965/4965109.png"
-                    alt="icon"
-                  />
-                  <div className="navText">
-                    <p>$10.000</p>
-                  </div>
-                </NavDropdown.Item>
-
                 <LinkRouter to="/giftcards">
                   <NavDropdown.Item className="navDrop" href="#action/3.4">
                     <img
                       className="headerIcon"
-                      src="https://cdn-icons-png.flaticon.com/512/4965/4965109.png"
+                      src="https://cdn-icons-png.flaticon.com/512/6903/6903101.png"
                       alt="icon"
                     />
                     <div className="navText">
-                      <p>Todas</p>
+                      <p>Gift Cards</p>
                     </div>
                   </NavDropdown.Item>
                 </LinkRouter>
@@ -254,7 +210,7 @@ export default function Header() {
                     alt="icon"
                   />
                   <div className="navText">
-                    <p>Campaña de reciclaje</p>
+                    <p>Economía Circular</p>
                   </div>
                 </NavDropdown.Item>
               </NavDropdown>
