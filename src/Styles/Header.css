@@ -117,6 +117,7 @@ span{
     display: flex !important;
     align-items: flex-end;
     font-weight: bolder;
+    width: 100% !important;
 }
 
 #basic-nav-dropdown{
@@ -151,9 +152,9 @@ span{
 .dropdown-menu{
     background-color: #faffd8 !important;
 }
+
 .navDrop:hover{
     background-color: #a3bbad !important;
-    width: 100% !important;
 }
 
 @media (max-width: 1200px) {

@@ -4,7 +4,7 @@ import { Link as LinkRouter } from 'react-router-dom'
 import Marquee from "react-fast-marquee";
 import MarqueeCards from './MarqueeCards';
 const cardsBuy = [
-    { key: "2001", title: "ELEGÍ TU CAFÉ", photo: "https://cdn-icons-png.flaticon.com/512/8070/8070478.png", text: "PASO 1", info: ["Selecciona el café que te guste, elegí si lo querés llevar en grano o molido y si querés comprar una bolsa de 250grs,500grs o de 1kg."] },
+    { key: "2001", title: "ELEGÍ TU PRODUCTO", photo: "https://cdn-icons-png.flaticon.com/512/8070/8070478.png", text: "PASO 1", info: ["Selecciona el producto que te guste, maquina, tazas o si queres café donde podes elegir si lo querés llevar en grano o molido y si querés comprar una bolsa de 250grs,500grs o de 1kg."] },
     { key: "2002", title: "PAGÁ EN FORMA SEGURA", /* button: 'ver-todo', */ photo: "https://cdn-icons-png.flaticon.com/512/4564/4564998.png", text: "PASO 2", info: ["Cobramos a través de Mercado Pago, la plataforma más segura del país. Aceptamos todas las tarjetas de crédito y débito."] },
     { key: "2003", title: "RECíBILO EN 24HS", photo: "https://cdn-icons-png.flaticon.com/512/2830/2830312.png", text: "PASO 3", info: ["Llega por Correo Argentino a todo el país y tarda 24hs en llegar a tu domicilio. Tu númeroi de seguimiento servirá para rastrearlo."] },
 ]
@@ -17,6 +17,9 @@ const cardsInfo = [
 export default function HomeCards() {
     return (
         <>
+            <Marquee pauseOnHover speed={80}>
+                <MarqueeCards />
+            </Marquee>
             <div className="homeCardsContainer">
                 {cardsInfo.map(card => (
                     <div key={card.key} className="homeCardColor">
@@ -29,12 +32,12 @@ export default function HomeCards() {
                                 <div className="homeCardTextContainer">
                                     {(card.info).map(text => (<p>{text}</p>))}
                                 </div>
-                                {/* {
+                                {
                                     card.button &&
                                     <LinkRouter className='homeBtn' to={card.button}>
                                         <button>Ver más</button>
                                     </LinkRouter>
-                                } */}
+                                }
                             </div>
                         </div>
                     </div>
@@ -55,22 +58,13 @@ export default function HomeCards() {
                             <p>{card.info}</p>
                         </div>
                         <div>
-                            {/* {
-                                card.button &&
-                                <LinkRouter className='buyBtn' to={card.button}>
-                                    <button type="">COMPRA ONLINE</button>
-                                </LinkRouter>
-                            } */}
                         </div>
                     </div>
                 ))}
             </div>
-                <LinkRouter className='buyBtn' to='ver-todo'>
-                    <button type="">COMPRA ONLINE</button>
-                </LinkRouter>
-            <Marquee pauseOnHover speed={80}>
-                <MarqueeCards />
-            </Marquee>
+            <LinkRouter className='buyBtn' to='ver-todo'>
+                <button type="">COMPRA ONLINE</button>
+            </LinkRouter>
         </>
     )
 }
