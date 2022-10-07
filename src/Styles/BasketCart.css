@@ -1,0 +1,15 @@
+.cartSlide{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.imgBasketItemPhoto{
+    width: 6rem;
+}
+.pBasketItemName {
+    width: 8rem;
+    text-align: center;
+
+}
