@@ -2,7 +2,7 @@ import React from 'react'
 import '../Styles/ProductCard.css'
 
 export default function ProductCard({data}) {
-
+console.log(data)
     return (
         <>
             <div key={data._id} className='cardContainer'>
