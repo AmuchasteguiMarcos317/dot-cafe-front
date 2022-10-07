@@ -3,27 +3,20 @@ import '../Styles/ProductCard.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../Features/cartSlice'
 
-
 export default function ProductCard({data}) {
+
 console.log(data)
 const dispatch = useDispatch()
-
 let photoProduct = typeof(data?.photo) == "string"? data.photo : data.photo[0]
 
-
 const handleAddToCart =  async (data) =>{
-    
-
     dispatch(addToCart({
         _id: data._id,
         photo: photoProduct,
         price: data.price,
         name:data.name
     }))
-
 }
-
-
 
     return (
         <>
