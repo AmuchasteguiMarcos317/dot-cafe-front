@@ -1,8 +1,27 @@
 import React from 'react'
 import '../Styles/ProductCard.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../Features/cartSlice'
+
 
 export default function ProductCard({data}) {
 console.log(data)
+const dispatch = useDispatch()
+
+
+const handleAddToCart =  async (data) =>{
+
+    dispatch(addToCart({
+        _id: data._id,
+        photo: data.photo,
+        price: data.price,
+        name:data.name
+    }))
+    
+}
+
+
+
     return (
         <>
             <div key={data._id} className='cardContainer'>
@@ -22,7 +41,7 @@ console.log(data)
                         <h4>Precio:</h4>
                         <h5>${data?.price}</h5>
                     </div>
-                    <div className='bottonCard'>AGREGAR AL CARRITO</div>
+                    <button onClick={ ()=>{handleAddToCart(data)} } className='bottonCard'>AGREGAR AL CARRITO</button>
                 </div>
             </div>
         </>
