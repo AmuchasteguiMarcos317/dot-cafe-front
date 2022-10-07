@@ -32,7 +32,6 @@
     width: 100%;
     height: 22rem;
     object-fit: cover;
-    
     border-radius: 1rem;
     box-shadow: .5rem .3rem 1rem #956031;
 }
@@ -47,6 +46,20 @@
 .homeCardInfo p {
     font-size: .9rem;
     text-align: justify;
+}
+.homeBtn button{
+    background-color: #204d48;
+    padding: .5rem;
+    border-radius: 15px;
+    font-size: x-large;
+    color: #faffd8;
+    
+}
+.homeBtn button:hover{
+    background-color: #faffd8;
+    color: #45230f;
+    font-weight: 600;
+    border: 1px solid #45230f;
 }
 
 @media screen and (max-width: 1024px) {
