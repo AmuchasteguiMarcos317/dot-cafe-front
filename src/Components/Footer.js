@@ -23,14 +23,14 @@ export default function footer() {
                         <LinkRouter to='/'>Home</LinkRouter>
                         <LinkRouter to='/cafes' href='#topCoffee'>Cafe</LinkRouter>
                         <LinkRouter to='/granel/peso' state={{ kilo: "1000" }}>Granel</LinkRouter>
-                        <LinkRouter to='/'>Maquinas</LinkRouter>
+                        <LinkRouter to='/maquinas'>Maquinas</LinkRouter>
                         <LinkRouter to='/tazas'>Accesorios</LinkRouter>
                     </div>
                     <div className='footerText'>
                         <h2>SOBRE NOSOTROS</h2>
                         <LinkRouter>Historia</LinkRouter>
                         <LinkRouter>Contacto</LinkRouter>
-                        <LinkRouter>Reciclaje</LinkRouter>
+                        <LinkRouter to='/economia-circular'>Reciclaje</LinkRouter>
                         <LinkRouter>Preguntas Frecuentes</LinkRouter>
                         <LinkRouter>Politicas de Envio</LinkRouter>
 

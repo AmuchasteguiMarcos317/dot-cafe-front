@@ -9,14 +9,20 @@ import { Link as LinkRouter, useNavigate } from "react-router-dom";
 import { useUserLogoutMutation } from "../Features/usersAPI";
 import { reload } from "../Features/reloadSlice";
 import { deleteCredentials } from "../Features/usersSlice";
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
-export default function Header() {
+export default function Header({ name, ...props }) {
   const userData = useSelector((state) => state.auth.user);
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const logged = useSelector((state) => state.auth.logged);
   const [singOutUser] = useUserLogoutMutation()
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleOpenMenu = () => {
     if (open === true) {
@@ -61,7 +67,19 @@ export default function Header() {
               <img src={logged ? userData.photo : 'user.png'} onClick={handleOpenMenu} />
             </div>
             <div className="headerCart">
-              <img src='https://cdn-icons-png.flaticon.com/512/8070/8070478.png' alt='icon'/>
+              <button variant="primary" onClick={handleShow} className="me-2">
+                <img src='https://cdn-icons-png.flaticon.com/512/8070/8070478.png' alt='icon' />
+              </button>
+              <Offcanvas placement='end' show={show} onHide={handleClose} {...props}>
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title>Carrito</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <LinkRouter to='/cart'>
+                    Ir a carrito
+                  </LinkRouter>
+                </Offcanvas.Body>
+              </Offcanvas>
             </div>
           </div>
           {logged ? (

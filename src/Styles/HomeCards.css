@@ -62,7 +62,7 @@
 .buyH1{
     width: 100%;
     background-color: #204d48;
-    margin: 0;
+    
     text-align: center;
     color: #956031;
     font-weight: bold;
@@ -78,6 +78,7 @@
     text-align: center;
     padding-bottom: 2rem;
     align-items: center;
+    margin-bottom: 10px;
 }
 .buyBanner{
     width: 70%;
