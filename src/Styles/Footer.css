@@ -14,11 +14,25 @@
     align-items: center;
     padding-top: 2rem;
 }
-.footerLogo img{
-    width: 12rem;
+.footerArrow1{
+    width: 12.8rem;
+}
+.footerArrow{
+    width: 12.9rem;
     border-radius: 50%;
     margin-top: 1rem;
+    position: relative;
+    left: 12.9rem;
+    top: -.5rem;
 }
+.footerArrow:hover{
+    z-index: -1;
+}
+.footerArrow1:hover{
+    z-index: 2;
+    position: relative;
+}
+
 button{
     border: none;
     background-color: #45230F;

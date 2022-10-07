@@ -58,12 +58,11 @@
     background-color: #faffd8;
     color: #45230f;
     font-weight: 600;
-    border: 1px solid #45230f;
 }
 .buyH1{
     width: 100%;
     background-color: #204d48;
-    margin: 0;
+    
     text-align: center;
     color: #956031;
     font-weight: bold;
@@ -79,6 +78,7 @@
     text-align: center;
     padding-bottom: 2rem;
     align-items: center;
+    margin-bottom: 10px;
 }
 .buyBanner{
     width: 70%;
@@ -120,12 +120,11 @@
     color: #faffd8;
     margin-top: 2rem;
     width: 100%;
+    margin-bottom: 1rem;
 }
 .buyBtn button:hover{
     background-color: #faffd8;
     color: #45230f;
-    font-weight: 600;
-    border: 1px solid #45230f;
 }
 
 @media screen and (max-width: 1024px) {
