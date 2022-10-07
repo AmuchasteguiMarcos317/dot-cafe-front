@@ -11,6 +11,7 @@ import { reload } from "../Features/reloadSlice";
 import { deleteCredentials } from "../Features/usersSlice";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import BasketCart from "./BasketCart";
 
 export default function Header({ name, ...props }) {
   const userData = useSelector((state) => state.auth.user);
@@ -48,6 +49,9 @@ export default function Header({ name, ...props }) {
       console.log(error)
     }
   }
+
+
+
   return (
     <>
       <Container fluid className="headerContain">
@@ -72,12 +76,11 @@ export default function Header({ name, ...props }) {
               </button>
               <Offcanvas placement='end' show={show} onHide={handleClose} {...props}>
                 <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Carrito</Offcanvas.Title>
+                  <Offcanvas.Title>CARRITO DE COMPRAS</Offcanvas.Title>
+                  <hr/>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <LinkRouter to='/cart'>
-                    Ir a carrito
-                  </LinkRouter>
+                  <BasketCart/>
                 </Offcanvas.Body>
               </Offcanvas>
             </div>
@@ -221,7 +224,9 @@ export default function Header({ name, ...props }) {
                   </div>
                 </NavDropdown.Item>
 
-                <NavDropdown.Item className="navDrop" href="#action/3.2">
+                <NavDropdown.Item className="navDrop">
+                  <LinkRouter to='/economia-circular'>
+                  
                   <img
                     className="headerIcon"
                     src="https://cdn-icons-png.flaticon.com/512/3299/3299853.png"
@@ -230,6 +235,7 @@ export default function Header({ name, ...props }) {
                   <div className="navText">
                     <p>Economía Circular</p>
                   </div>
+                  </LinkRouter>
                 </NavDropdown.Item>
               </NavDropdown>
               <Navbar.Brand href="#home">
