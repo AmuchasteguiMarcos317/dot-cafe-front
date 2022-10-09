@@ -5,7 +5,6 @@ import { addToCart } from '../Features/cartSlice'
 
 export default function ProductCard({data}) {
 
-console.log(data)
 const dispatch = useDispatch()
 let photoProduct = typeof(data?.photo) == "string"? data.photo : data.photo[0]
 
