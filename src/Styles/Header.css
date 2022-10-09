@@ -60,8 +60,8 @@
     align-items: center;
 }
 .headerCart img{
-    width: 35px !important;
-    height: 35px !important;
+    width: 30px !important;
+    height: 30px !important;
 }
 .headerPrueba{
     display: flex !important;
@@ -83,7 +83,6 @@
 }
 .header p{
     font-weight: bold;
-    letter-spacing: 2px;
     font-size: 1.2rem;
 }
 span{
@@ -155,6 +154,31 @@ span{
 
 .navDrop:hover{
     background-color: #a3bbad !important;
+}
+
+.btn-cart {
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: #faffd8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-sup {
+    background-color: #E8B100;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    color: black;
+    font-size: 1rem !important;
+    text-align: center;
+    letter-spacing: 0px;
+    margin-left: -.7em;
 }
 
 @media (max-width: 1200px) {
