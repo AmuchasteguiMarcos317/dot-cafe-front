@@ -1,0 +1,30 @@
+.formContact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    min-height: 50vh;
+    background-color: gray;
+    border-radius: 1rem;
+    margin: 1rem 0 1rem 0;
+}
+.titleContact{
+    display: flex;
+    font-size: 1.8rem;
+    justify-content: center;
+    margin: 0 10px;
+    padding-bottom: 10px;
+    color: #FAFFD8;
+    border-bottom: 3px solid #FAFFD8;
+    width: 70vw;
+}
+.formInputContact{
+    width: 60vw;
+    border-radius: 10px;
+    height: 3rem;
+}
+.formInputMessage{
+    width: 60vw;
+    height: 5rem;
+}

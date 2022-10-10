@@ -24,6 +24,7 @@ import VerTodo from './Pages/VerTodo';
 import ScrollToTop from './Components/ScrollToTop';
 import Alerts from './Components/Alerts';
 import AboutUs from './Pages/AboutUs';
+import Contact from './Pages/Contact';
 
 
 
@@ -75,6 +76,7 @@ function App() {
             <Route path='/notfound' element={<NotFound />} />
             <Route path='/economia-circular' element={< CircularEconomy />} />
             <Route path='/sobre-nosotros' element={< AboutUs />} />
+            <Route path='/contacto' element={< Contact />} />
           </Routes>
           <Alerts/>
         </CafeLayout>
