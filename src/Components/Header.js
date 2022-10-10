@@ -71,7 +71,7 @@ export default function Header({ name, ...props }) {
             </LinkRouter>
             <div className="container-avatar">
               <img
-                src={logged ? userData.photo : "user.png"}
+                src={logged ? userData?.photo : "user.png"}
                 onClick={handleOpenMenu}
               />
             </div>
@@ -82,7 +82,7 @@ export default function Header({ name, ...props }) {
           {logged ? (
             open ? (
               <div className="headerPrueba">
-                <LinkRouter>{userData.firstName}</LinkRouter>
+                <LinkRouter>{userData?.firstName}</LinkRouter>
                 <LinkRouter to="#">Tu Cuenta</LinkRouter>
                 <LinkRouter to="#" onClick={handleClick}>
                   Salir

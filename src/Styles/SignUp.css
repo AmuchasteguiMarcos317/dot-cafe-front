@@ -12,7 +12,9 @@
 .formSignUp{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 50%;
+    gap: 1em;
     min-height: 35rem;
     background-color:rgba(0, 0, 0, 0.591);
     border-radius: 1rem;

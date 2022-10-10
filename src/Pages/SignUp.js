@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import InputUsers from "../Components/InputUsers";
 import SignUpGoogle from '../Components/SignUpGoogle';
+import { setMessage } from '../Features/AlertsSlice';
 import { reload } from '../Features/reloadSlice';
 import { useUserSignupMutation } from '../Features/usersAPI';
 import '../Styles/SignUp.css'
@@ -38,6 +39,10 @@ export default function SignUp() {
             if(res.data.success){
                 dispatch(reload())
                 navigate("/login", {replace: true})
+                dispatch(setMessage({
+                    message: "Revisa tu correo para revisar tu cuenta",
+                    success: true
+                }))
             }
         } catch (error) {
             console.log(error)
@@ -61,8 +66,8 @@ export default function SignUp() {
                     </div>
                     <div className="buttonContainer">
                         <button className="formBtn" type="submit">REGISTRAR</button>
-                        <SignUpGoogle />
                     </div>
+                    <SignUpGoogle />
                 </form>
             </main>
         </>
