@@ -9,10 +9,13 @@ import mugsAPI from './mugsAPI'
 import coffeeMachinesAPI from './coffeeMachinesAPI'
 import coffeeForDrinkAPI from './coffeeForDrinkAPI'
 import coffeeByKiloAPI from './coffeeByKiloAPI'
-import  cartReducer from './cartSlice'
+import cartReducer from './cartSlice'
+import newLetterAPI from './newLetterAPI'
+
 
 export default configureStore ({
     reducer: {
+        
         [usersAPI.reducerPath] : usersAPI.reducer,
         [kitsAPI.reducerPath] : kitsAPI.reducer,
         [filtersAPI.reducerPath] : filtersAPI.reducer,
@@ -21,6 +24,7 @@ export default configureStore ({
         [coffeeMachinesAPI.reducerPath] : coffeeMachinesAPI.reducer,
         [coffeeForDrinkAPI.reducerPath] : coffeeForDrinkAPI.reducer,
         [coffeeByKiloAPI.reducerPath] : coffeeByKiloAPI.reducer,
+        [newLetterAPI.reducerPath] : newLetterAPI.reducer,
         auth: userReducer,
         reload: reloadSlice,
         cart: cartReducer
