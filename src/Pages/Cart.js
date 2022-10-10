@@ -1,10 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import ItemCard from '../Components/ItemCard'
 import '../Styles/Cart.css'
+import { emptyCart } from '../Features/cartSlice'
 
 export default function Cart() {
     const finalCart = useSelector(state => state.cart.cartArray)
+    const dispatch = useDispatch()
     let totalQuantity = 0
     let totalPrice = 0
     let discount = 10000
@@ -31,7 +33,14 @@ export default function Cart() {
                                 <p className='totalItem'>TOTAL</p>
                             </div>
                             { finalCart.length > 0 ? (
-                                finalCart.map((item)=><ItemCard data={item} />)
+                                <>
+                                {finalCart.map( item => <ItemCard data={item} />)}
+                                <div className='emptyContainer'>
+                                    <button onClick={()=> dispatch(emptyCart()) } className='buttonEmpty'>
+                                        <p>VACIAR CARRITO</p>
+                                    </button>
+                                </div>
+                                </>
                             ) : (
                                 <p>El carrito está vacio</p>
                             )
