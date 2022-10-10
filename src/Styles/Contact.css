@@ -1,11 +1,19 @@
+.contactContainer{
+    background-image: url('../../public/cafe-fondo4.jpg');
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: center;
+    background-size: cover;
+    padding: 1rem;
+}
 .formContact{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 50%;
     min-height: 50vh;
-    background-color: gray;
+    background-color:rgba(0, 0, 0, 0.591);
     border-radius: 1rem;
     margin: 1rem 0 1rem 0;
 }
@@ -16,28 +24,29 @@
     padding-bottom: 10px;
     color: #FAFFD8;
     border-bottom: 3px solid #FAFFD8;
-    width: 70vw;
+    width: 45vw;
     margin-top: 1rem;
 }
 .titleInputContact{
     text-align: center;
     margin-top: 1rem;
+    color: #FAFFD8;
 }
 .formInputContact{
-    width: 60vw;
+    width: 40vw;
     border-radius: 10px;
     height: 3rem;
-    padding-left: 2rem;
+    text-align: center;
     margin-bottom:1rem;
 }
 .formInputMessage{
-    width: 60vw;
+    width: 40vw;
     height: 5rem;
     border-radius: 10px;
-    padding-left: 2rem;
+    text-align: center;
 }
 .buttonContact{
-    width: 30rem;
+    width: 30vw;
     height: 3rem;
     background-color: #204D48;
     border-radius: .8rem;
@@ -53,4 +62,16 @@
     color: #FAFFD8;
     border: #204D48 solid;
     transition: .6s;
+}
+
+@media screen and (max-width: 768px){
+    .formContact{
+        width: 70%;
+    }
+    .formInputContact{
+        width: 50vw;
+    }
+    .formInputMessage{
+        width: 50vw;
+}
 }
