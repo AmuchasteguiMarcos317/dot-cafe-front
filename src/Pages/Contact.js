@@ -11,22 +11,22 @@ export default function Contact() {
                     <div className='formCont'>
                         <div className='inputContact'>
                             <label className="formLabelCont"><h3 className='titleInputContact'>Nombre</h3>
-                                <input className="formInputContact" type='text' name='' placeholder='sdf' required />
+                                <input className="formInputContact" type='text' name='nombre' placeholder='Nombre' required />
                             </label>
                         </div>
                         <div className='inputContact1'>
                             <label className="formLabelCont"><h3 className='titleInputContact'>Email</h3>
-                                <input className="formInputContact" type='email' name='' placeholder='sdf' required />
+                                <input className="formInputContact" type='email' name='email' placeholder='Email' required />
                             </label>
                         </div>
                         <div className='inputContact2'>
                             <label className="formLabelCont"><h3 className='titleInputContact'>Telefono</h3>
-                                <input className="formInputContact" type='tel' name='' placeholder='dsfds' required />
+                                <input className="formInputContact" type='tel' name='telefono' placeholder='Telefono' required />
                             </label>
                         </div>
                         <div className='inputContact3'>
                             <label className="formLabelCont"><h3 className='titleInputContact'>Mensaje</h3>
-                                <input className="formInputMessage" type='text' name='' placeholder='sdfsd' required />
+                                <input className="formInputMessage" type='text' name='mensaje' placeholder='Mensaje' required />
                             </label>
                         </div>
                     </div>
