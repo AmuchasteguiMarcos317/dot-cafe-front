@@ -28,7 +28,7 @@ export default function footer() {
                     </div>
                     <div className='footerText'>
                         <h2>SOBRE NOSOTROS</h2>
-                        <LinkRouter>Historia</LinkRouter>
+                        <LinkRouter to='/sobre-nosotros'>Historia</LinkRouter>
                         <LinkRouter>Contacto</LinkRouter>
                         <LinkRouter to='/economia-circular'>Reciclaje</LinkRouter>
                         <LinkRouter>Preguntas Frecuentes</LinkRouter>
