@@ -1,4 +1,4 @@
-.aboutUsBanner{
+.aboutUsBanner {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -9,56 +9,83 @@
     background-size: cover;
     background-attachment: fixed;
 }
-.titleAboutUs h2{
+
+.titleAboutUs h2 {
     padding-left: 8rem;
     font-size: 3rem;
     font-weight: 700;
 }
-.aboutUsContainer{
+
+.aboutUsContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     min-height: 40vh;
     background-color: #e4f5eb;
+    padding: 2rem 0;
 }
-.aboutImg{
+
+.contAbout {
+    width: 75%;
+    display: flex;
+}
+
+.contAbout1 {
+    display: flex;
+    width: 75%;
+    flex-direction: row-reverse;
+}
+
+.aboutImg {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    padding: 1rem;
+    width: 50%;
+
 }
-.aboutImg .imgAboutUs{
-    width: 20vw;
+
+.imgAboutcontainer {
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.aboutImg .imgAboutUs {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
     border-radius: 1rem;
+    box-shadow: .5rem .3rem 1rem #956031;
 }
-.aboutText{
-    width: 70%;
-    padding: 2rem;
+
+.aboutText {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-.aboutText h2{
-    border-bottom: 1px solid;
-    width: 30%;
-    text-align: center;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
 
 }
-.aboutText p{
-    width: 60%;
-    margin: 0;
-    text-align: center;
+
+.aboutText h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
-.aboutUsContainer1{
+
+.aboutText p {
+    font-size: .9rem;
+    text-align: justify;
+    margin: 0;
+}
+
+.aboutUsContainer1 {
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
     background-color: #a3bbad;
+    padding: 2rem 0;
 }
-.aboutUsBanner2{
+
+.aboutUsBanner2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,74 +94,153 @@
     background-image: url('../../public/aboutusbanner1.jpg');
     background-position-y: 48rem;
     background-size: cover;
-    
+
 }
 
-@media screen and (max-width: 1440px){
-    .aboutUsBanner2{
+@media screen and (max-width: 1440px) {
+    .aboutUsBanner2 {
         background-position-y: 38rem;
     }
-    .aboutUsBanner{
+
+    .aboutUsBanner {
         background-position-y: 35rem;
     }
 }
-@media screen and (max-width: 1024px){
-    .aboutUsBanner2{
+
+@media screen and (max-width: 1024px) {
+    .aboutUsBanner2 {
         background-position-y: 32rem;
     }
-    .aboutUsBanner{
+
+    .aboutUsBanner {
         background-position-y: 36rem;
     }
+    .contAbout {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    .contAbout1 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    .aboutImg{
+        width: 100%;
+    }
+    .aboutText{
+        width: 100%;
+        padding: 2rem ;
+    }
 }
-@media screen and (max-width: 768px){
-    .aboutUsBanner{
+
+@media screen and (max-width: 768px) {
+    .aboutUsBanner {
         background-position-x: 50rem;
     }
+    .aboutUsBanner2 {
+        background-position-y: 28.5rem;
+    }
+    .contAbout {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    .contAbout1 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    .aboutImg{
+        width: 100%;
+    }
+    .aboutText{
+        width: 100%;
+        padding: 2rem ;
+    }
+    
+
 }
-@media screen and (max-width: 425px){
-    .aboutUsContainer{
+
+@media screen and (max-width: 425px) {
+    .contAbout {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 90%;
     }
-    .aboutUsContainer1{
+
+    .contAbout1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 90%;
     }
-    .titleAboutUs h2{
+
+    .aboutImg {
+        width: 100%;
+    }
+
+    .titleAboutUs h2 {
         font-size: 2.2rem;
     }
-    .aboutUsBanner{
+
+    .aboutUsBanner {
         align-items: center;
         justify-content: center;
     }
-    .aboutUsBanner2{
-        background-position-x: 35rem;
-        background-position-y: 30.5rem;
+
+    .aboutUsBanner2 {
+        background-position-x: 34rem;
+        background-position-y: 28.5rem;
     }
-    .aboutImg .imgAboutUs{
-        width: 50vw;
-        
+
+    .aboutImg .imgAboutUs {
+        width: 100%;
+
     }
-    .aboutText h2{
+
+    .aboutText {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0 0 0;
+    }
+
+    .aboutText h2 {
         width: 50%;
         text-align: center;
     }
-    .aboutText p{
+
+    .aboutText p {
         width: 90%;
     }
 }
-@media screen and (max-width: 320px){
-    .aboutUsBanner{
+@media screen and (max-width: 375px){
+    .aboutUsBanner2 {
+        background-position-x: 32rem;
+        background-position-y: 28rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .aboutUsBanner {
         background-position-y: 40rem;
     }
-    .titleAboutUs h2{
+
+    .titleAboutUs h2 {
         font-size: 2.2rem;
         text-align: center;
         transform: translateX(-4rem);
     }
-    .aboutUsBanner2{
-        background-position-x: 32rem;
+
+    .aboutUsBanner2 {
+        background-position-x: 31.5rem;
+        background-position-y: 28rem;
     }
+    
 }
