@@ -22,7 +22,9 @@ import { setCredentials } from './Features/usersSlice';
 import CircularEconomy from './Pages/CircularEconomy';
 import VerTodo from './Pages/VerTodo';
 import ScrollToTop from './Components/ScrollToTop';
+import Alerts from './Components/Alerts';
 import AboutUs from './Pages/AboutUs';
+
 
 
 function App() {
@@ -74,6 +76,7 @@ function App() {
             <Route path='/economia-circular' element={< CircularEconomy />} />
             <Route path='/sobre-nosotros' element={< AboutUs />} />
           </Routes>
+          <Alerts/>
         </CafeLayout>
       </BrowserRouter>
       

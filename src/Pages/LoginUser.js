@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { setCredentials } from '../Features/usersSlice'
 import { reload } from '../Features/reloadSlice'
 import { useNavigate } from 'react-router-dom'
+import { setMessage } from '../Features/AlertsSlice'
 
 function LoginUser() {
 
@@ -31,6 +32,10 @@ function LoginUser() {
             if(res.data.success){
                 let data = res.data.response.user
                 dispatch(setCredentials(data))
+                dispatch(setMessage({
+                    message: `Bienvenido ${data.firstName} ${data.lastName}`,
+                    success: res.data?.success
+                }))
                 dispatch(reload())
                 localStorage.setItem('token', res.data.response.token)
                 navigate("/", {replace: true})
