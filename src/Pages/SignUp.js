@@ -2,20 +2,19 @@ import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import InputUsers from "../Components/InputUsers";
+import SignUpGoogle from '../Components/SignUpGoogle';
+import { setMessage } from '../Features/AlertsSlice';
 import { reload } from '../Features/reloadSlice';
 import { useUserSignupMutation } from '../Features/usersAPI';
-import { setCredentials } from '../Features/usersSlice';
 import '../Styles/SignUp.css'
 
 const inputsArray = [
-    { _id: 100, name: "firstName", type: "text", ph: "e.g. Maria", label: "Nombre"},
-    { _id: 101, name: "lastName", type: "text", ph: "e.g Phillips", label: "Apellido" },
-    
-
+    { _id: 100, name: "firstName", type: "text", ph: "ej: Maria", label: "Nombre"},
+    { _id: 101, name: "lastName", type: "text", ph: "ej: López", label: "Apellido" },
 ]
 const inputsArray2 = [
     { _id: 102, name: "photo", type: "text", ph: "debe ser una url", label: "Foto"},
-    { _id: 103, name: "email", type: "email", ph: "mariaphillips@gmail.com" , label: "Email"},
+    { _id: 103, name: "email", type: "email", ph: "marialopez@gmail.com" , label: "Email"},
     { _id: 104, name: "password", type: "password", ph: "debe contener letras o números", label: "Contraseña" },
 ]
 export default function SignUp() {
@@ -30,7 +29,7 @@ export default function SignUp() {
         const dataform = new FormData(fromData.current)
         const values = Object.fromEntries(dataform)
         values.from = 'form'
-        console.log(values)
+        values.role = 'user'
         singUpUser(values)
     }
 
@@ -38,9 +37,12 @@ export default function SignUp() {
         try {
             let res = await signUp(data)
             if(res.data.success){
-                console.log('Registrado pa!!!')
                 dispatch(reload())
                 navigate("/login", {replace: true})
+                dispatch(setMessage({
+                    message: "Revisa tu correo para revisar tu cuenta",
+                    success: true
+                }))
             }
         } catch (error) {
             console.log(error)
@@ -65,6 +67,7 @@ export default function SignUp() {
                     <div className="buttonContainer">
                         <button className="formBtn" type="submit">REGISTRAR</button>
                     </div>
+                    <SignUpGoogle />
                 </form>
             </main>
         </>

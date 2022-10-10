@@ -23,7 +23,9 @@ import CircularEconomy from './Pages/CircularEconomy';
 import VerTodo from './Pages/VerTodo';
 import ScrollToTop from './Components/ScrollToTop';
 import NewLetter from './Components/NewLetter';
-
+import Alerts from './Components/Alerts';
+import AboutUs from './Pages/AboutUs';
+import Contact from './Pages/Contact';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -73,7 +75,10 @@ function App() {
             <Route path='/notfound' element={<NotFound />} />
             <Route path='/economia-circular' element={< CircularEconomy />} />
             <Route path= '/suscriptores' element={<NewLetter />} />
+            <Route path='/sobre-nosotros' element={< AboutUs />} />
+            <Route path='/contacto' element={< Contact />} />
           </Routes>
+          <Alerts/>
         </CafeLayout>
       </BrowserRouter>
       

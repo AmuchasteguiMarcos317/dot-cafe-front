@@ -2,10 +2,10 @@ import React from 'react'
 import '../Styles/ProductCard.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../Features/cartSlice'
+import { setMessage } from '../Features/AlertsSlice'
 
 export default function ProductCard({data}) {
 
-console.log(data)
 const dispatch = useDispatch()
 let photoProduct = typeof(data?.photo) == "string"? data.photo : data.photo[0]
 
@@ -15,6 +15,10 @@ const handleAddToCart =  async (data) =>{
         photo: photoProduct,
         price: data.price,
         name:data.name
+    }))
+    dispatch(setMessage({
+        message: `${data.name} Se ha añadido al carrito`,
+        success: true
     }))
 }
 
