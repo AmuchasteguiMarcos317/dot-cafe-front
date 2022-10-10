@@ -2,9 +2,18 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import '../Styles/ItemCard.css'
 import { incrementItem, decrementItem, emptyItem } from '../Features/cartSlice'
+import { setMessage } from '../Features/AlertsSlice'
 
 export default function ItemCard({data}) {
     const dispatch = useDispatch()
+
+    const handleRemoveItem = id => {
+        dispatch(emptyItem(id))
+        dispatch(setMessage({
+            message: "Producto borrado",
+            success:  true
+        }))
+    }
 
     return (
         <>
@@ -25,7 +34,7 @@ export default function ItemCard({data}) {
                     <p>AR$ {data.price * data.quantity}</p>
                 </div>
                 <div>
-                    <button onClick={()=> dispatch(emptyItem(data._id)) } className='delete'><img className='imgDelete' src="delete-item.png" alt="delete" /></button>
+                    <button onClick={()=> handleRemoveItem(data._id) } className='delete'><img className='imgDelete' src="delete-item.png" alt="delete" /></button>
                 </div>
             </div>
         </>

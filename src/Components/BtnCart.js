@@ -31,7 +31,13 @@ function BtnCart({ name, ...props }) {
           <hr />
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <BasketCart />
+          {
+            cart.length > 0
+            ?
+            <BasketCart />
+            :
+            null
+          }
         </Offcanvas.Body>
       </Offcanvas>
     </>
