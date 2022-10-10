@@ -1,15 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import '../Styles/ItemCard.css'
-import { incrementItem, decrementItem,emptyCart } from '../Features/cartSlice'
+import { incrementItem, decrementItem, emptyItem } from '../Features/cartSlice'
 
 export default function ItemCard({data}) {
-
     const dispatch = useDispatch()
-
-
-
-
 
     return (
         <>
@@ -30,7 +25,7 @@ export default function ItemCard({data}) {
                     <p>AR$ {data.price * data.quantity}</p>
                 </div>
                 <div>
-                    <button onClick={()=> dispatch(emptyCart(data._id)) }   className='delete'><img className='imgDelete' src="delete-item.png" alt="delete" /></button>
+                    <button onClick={()=> dispatch(emptyItem(data._id)) } className='delete'><img className='imgDelete' src="delete-item.png" alt="delete" /></button>
                 </div>
             </div>
         </>

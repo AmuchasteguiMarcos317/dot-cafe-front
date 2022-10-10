@@ -1,0 +1,140 @@
+.aboutUsBanner{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 55vh;
+    background-image: url('../../public/coffee-fondo3.jpg');
+    background-position-y: 39rem;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.titleAboutUs h2{
+    padding-left: 8rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.aboutUsContainer{
+    display: flex;
+    width: 100%;
+    min-height: 40vh;
+    background-color: #e4f5eb;
+}
+.aboutImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 1rem;
+}
+.aboutImg .imgAboutUs{
+    width: 20vw;
+    border-radius: 1rem;
+}
+.aboutText{
+    width: 70%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.aboutText h2{
+    border-bottom: 1px solid;
+    width: 30%;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+}
+.aboutText p{
+    width: 60%;
+    margin: 0;
+    text-align: center;
+}
+.aboutUsContainer1{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    background-color: #a3bbad;
+}
+.aboutUsBanner2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    background-image: url('../../public/aboutusbanner1.jpg');
+    background-position-y: 48rem;
+    background-size: cover;
+    
+}
+
+@media screen and (max-width: 1440px){
+    .aboutUsBanner2{
+        background-position-y: 38rem;
+    }
+    .aboutUsBanner{
+        background-position-y: 35rem;
+    }
+}
+@media screen and (max-width: 1024px){
+    .aboutUsBanner2{
+        background-position-y: 32rem;
+    }
+    .aboutUsBanner{
+        background-position-y: 36rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .aboutUsBanner{
+        background-position-x: 50rem;
+    }
+}
+@media screen and (max-width: 425px){
+    .aboutUsContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutUsContainer1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .titleAboutUs h2{
+        font-size: 2.2rem;
+    }
+    .aboutUsBanner{
+        align-items: center;
+        justify-content: center;
+    }
+    .aboutUsBanner2{
+        background-position-x: 35rem;
+        background-position-y: 30.5rem;
+    }
+    .aboutImg .imgAboutUs{
+        width: 50vw;
+        
+    }
+    .aboutText h2{
+        width: 50%;
+        text-align: center;
+    }
+    .aboutText p{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 320px){
+    .aboutUsBanner{
+        background-position-y: 40rem;
+    }
+    .titleAboutUs h2{
+        font-size: 2.2rem;
+        text-align: center;
+        transform: translateX(-4rem);
+    }
+    .aboutUsBanner2{
+        background-position-x: 32rem;
+    }
+}
