@@ -270,8 +270,8 @@ export default function Header({ name, ...props }) {
                   </div>
                 </NavDropdown.Item>
 
-                <NavDropdown.Item className="navDrop">
-                  <LinkRouter to="/economia-circular">
+                <LinkRouter to="/economia-circular">
+                  <NavDropdown.Item className="navDrop" href="#action/3.2">
                     <img
                       className="headerIcon"
                       src="https://cdn-icons-png.flaticon.com/512/3299/3299853.png"
@@ -280,8 +280,8 @@ export default function Header({ name, ...props }) {
                     <div className="navText">
                       <p>Economía Circular</p>
                     </div>
-                  </LinkRouter>
-                </NavDropdown.Item>
+                  </NavDropdown.Item>
+                </LinkRouter>
               </NavDropdown>
               <Navbar.Brand>
                 <LinkRouter to="/ver-todo" className="navAll">Ver todo</LinkRouter>

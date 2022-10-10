@@ -100,6 +100,17 @@
 .coffeeBtn{
     align-self: flex-end;
     margin-bottom: 1rem;
+    background-color: #204d48;
+    border-radius: 10px;
+    color: #faffd8;
+    padding: .5rem !important;
+    border: 1px solid #204d48;
+}
+.coffeeBtn:hover{
+    background-color: #faffd8;
+    color: #45230f;
+    font-weight: 600;
+    border: 1px solid #45230f;
 }
 .coffeeBtn a{
     background-color: #204d48;
