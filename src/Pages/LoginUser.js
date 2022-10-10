@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { setCredentials } from '../Features/usersSlice'
 import { reload } from '../Features/reloadSlice'
 import { useNavigate } from 'react-router-dom'
+import LoginGoogle from '../Components/LoginGoogle'
 
 function LoginUser() {
 
@@ -42,18 +43,19 @@ function LoginUser() {
 
 
   return (
-    <div className='form-login-user'>
+    <div className='formLoginUser'>
         <form ref={fromData} onSubmit={handleSubmit}>
         <h1 className='tittleLogin'>INICIAR SESIÓN</h1>
             <div>
-                <label htmlFor='email' id='email'><h5>Email</h5></label>
+                <label className='labelEmail' for='email'>Email</label>
                 <input id='email' className='inputEmail' type="email" name='email' placeholder='Ingrese su email'/>
             </div>
             <div>
-                <label id='pass'><h5>Contraseña</h5></label>
-                <input id='pass' className='inputPass' type="password" name='password' placeholder='Contraseña'/>
+                <label className='labelPass' for='pass'>Contraseña</label>
+                <input id='pass' className='inputPass' type="password" name='password' placeholder='Ingrese su contraseña'/>
             </div>
             <button className="formBoton" type='submit'>Iniciar Sesion</button>
+            <LoginGoogle />
         </form>
     </div>
   )
