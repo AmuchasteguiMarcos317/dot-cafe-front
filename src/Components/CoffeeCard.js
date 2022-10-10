@@ -3,6 +3,7 @@ import { Link as LinkRouter } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Features/cartSlice";
+import { setMessage } from "../Features/AlertsSlice";
 
 export default function CoffeeCard({ data }) {
   const [priceMug, setPriceMug] = useState();
@@ -19,13 +20,20 @@ export default function CoffeeCard({ data }) {
   const handleAddToCart = (data) => {
     console.log(priceMug);
     if (priceMug == undefined) {
-      console.log("Elije un tipo de vaso o taza");
+      dispatch(setMessage({
+        message: 'Elije un tipo de vaso o taza',
+        success: false
+      }))
     } else {
       dispatch(addToCart({
         _id: data._id,
         photo: data.photo,
         price: priceMug,
         name: `${data.type} : ${data.size}`,
+      }))
+      dispatch(setMessage({
+        message: `Se ha añadido al carrito ${data.type}-${data.size} `,
+        success: true
       }))
       setPriceMug()
     }

@@ -22,6 +22,7 @@ import { setCredentials } from './Features/usersSlice';
 import CircularEconomy from './Pages/CircularEconomy';
 import VerTodo from './Pages/VerTodo';
 import ScrollToTop from './Components/ScrollToTop';
+import Alerts from './Components/Alerts';
 
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
             <Route path='/notfound' element={<NotFound />} />
             <Route path='/economia-circular' element={< CircularEconomy />} />
           </Routes>
+          <Alerts/>
         </CafeLayout>
       </BrowserRouter>
       
