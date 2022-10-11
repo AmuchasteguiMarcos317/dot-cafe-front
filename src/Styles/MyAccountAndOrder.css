@@ -5,19 +5,20 @@
     padding: 2rem 0;
     color: #1D1F1F
 }
-.MyAccountContainer h3{
+.MyAccountContainer h3 {
     width: 100%;
     padding-bottom: .2rem;
     font-size: 1.2rem;
     font-weight: 600;
     border-bottom: 1px solid lightgrey;
 }
-.MyAccountContainer h4{
+.MyAccountContainer h4, .MyOrderDetails h4{
+    width: 100%;
     font-size: 1rem;
     border-bottom: 1px solid lightgrey;
 }
-.MyAccountContainer p{
-    margin: 0;
+.MyLoginData p, .MyAccountData p{
+    margin: 0 !important;
     font-size: .9rem;
 }
 .MyAccountContainer span{
@@ -29,12 +30,12 @@
     align-items: flex-start;
     width: 35%;
 }
-.MyOrdersContainer{
+.MyOrdersContainer, .MyOrderDetails{
     width: 60%;
     display: flex;
     flex-direction: column;
 }
-.MyLoginData, .MyAccountData, .AllMyOrders{
+.MyLoginData, .MyAccountData, .AllMyOrders, .MyOrderProducts{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -49,10 +50,37 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem .6rem;
 }
 .MyLoginData > img{
     width: 6rem;
     border-radius: 3rem;
+}
+.MyOrderTitles{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}
+.MyOrderTitles p{
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 500;
+    margin: 0 !important;
+}
+.MyOrderFinalPrice{
+    align-self: flex-end;
+}
+.MyOrderFinalPrice h6{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.MyOrderFinalPrice strong{
+    font-size: 1.2rem;
+}
+p.lineCross{
+    border-bottom: 1px solid lightgrey;
 }
 
 @media screen and (max-width: 1200px){
@@ -72,14 +100,14 @@
        flex-direction: column;
        align-items: center;
     }
-    .MyDataContainer, .MyOrdersContainer{
+    .MyDataContainer, .MyOrdersContainer, .MyOrderDetails{
         width: 90%;
         padding-bottom: 1rem;
     }
 }
 
 @media screen and (max-width: 768px){
-    .MyDataContainer, .MyOrdersContainer{
+    .MyDataContainer, .MyOrdersContainer, .MyOrderDetails{
         width: 100%;
     }
 }

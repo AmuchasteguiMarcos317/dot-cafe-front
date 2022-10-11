@@ -13,6 +13,7 @@ import cartReducer from "./cartSlice";
 import storage from "redux-persist/lib/storage";
 import AlertsSlice from "./AlertsSlice";
 import newLetterAPI from './newLetterAPI'
+import orderAPI from "./orderAPI";
 
 import {
   persistStore,
@@ -44,6 +45,7 @@ export const store = configureStore({
     [coffeeForDrinkAPI.reducerPath]: coffeeForDrinkAPI.reducer,
     [coffeeByKiloAPI.reducerPath]: coffeeByKiloAPI.reducer,
     [newLetterAPI.reducerPath] : newLetterAPI.reducer,
+    [orderAPI.reducerPath] : orderAPI.reducer,
     auth: userReducer,
     reload: reloadSlice,
     alerts: AlertsSlice

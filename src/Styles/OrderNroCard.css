@@ -1,5 +1,5 @@
 .OrderCardContainer{
-    width: 45%;
+    width: 49%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,34 +10,40 @@
 }
 .OrderCardContainer > div{
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
-.OrderCardContainer > div > p{
+.OrderNumber p{
+    font-size: .8rem;
     padding: 0 .2em;
+    margin: 0 !important;
 }
 .OrderCardContainer a{
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
     background-color: #a3bbad;
     border-radius: .4rem;
     margin-left: .2rem;
     font-weight: 600;
-    padding: .2rem .3rem;
-}
-.OrderNumber p{
-    font-weight: 600;
+    padding: .2rem;
 }
 .OrderCardContainer img {
     width: 1.2rem;
     border-radius: .6rem;
 }
+.OrderLink p{
+    font-size: .7rem;
+}
 
 @media screen and (max-width: 1200px){
     .OrderCardContainer {
-       width: 70%;
+       width: 80%;
     }
 }
 
 @media screen and (max-width: 768px){
     .OrderCardContainer {
-       width: 90%;
+       width: 95%;
     }
 }
