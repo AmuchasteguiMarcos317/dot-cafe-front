@@ -1,8 +1,9 @@
 .newLetterContainer{
     display: flex;
-    justify-content: flex-end;
-    width: 70%;
-    margin:1rem 0;
+    justify-content: center;
+    padding: 2em 0 2em 0;
+    background-color: #e4f5eb;
+    width: 100%;
 }
 .newLetterContainer h4{
     width: 80%;
@@ -31,7 +32,8 @@
 }
 .newLetterInput{
     border-radius: 10px;
-    padding: 0 .5rem;
+    padding: .2rem 0.7rem .2rem .7rem;
+    border: none;
 }
 .newLetterBtn{
     background-color: #204d48;
