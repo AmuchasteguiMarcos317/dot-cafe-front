@@ -28,6 +28,7 @@ import AboutUs from './Pages/AboutUs';
 import MyAccount from './Pages/MyAccount';
 import MyOrder from './Pages/MyOrder';
 import Contact from './Pages/Contact';
+import EditProfile from './Pages/EditProfile';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -81,6 +82,7 @@ function App() {
               <Route path= '/suscriptores' element={<NewLetter />} />
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
+              <Route path='/editar-perfil' element={<EditProfile/>} />
             </Routes>
           <Alerts/>
         </CafeLayout>

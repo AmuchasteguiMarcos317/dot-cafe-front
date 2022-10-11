@@ -33,7 +33,7 @@ function CircularEconomy() {
                             <div className="homeCardInfo">
                                 <h3>{card.title}</h3>
                                 <div className="homeCardTextContainer">
-                                    {(card.info).map(text => (<p>{text}</p>))}
+                                    {(card.info).map(text => (<p key={new Date().getSeconds}>{text}</p>))}
                                 </div>
                             </div>
                         </div>

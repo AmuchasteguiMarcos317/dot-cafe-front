@@ -19,7 +19,7 @@ export default function CoffeeByKilo() {
                 <div className="AllCardsContainer">
                     <h2 className="CardsTitle">Café por kilo: {kilo} Grs.</h2>
                     <div className="CardsContainer">
-                        {coffeesbykilo?.coffeeByKi.map(coffee => <ProductCard data={coffee} linkTo={coffee._id} />)}
+                        {coffeesbykilo?.coffeeByKi.map(coffee => <ProductCard data={coffee} linkTo={coffee._id} key={coffee._id}/>)}
                     </div>
                 </div>
             </main>

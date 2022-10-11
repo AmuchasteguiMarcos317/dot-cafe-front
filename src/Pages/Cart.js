@@ -40,7 +40,7 @@ export default function Cart() {
   return (
     <>
       <main>
-        <div class="CartContainer">
+        <div className="CartContainer">
           <div className="trolleyContainer">
             <div className="detailProcuctContainer">
               <div className="itemCard">
@@ -52,7 +52,7 @@ export default function Cart() {
               {finalCart.length > 0 ? (
                 <>
                   {finalCart.map((item) => (
-                    <ItemCard data={item} />
+                    <ItemCard key={item._id} data={item} />
                   ))}
                   <div className="emptyContainer">
                     <Button className="buttonEmpty" variant="primary" onClick={handleShow}>

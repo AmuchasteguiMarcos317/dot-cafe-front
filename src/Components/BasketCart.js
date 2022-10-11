@@ -22,8 +22,8 @@ function BasketCart() {
         <div>
           {basket.map((item) => {
             return (
-              <>
-                <div key={item._id} className="cartSlide">
+              <div key={item._id}>
+                <div className="cartSlide">
                   <img
                     className="imgBasketItemPhoto"
                     src={item.photo}
@@ -36,7 +36,7 @@ function BasketCart() {
                   </p>
                 </div>
                 <hr />
-              </>
+              </div>
             );
           })}
           <p>
