@@ -1,13 +1,13 @@
 import React from 'react'
 import Products from '../Components/Products'
-import '../Styles/VerTodo.css'
+import '../Styles/SeeAll.css'
 
-export default function VerTodo() {
+export default function SeeAll() {
 
   return (
-    <div className='ver-todo-page'>
+    <div className='seeAllPage'>
       <div className='allProductContain'>
-        <h2 className="allProduct">Todas los productos</h2>
+        <h2 className="allProduct">Todos los productos</h2>
         <Products />
       </div>
     </div>

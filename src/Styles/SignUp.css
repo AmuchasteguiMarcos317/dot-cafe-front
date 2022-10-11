@@ -64,6 +64,7 @@
        flex-direction: column;
     }
 }
+
 @media screen and (max-width: 768px){
     .formSignUp{
         width: 90%;

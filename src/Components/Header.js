@@ -14,11 +14,13 @@ import { setMessage } from "../Features/AlertsSlice";
 
 export default function Header({ name, ...props }) {
   const userData = useSelector((state) => state.auth.user);
+  let myaccount = '/mi-cuenta/'+ userData?.id
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const logged = useSelector((state) => state.auth.logged);
   const [singOutUser] = useUserLogoutMutation();
+ 
 
   const handleOpenMenu = () => {
     if (open === true) {
@@ -79,9 +81,8 @@ export default function Header({ name, ...props }) {
           {logged ? (
             open ? (
               <div className="headerPrueba">
-                <LinkRouter>{userData?.firstName}</LinkRouter>
-                <LinkRouter to="#">Tu Cuenta</LinkRouter>
-                <LinkRouter to="#" onClick={handleClick}>
+                <LinkRouter to={myaccount}>{userData.firstName}</LinkRouter>
+                <LinkRouter to="/" onClick={handleClick}>
                   Salir
                 </LinkRouter>
               </div>
