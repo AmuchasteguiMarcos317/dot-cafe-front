@@ -1,4 +1,4 @@
-.signUpContainer{
+.contactContainer{
     background-image: url('../../public/cafe-fondo4.jpg');
     background-repeat: no-repeat;
     background-attachment: initial;
@@ -6,43 +6,47 @@
     background-size: cover;
     padding: 1rem;
 }
-.formContainer{
-    width: 100%;
-}
-.formSignUp{
+.formContact{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 50%;
-    gap: 1em;
-    min-height: 35rem;
+    min-height: 50vh;
     background-color:rgba(0, 0, 0, 0.591);
     border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 1rem 0 1rem 0;
 }
-.formSignUp h2 {
+.titleContact{
     display: flex;
     font-size: 1.8rem;
     justify-content: center;
-    margin: 0 10px;
     padding-bottom: 10px;
     color: #FAFFD8;
     border-bottom: 3px solid #FAFFD8;
+    width: 45vw;
+    margin-top: 1rem;
 }
-.inputContainer1 {
-    display: flex;
-    justify-content: center;
-    font-size: 1.5rem;
-    width: 100%;
+.titleInputContact{
+    text-align: center;
+    margin-top: 1rem;
+    color: #FAFFD8;
 }
-.buttonContainer {
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
+.formInputContact{
+    width: 40vw;
+    border-radius: 10px;
+    height: 3rem;
+    text-align: center;
+    margin-bottom:1rem;
 }
-.formBtn {
-    width: 30rem;
+.formInputMessage{
+    width: 40vw;
+    height: 5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+.buttonContact{
+    width: 30vw;
     height: 3rem;
     background-color: #204D48;
     border-radius: .8rem;
@@ -51,22 +55,23 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin:2rem 0 ;
 }
-.formBtn:hover {
+.buttonContact:hover {
     background-color: #39736c;
     color: #FAFFD8;
     border: #204D48 solid;
     transition: .6s;
 }
 
-@media screen and (max-width: 1000px){
-    .inputContainer1 {
-       flex-direction: column;
-    }
-}
-
 @media screen and (max-width: 768px){
-    .formSignUp{
-        width: 90%;
+    .formContact{
+        width: 70%;
     }
+    .formInputContact{
+        width: 50vw;
+    }
+    .formInputMessage{
+        width: 50vw;
+}
 }

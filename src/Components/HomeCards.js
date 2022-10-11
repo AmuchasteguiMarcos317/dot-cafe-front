@@ -3,6 +3,7 @@ import '../Styles/HomeCards.css'
 import { Link as LinkRouter } from 'react-router-dom'
 import Marquee from "react-fast-marquee";
 import MarqueeCards from './MarqueeCards';
+import NewLetter from './NewLetter';
 const cardsBuy = [
     { key: "2001", title: "ELEGÍ TU PRODUCTO", photo: "https://cdn-icons-png.flaticon.com/512/8070/8070478.png", text: "PASO 1", info: ["Selecciona el producto que te guste, maquina, tazas o si queres café donde podes elegir si lo querés llevar en grano o molido y si querés comprar una bolsa de 250grs,500grs o de 1kg."] },
     { key: "2002", title: "PAGÁ EN FORMA SEGURA", photo: "https://cdn-icons-png.flaticon.com/512/4564/4564998.png", text: "PASO 2", info: ["Cobramos a través de Mercado Pago, la plataforma más segura del país. Aceptamos todas las tarjetas de crédito y débito."] },
@@ -65,6 +66,7 @@ export default function HomeCards() {
                     </div>
                 ))}
             </div>
+            <NewLetter />
         </>
     )
 }

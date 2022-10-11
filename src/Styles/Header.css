@@ -21,9 +21,6 @@
     height: 25px !important;
     margin-bottom: 6px;
 }
-.headerP{
-    padding-top: 1em;
-}
 .headerLogged{
     display: flex;
     gap: 1.3rem;
@@ -146,6 +143,7 @@ header span{
     background-color: #45230f;
 }
 .navAll:hover{
+    color:#faffd8 !important;
     background-color: #955f31;
 }
 .dropdown-menu{

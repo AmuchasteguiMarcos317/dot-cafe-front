@@ -22,10 +22,12 @@ import { setCredentials } from './Features/usersSlice';
 import CircularEconomy from './Pages/CircularEconomy';
 import SeeAll from './Pages/SeeAll';
 import ScrollToTop from './Components/ScrollToTop';
+import NewLetter from './Components/NewLetter';
 import Alerts from './Components/Alerts';
 import AboutUs from './Pages/AboutUs';
 import MyAccount from './Pages/MyAccount';
 import MyOrder from './Pages/MyOrder';
+import Contact from './Pages/Contact';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -76,10 +78,12 @@ function App() {
               <Route path='/cart' element={<Cart />} />
               <Route path='/notfound' element={<NotFound />} />
               <Route path='/economia-circular' element={< CircularEconomy />} />
+              <Route path= '/suscriptores' element={<NewLetter />} />
               <Route path='/sobre-nosotros' element={< AboutUs />} />
+              <Route path='/contacto' element={< Contact />} />
             </Routes>
-            <Alerts/>
-          </CafeLayout>
+          <Alerts/>
+        </CafeLayout>
       </BrowserRouter>
     </>
   );

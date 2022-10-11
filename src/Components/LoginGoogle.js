@@ -4,6 +4,7 @@ import { useUserLoginMutation } from "../Features/usersAPI";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCredentials } from '../Features/usersSlice';
+import { setMessage } from "../Features/AlertsSlice";
 
 export default function LoginGoogle() {
     const dispatch = useDispatch()
@@ -22,8 +23,13 @@ export default function LoginGoogle() {
         
         await userLogin(newData)
         .then(response => {
+            let data = response?.data?.response.user
             dispatch(setCredentials(response?.data?.response.user))
             localStorage.setItem('token', response?.data?.response.token)
+            dispatch(setMessage({
+                message: `Bienvendio ${data.firstName}`,
+                success: true
+            }))
             navigate("/", {replace:true})
         })
         .catch(error => {
@@ -40,7 +46,7 @@ export default function LoginGoogle() {
         });
         google.accounts.id.renderButton(
             btnGoogle.current,
-            { theme: "outline", size: "large" , text: 'signin_with', locale: 'en'} // customization attributes
+            { theme: "outline", size: "large" , text: 'signin_with', locale: 'es'} // customization attributes
         );
     }, [])
 

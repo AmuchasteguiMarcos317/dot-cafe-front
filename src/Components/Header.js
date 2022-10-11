@@ -60,9 +60,6 @@ export default function Header({ name, ...props }) {
           <LinkRouter className="headerLogo" to="/">
             <img className="headerLogoCafe" src="logo1.png" alt="image" />
           </LinkRouter>
-          <Navbar.Brand className="headText" href="#home">
-            <span></span>{" "}
-          </Navbar.Brand>
           <div className="headerLogged">
             <LinkRouter className="headerPedi" to="/cafes">
               Pedí tu<span className="headerSpan"> .</span>Café
@@ -73,7 +70,7 @@ export default function Header({ name, ...props }) {
             </LinkRouter>
             <div className="container-avatar">
               <img
-                src={logged ? userData.photo : "user.png"}
+                src={logged ? userData?.photo : "user.png"}
                 onClick={handleOpenMenu}
               />
             </div>
@@ -105,7 +102,7 @@ export default function Header({ name, ...props }) {
       <Navbar className="navbarContain" expand="xl">
         <Container fluid className="dropdown">
           <Container>
-            <Navbar.Brand className="navText" href="#home">
+            <Navbar.Brand className="navText">
               <span></span>{" "}
             </Navbar.Brand>
           </Container>
@@ -274,8 +271,8 @@ export default function Header({ name, ...props }) {
                   </div>
                 </NavDropdown.Item>
 
-                <NavDropdown.Item className="navDrop">
-                  <LinkRouter to="/economia-circular">
+                <LinkRouter to="/economia-circular">
+                  <NavDropdown.Item className="navDrop" href="#action/3.2">
                     <img
                       className="headerIcon"
                       src="https://cdn-icons-png.flaticon.com/512/3299/3299853.png"
@@ -284,13 +281,11 @@ export default function Header({ name, ...props }) {
                     <div className="navText">
                       <p>Economía Circular</p>
                     </div>
-                  </LinkRouter>
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Navbar.Brand href="#home">
-                <LinkRouter to="/ver-todo" className="navAll">
-                  Ver todo
+                  </NavDropdown.Item>
                 </LinkRouter>
+              </NavDropdown>
+              <Navbar.Brand>
+                <LinkRouter to="/ver-todo" className="navAll">Ver todo</LinkRouter>
               </Navbar.Brand>
             </Nav>
           </Navbar.Collapse>

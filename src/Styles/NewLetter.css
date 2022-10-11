@@ -1,0 +1,50 @@
+.newLetterContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    margin:1rem 0;
+}
+.newLetterContainer h4{
+    width: 80%;
+    text-align: start;
+    color: #45230f;
+    font-weight: bold;
+}
+.newLetterContainer h4 span{
+    color: #204d48;
+    font-size: 3rem;
+    text-shadow: -1px 2px 5px black;
+}
+.newLetterContain{
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 10px;
+    color: #faffd8;
+    background-color: #45230f;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+}
+.newLetterLabel{
+    padding: 0 .5rem;
+}
+.newLetterInput{
+    border-radius: 10px;
+    padding: 0 .5rem;
+}
+.newLetterBtn{
+    background-color: #204d48;
+    padding: .5rem;
+    margin-top: 15rem;
+    border: 1px solid #204d48;
+    border-radius: 15px;
+    font-size: x-large;
+    color: #faffd8;
+    margin: 0 10px;
+}
+.newLetterBtn:hover{
+    background-color: #faffd8;
+    color: #45230f;
+    border: 1px solid #45230f;
+}
