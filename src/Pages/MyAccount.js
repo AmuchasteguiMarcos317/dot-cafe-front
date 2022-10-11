@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { Link as LinkRouter } from 'react-router-dom'
 import OrderNroCard from '../Components/OrderNroCard'
 import '../Styles/MyAccountAndOrder.css'
 
@@ -44,7 +45,7 @@ export default function MyAccount() {
                     <div className="MyOrdersContainer">
                         <h3>Mis órdenes de compra</h3>
                         <div className="AllMyOrders">
-                        {orders?.response.map(order => <OrderNroCard order={order} />)}
+                            {orders?.response.map(order => <OrderNroCard key={order._id} order={order} />)}
                         </div>
                     </div>
                 </div>
