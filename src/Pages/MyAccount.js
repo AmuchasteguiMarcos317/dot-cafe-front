@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link as LinkRouter } from 'react-router-dom'
 import OrderNroCard from '../Components/OrderNroCard'
+import { useGetAllOrdersQuery } from '../Features/orderAPI'
 import '../Styles/MyAccountAndOrder.css'
 
 export default function MyAccount() {

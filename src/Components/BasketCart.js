@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "../Styles/BasketCart.css";
 import { Link as LinkRouter } from "react-router-dom";
