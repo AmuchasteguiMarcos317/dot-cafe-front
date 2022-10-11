@@ -36,15 +36,20 @@ export default function SignUp() {
     async function singUpUser(data) {
         try {
             let res = await signUp(data)
-            if(res.data.success){
+            if(res.data?.success){
                 dispatch(reload())
                 navigate("/login", {replace: true})
                 dispatch(setMessage({
-                    message: "Revisa tu correo para revisar tu cuenta",
+                    message: "Revisa tu correo para confirmar tu cuenta",
                     success: true
                 }))
+            }else if(!res.error.success){
+                dispatch(setMessage({
+                    message: res.error.data.message,
+                    success: res.error.data.success
+                }))
             }
-        } catch (error) {
+        } catch(error) {
             console.log(error)
         }
     }
