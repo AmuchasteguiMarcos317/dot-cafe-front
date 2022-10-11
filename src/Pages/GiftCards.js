@@ -5,7 +5,6 @@ import '../Styles/AllCards.css'
 
 export default function GiftCard() {
     const {data: giftcards} = useGetAllGiftCardsQuery()
-    console.log(giftcards)
 
     return (
         <>
@@ -13,7 +12,7 @@ export default function GiftCard() {
                 <div className="AllCardsContainer">
                     <h2 className="CardsTitle">Todas nuestras Gift Cards</h2>
                     <div className="CardsContainer">
-                        {giftcards?.response.map(gift => <ProductCard data={gift} linkTo={gift._id} />)}
+                        {giftcards?.response.map(gift => <ProductCard key={gift._id} data={gift} linkTo={gift._id} />)}
                     </div>
                 </div>
             </main>

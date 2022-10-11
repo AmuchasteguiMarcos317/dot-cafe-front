@@ -26,7 +26,7 @@ export default function Coffees() {
                         </form>
                     </div>
                     <div className="">
-                        {coffees?.response.map(coffee => <CoffeeCard data={coffee} />)}
+                        {coffees?.response.map(coffee => <CoffeeCard key={coffee._id} data={coffee} />)}
                     </div>
                 </div>
             </main>
