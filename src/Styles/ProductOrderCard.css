@@ -1,0 +1,25 @@
+.orderProductContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.orderProductContainer img{
+    width: 7rem;
+}
+.orderProductContainer h5{
+    font-size: .9rem;
+}
+.orderProductContainer p{
+    font-size: .8rem;
+}
+.orderProductContainer strong{
+    font-size: .9rem;
+}
+.MyOrder20{
+    width: 20%;
+}
+.MyOrder50{
+    width: 50%;
+    text-align: center;
+}

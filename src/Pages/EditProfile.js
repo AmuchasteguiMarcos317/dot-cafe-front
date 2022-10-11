@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { setCredentials } from "../Features/usersSlice";
 
 let dataPro = [
-  {id: 1,  provincia: "Buenos Aires" },
+  {id: 1, provincia: "Buenos Aires" },
   {id: 2, provincia: "Córdoba" },
   {id: 3, provincia: "Santa Fe" },
   {id: 4, provincia: "Ciudad Autónoma de Buenos Aires" },
@@ -45,7 +45,7 @@ function EditProfile() {
         const dataform = new FormData(refData.current)
         const values = Object.fromEntries(dataform)
         const {address, zipCode, city, province, dni, tel } = values
-        if(address !== "" && zipCode !== "" && city !== "" && province !== "" && dni !== "" && tel != "" ){
+        if(address !== "" && zipCode !== "" && city !== "" && province !== "" && dni !== "" && tel !== "" ){
             values.id = userId.id
             updateDataUser(values)
         }else {

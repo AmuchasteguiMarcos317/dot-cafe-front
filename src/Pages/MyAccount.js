@@ -1,29 +1,16 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import OrderNroCard from '../Components/OrderNroCard'
-import '../Styles/MyAccount.css'
 import { Link as LinkRouter } from 'react-router-dom'
-
-
-const orders = [
-    {_id: 1, date: "12-08-2022"},
-    {_id: 2, date: "23-09-2022"},
-    {_id: 3, date: "30-09-2022"},
-    {_id: 4, date: "12-08-2022"},
-    {_id: 5, date: "23-09-2022"},
-    {_id: 6, date: "30-09-2022"},
-    {_id: 7, date: "12-08-2022"},
-    {_id: 8, date: "23-09-2022"},
-    {_id: 9, date: "30-09-2022"}
-]
+import OrderNroCard from '../Components/OrderNroCard'
+import { useGetAllOrdersQuery } from '../Features/orderAPI'
+import '../Styles/MyAccountAndOrder.css'
 
 export default function MyAccount() {
     let user = useSelector(state => state.auth.user)
-    const userId = user?.id
+    const {data: orders} = useGetAllOrdersQuery()
     const reload = useSelector(state => state.reload.reloadState)
 
     useEffect(() => {
-
     },[reload])
 
     return (
@@ -37,7 +24,7 @@ export default function MyAccount() {
                             <img src={user?.photo} alt="user" />
                             <p><span>Nombre: </span>{user?.firstName +" "+ user?.lastName}</p>
                             <p><span>Email: </span>{user?.email}</p>
-                            <p><span>Gift cards: </span>{user?.giftCard? user.giftCard.length : 0 }</p>
+                            <p><span>Gift cards: </span>{user?.giftCard? user.giftCard.length : 0}</p>
                         </div>
                         <div className="MyAccountData">
                             <div className='MyAccountData-btn'>
@@ -59,7 +46,7 @@ export default function MyAccount() {
                     <div className="MyOrdersContainer">
                         <h3>Mis órdenes de compra</h3>
                         <div className="AllMyOrders">
-                            {orders.map(order => <OrderNroCard key={order._id} order={order} />)}
+                            {orders?.response.map(order => <OrderNroCard key={order._id} order={order} />)}
                         </div>
                     </div>
                 </div>
