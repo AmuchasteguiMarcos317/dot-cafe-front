@@ -13,11 +13,22 @@ export default function NewLetter() {
         const formNews = document.querySelector('.newLetterContainer')
         const newData = Object.fromEntries(new FormData(formData.current))
         formNews.reset()
-        await addSubscriber(newData)
-        dispatch(setMessage({
-            message: "Se ha suscripto a nuestro boletín",
-            success: true
-        }))
+        try {
+            let res = await addSubscriber(newData)
+            if(res.data.success){
+                dispatch(setMessage({
+                    message: "Se ha suscripto a nuestro boletín",
+                    success: true
+                }))
+            }else {
+                dispatch(setMessage({
+                    message: "Ocurrió un error",
+                    success: false
+                }))
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
