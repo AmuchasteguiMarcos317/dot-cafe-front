@@ -1,13 +1,32 @@
 import React from 'react'
 import '../Styles/ProductCard.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../Features/cartSlice'
+import { setMessage } from '../Features/AlertsSlice'
 
 export default function ProductCard({data}) {
-console.log(data)
+
+const dispatch = useDispatch()
+let photoProduct = typeof(data?.photo) == "string"? data.photo : data.photo[0]
+
+const handleAddToCart =  async (data) =>{
+    dispatch(addToCart({
+        _id: data._id,
+        photo: photoProduct,
+        price: data.price,
+        name:data.name
+    }))
+    dispatch(setMessage({
+        message: `${data.name} Se ha añadido al carrito`,
+        success: true
+    }))
+}
+
     return (
         <>
             <div key={data._id} className='cardContainer'>
                 <div className='imgContainer'>
-                    <img className='imgCard' src={typeof(data?.photo) == "string"? data.photo : data.photo[0]} alt="cafe" />
+                    <img className='imgCard' src={photoProduct} alt="cafe" />
                 </div>
                 <div className="cardInfoContainer">
                     { data.name &&
@@ -22,7 +41,7 @@ console.log(data)
                         <h4>Precio:</h4>
                         <h5>${data?.price}</h5>
                     </div>
-                    <div className='bottonCard'>AGREGAR AL CARRITO</div>
+                    <button onClick={ ()=>{handleAddToCart(data)} } className='bottonCard'>AGREGAR AL CARRITO</button>
                 </div>
             </div>
         </>

@@ -15,21 +15,22 @@ export default function footer() {
             <div className='footerContainer'>
                 <div className='footer'>
                         <button className='footerLogo' onClick={scrollTopUp}>
-                            <img src='logo1.png' alt="logo" />
+                            <img className='footerArrow' src='logo1.png' alt="logo" />
+                            <img className='footerArrow1' src='https://cdn-icons-png.flaticon.com/512/1174/1174588.png?w=826&t=st=1665163827~exp=1665164427~hmac=b30c3f8be88b2dac903d75336bd18ca3255a8aafd88db65df636f49ce11153f1'alt='icon'/>
                         </button>
                     <div className='footerText'>
                         <h2>PRODUCTOS</h2>
                         <LinkRouter to='/'>Home</LinkRouter>
                         <LinkRouter to='/cafes' href='#topCoffee'>Cafe</LinkRouter>
                         <LinkRouter to='/granel/peso' state={{ kilo: "1000" }}>Granel</LinkRouter>
-                        <LinkRouter to='/'>Maquinas</LinkRouter>
+                        <LinkRouter to='/maquinas'>Maquinas</LinkRouter>
                         <LinkRouter to='/tazas'>Accesorios</LinkRouter>
                     </div>
                     <div className='footerText'>
                         <h2>SOBRE NOSOTROS</h2>
-                        <LinkRouter>Historia</LinkRouter>
-                        <LinkRouter>Contacto</LinkRouter>
-                        <LinkRouter>Reciclaje</LinkRouter>
+                        <LinkRouter to='/sobre-nosotros'>Historia</LinkRouter>
+                        <LinkRouter to='/contacto' >Contacto</LinkRouter>
+                        <LinkRouter to='/economia-circular'>Reciclaje</LinkRouter>
                         <LinkRouter>Preguntas Frecuentes</LinkRouter>
                         <LinkRouter>Politicas de Envio</LinkRouter>
 

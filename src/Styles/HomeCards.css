@@ -53,13 +53,78 @@
     border-radius: 15px;
     font-size: x-large;
     color: #faffd8;
-    
 }
 .homeBtn button:hover{
     background-color: #faffd8;
     color: #45230f;
     font-weight: 600;
-    border: 1px solid #45230f;
+}
+.buyH1{
+    width: 100%;
+    background-color: #204d48;
+    
+    text-align: center;
+    color: #956031;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 1rem 0;
+}
+.buyContainer{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    background-color: #204d48;
+    color: #e4f5eb;
+    text-align: center;
+    padding-bottom: 2rem;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.buyBanner{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.buyDescription {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    line-height: 30px;
+}
+.buyDescription h3{
+    text-align: center;
+    padding: 1rem 0;
+}
+.buyDescription h5{
+    color: #956031;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.buyDescription img{
+    width: 50px;
+    align-self: center;
+}
+.buyBtn button{
+    background-color: #204d48;
+    border: 2px solid #45230f;
+    padding: .5rem;
+    border-radius: 15px;
+    font-size: x-large;
+    color: #faffd8;
+    margin-top: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.buyBtn button:hover{
+    background-color: #faffd8;
+    color: #45230f;
 }
 
 @media screen and (max-width: 1024px) {
@@ -79,5 +144,11 @@
     }
     .homeCardColor:nth-child(even) .homeCardInfo h3, .homeCardColor:nth-child(even) .homeCardInfo p{
         text-align: end;
+    }
+}
+@media screen and (max-width: 768px){
+    .buyContainer{
+        flex-direction: column;
+        gap: 4rem;
     }
 }
