@@ -16,7 +16,7 @@ import Cart from './Pages/Cart';
 import CoffeeByKilo from './Pages/CoffeeByKilo';
 import AllMachine from './Pages/AllMachine'; 
 import { useUserLoginTokenMutation } from './Features/usersAPI';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
 import CircularEconomy from './Pages/CircularEconomy';
@@ -28,10 +28,13 @@ import AboutUs from './Pages/AboutUs';
 import MyAccount from './Pages/MyAccount';
 import MyOrder from './Pages/MyOrder';
 import Contact from './Pages/Contact';
+import EditProfile from './Pages/EditProfile';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
   const dispatch = useDispatch()
+  const reload = useSelector(state => state.reload.reloadState)
+
 
   const loginAgain = async () => {
     try {
@@ -52,7 +55,7 @@ function App() {
     if(localStorage.getItem('token')){
       loginAgain()
     }
-  }, [])
+  }, [reload])
   
   return (
     <>
@@ -81,6 +84,7 @@ function App() {
               <Route path= '/suscriptores' element={<NewLetter />} />
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
+              <Route path='/editar-perfil' element={<EditProfile/>} />
             </Routes>
           <Alerts/>
         </CafeLayout>

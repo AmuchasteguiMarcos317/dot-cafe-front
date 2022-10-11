@@ -1,17 +1,34 @@
 import React, { useRef } from 'react'
 import '../Styles/NewLetter.css'
 import { useAddNewSubscriberMutation } from '../Features/newLetterAPI'
+import { useDispatch } from 'react-redux'
+import { setMessage } from '../Features/AlertsSlice'
 
 export default function NewLetter() {
     const [ addSubscriber ]   = useAddNewSubscriberMutation()
     const formData = useRef({})
+    const dispatch = useDispatch()
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formNews = document.querySelector('.newLetterContainer')
         const newData = Object.fromEntries(new FormData(formData.current))
-        console.log(newData)
-        await addSubscriber(newData)
         formNews.reset()
+        try {
+            let res = await addSubscriber(newData)
+            if(res.data.success){
+                dispatch(setMessage({
+                    message: "Se ha suscripto a nuestro boletín",
+                    success: true
+                }))
+            }else {
+                dispatch(setMessage({
+                    message: "Ocurrió un error",
+                    success: false
+                }))
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (

@@ -12,7 +12,7 @@ export default function Mugs() {
                 <div className="AllCardsContainer">
                     <h2 className="CardsTitle">Tazas: Todas</h2>
                     <div className="CardsContainer">
-                        {mugs?.response.map(mug => <ProductCard data={mug} linkTo={mug._id} />)}
+                        {mugs?.response.map(mug => <ProductCard data={mug} key={mug._id} linkTo={mug._id} />)}
                     </div>
                 </div>
             </main>
