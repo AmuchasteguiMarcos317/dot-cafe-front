@@ -23,14 +23,17 @@ function LoginUser() {
             values.from = 'form'
             login(values)
         }else {
-            console.log('Esta vacio')
+            dispatch(setMessage({
+                message: "Ingrese los datos",
+                success: false
+            }))
         }
     }
 
     async function login(logindata) {
         try {
             let res = await loginUser(logindata)
-            if(res.data.success){
+            if(res.data?.success){
                 let data = res.data.response.user
                 dispatch(setCredentials(data))
                 dispatch(setMessage({
@@ -40,6 +43,11 @@ function LoginUser() {
                 dispatch(reload())
                 localStorage.setItem('token', res.data.response.token)
                 navigate("/", {replace: true})
+            }else if(!res.error.success){
+                dispatch(setMessage({
+                    message: res.error.data.message,
+                    success: res.error.data.success
+                }))
             }
         } catch (error) {
             console.log(error)
@@ -53,11 +61,11 @@ function LoginUser() {
         <h1 className='tittleLogin'>INICIAR SESIÓN</h1>
             <div>
                 <label className='labelEmail' for='email'>Email</label>
-                <input id='email' className='inputEmail' type="email" name='email' placeholder='Ingrese su email'/>
+                <input id='email' className='inputEmail' type="email" name='email' placeholder='Ingrese su email' required/>
             </div>
             <div>
                 <label className='labelPass' for='pass'>Contraseña</label>
-                <input id='pass' className='inputPass' type="password" name='password' placeholder='Ingrese su contraseña'/>
+                <input id='pass' className='inputPass' type="password" name='password' placeholder='Ingrese su contraseña' required/>
             </div>
             <button className="formBoton" type='submit'>Iniciar Sesion</button>
             <LoginGoogle />
