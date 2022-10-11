@@ -16,7 +16,7 @@ import Cart from './Pages/Cart';
 import CoffeeByKilo from './Pages/CoffeeByKilo';
 import AllMachine from './Pages/AllMachine'; 
 import { useUserLoginTokenMutation } from './Features/usersAPI';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './Features/usersSlice';
 import CircularEconomy from './Pages/CircularEconomy';
@@ -33,6 +33,8 @@ import EditProfile from './Pages/EditProfile';
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
   const dispatch = useDispatch()
+  const reload = useSelector(state => state.reload.reloadState)
+
 
   const loginAgain = async () => {
     try {
@@ -53,7 +55,7 @@ function App() {
     if(localStorage.getItem('token')){
       loginAgain()
     }
-  }, [])
+  }, [reload])
   
   return (
     <>

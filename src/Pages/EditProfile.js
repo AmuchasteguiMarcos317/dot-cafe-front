@@ -59,7 +59,7 @@ function EditProfile() {
     async function updateDataUser(data) {
         try {
             let res = await editProfile(data)
-            if(res.data.succes){
+            if(res.data.success){
                 dispatch(reload())
                 dispatch(setMessage({
                     message: res.data.message,
