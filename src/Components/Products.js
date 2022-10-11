@@ -39,7 +39,7 @@ function Products() {
 
   const handleChange = e => {
     let userSearch = e.target.value
-    let buscadosArray = products.filter((ele) => ele.name.toLocaleLowerCase().includes(userSearch.toLowerCase()));
+    let buscadosArray = products.filter((ele) => ele.name.toLocaleLowerCase().includes(userSearch.toLowerCase().trim()));
     if(buscadosArray.length > 0){
       setProducts(buscadosArray)
     }else{

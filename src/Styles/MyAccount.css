@@ -1,0 +1,85 @@
+.MyAccountContainer{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    color: #1D1F1F
+}
+.MyAccountContainer h3{
+    width: 100%;
+    padding-bottom: .2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid lightgrey;
+}
+.MyAccountContainer h4{
+    font-size: 1rem;
+    border-bottom: 1px solid lightgrey;
+}
+.MyAccountContainer p{
+    margin: 0;
+    font-size: .9rem;
+}
+.MyAccountContainer span{
+    font-weight: 500;
+}
+.MyDataContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 35%;
+}
+.MyOrdersContainer{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.MyLoginData, .MyAccountData, .AllMyOrders{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    box-shadow: .5rem .5rem 1rem #a3bbad;
+    margin: .5rem 0;
+    gap: .4rem
+}
+.AllMyOrders{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.MyLoginData > img{
+    width: 6rem;
+    border-radius: 3rem;
+}
+
+@media screen and (max-width: 1200px){
+    .AllMyOrders {
+       flex-direction: column;
+    }
+    .MyDataContainer{
+        width: 40%;
+    }
+    .MyOrdersContainer{
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .MyAccountContainer {
+       flex-direction: column;
+       align-items: center;
+    }
+    .MyDataContainer, .MyOrdersContainer{
+        width: 90%;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .MyDataContainer, .MyOrdersContainer{
+        width: 100%;
+    }
+}

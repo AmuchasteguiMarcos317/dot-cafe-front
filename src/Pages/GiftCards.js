@@ -10,7 +10,7 @@ export default function GiftCard() {
     return (
         <>
             <main>
-                <div class="AllCardsContainer">
+                <div className="AllCardsContainer">
                     <h2 className="CardsTitle">Todas nuestras Gift Cards</h2>
                     <div className="CardsContainer">
                         {giftcards?.response.map(gift => <ProductCard data={gift} linkTo={gift._id} />)}

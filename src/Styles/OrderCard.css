@@ -1,0 +1,43 @@
+.OrderCardContainer{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EFF9F0;
+    padding: .6rem;
+    margin: .5rem 0;
+    border-radius: .5rem;
+}
+.OrderCardContainer > div{
+    display: flex;
+    align-items: center;
+}
+.OrderCardContainer > div > p{
+    padding: 0 .2em;
+}
+.OrderCardContainer a{
+    background-color: #a3bbad;
+    border-radius: .4rem;
+    margin-left: .2rem;
+    font-weight: 600;
+    padding: .2rem .3rem;
+}
+.OrderNumber p{
+    font-weight: 600;
+}
+.OrderCardContainer img {
+    width: 1.2rem;
+    border-radius: .6rem;
+}
+
+@media screen and (max-width: 1200px){
+    .OrderCardContainer {
+       width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .OrderCardContainer {
+       width: 90%;
+    }
+}
