@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useSelector } from "react-redux";
 import BasketCart from "./BasketCart";
+import { Link as LinkRouter } from "react-router-dom";
+import "../Styles/BtnCart.css";
 
 
 function BtnCart({ name, ...props }) {
@@ -36,7 +38,15 @@ function BtnCart({ name, ...props }) {
             ?
             <BasketCart />
             :
-            null
+            <div className="btnContainer">
+              <img className='imgBtn' src='carrovacio1.png' alt="logo" />
+          <p>
+            <strong>Tu carrito está vacio</strong>
+          </p>
+          <LinkRouter to="/ver-todo" className="navAll">
+            ir a comprar
+          </LinkRouter>
+        </div>
           }
         </Offcanvas.Body>
       </Offcanvas>

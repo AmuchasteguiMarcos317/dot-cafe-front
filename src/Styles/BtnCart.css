@@ -1,0 +1,8 @@
+.btnContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imgBtn{
+    width: 50%;
+}
