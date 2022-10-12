@@ -50,14 +50,7 @@ function BasketCart() {
           </LinkRouter>
         </div>
       ) : (
-        <div>
-          <p>
-            <strong>Tu carrito está vacio</strong>
-          </p>
-          <LinkRouter to="/ver-todo" className="navAll">
-            ir a comprar
-          </LinkRouter>
-        </div>
+        null
       )}
     </>
   );
