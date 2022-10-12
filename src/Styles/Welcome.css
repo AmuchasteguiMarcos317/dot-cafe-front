@@ -1,6 +1,6 @@
 .Welcome-main{
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
     background-image: url('../../public/cafe-back.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -22,12 +22,16 @@
     font-style: oblique;
     letter-spacing: .5rem;
 }
-
+@media screen and (max-width: 1400px) {
+    .Welcome-main{
+        min-height: 60vh;
+        background-position: center;
+        background-attachment: initial;
+    }
+}
 @media screen and (max-width: 1024px) {
     .Welcome-main{
         min-height: 40vh;
-        background-attachment: initial;
-        background-position: center;
         justify-content: flex-start;
         align-items: center;
         padding-top: 2rem;
