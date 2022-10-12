@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Link as LinkRouter } from 'react-router-dom'
+import { Link as LinkRouter, useLocation, useParams } from 'react-router-dom'
 import OrderNroCard from '../Components/OrderNroCard'
-import { useGetAllOrdersQuery, useGetOrderByUserMutation, useGetOrderByUserQuery } from '../Features/orderAPI'
+import { useGetAllOrdersQuery, useGetOrderByUserQuery } from '../Features/orderAPI'
 import '../Styles/MyAccountAndOrder.css'
 
 export default function MyAccount() {

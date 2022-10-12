@@ -10,13 +10,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as LinkRouter} from 'react-router-dom'
 
-const ACCESS_TOKEN= 'TEST-6581106291893003-101020-ce992fb3ac71fe99275ecbc4e3089e2b-1142649826'
+const ACCESS_TOKEN= process.env.REACT_APP_ACCESS_TOKEN
+
 export default function Cart() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const finalCart = useSelector((state) => state.cart.cartArray);
   const dispatch = useDispatch();
+  const userData = useSelector(state => state.auth.user)
   let totalQuantity = 0;
   let totalPrice = 0;
   let discount = 0;
@@ -48,6 +50,20 @@ export default function Cart() {
     console.log("intento de pago MP")
     
     let body = {
+      payer: {
+          address: {
+            zip_code: userData.zipCode
+          },
+          email: userData.email,
+          name: userData.firstName,
+          phone: {
+            number: userData.tel
+          },
+          identification: {
+            number: userData.dni,
+            type: 'dni'
+          }
+      },
       items: [
         {
           title: "Tienda Punto Café S.A",
@@ -76,6 +92,7 @@ export default function Cart() {
       });
 
       window.open(`${payment.data.init_point}`)
+      console.log(payment.data)
       dispatch(emptyCart());
   
       return payment.data
