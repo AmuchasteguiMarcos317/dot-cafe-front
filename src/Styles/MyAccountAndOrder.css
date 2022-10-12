@@ -3,7 +3,27 @@
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
-    color: #1D1F1F
+    color: #1D1F1F;
+}
+.containerEmpty {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;   
+    padding: 1rem;
+    align-items: center;
+}
+
+.containerEmpty a {
+    background-color: #a3bbad;
+    padding: 4px 10px 4px 10px;
+    border-radius: .5rem;
+    color: #1D1F1F;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.containerEmpty a:hover {
+    color: #1D1F1F;
 }
 
 .MyDataContainerRole  {

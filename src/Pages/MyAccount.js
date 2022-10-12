@@ -57,7 +57,16 @@ export default function MyAccount() {
                     <div className="MyOrdersContainer">
                         <h3>Mis órdenes de compra</h3>
                         <div className="AllMyOrders">
-                            {orders?.response.map(order => <OrderNroCard key={order._id} order={order} />)}
+                            {
+                                orders.length > 0 
+                                ?
+                                    orders?.response.map(order => <OrderNroCard key={order._id} order={order} />)
+                                :
+                                <div className='containerEmpty '>
+                                    <h6>No tenés órdenes de compras</h6>
+                                    <LinkRouter to="/ver-todo">Ver productos</LinkRouter>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
