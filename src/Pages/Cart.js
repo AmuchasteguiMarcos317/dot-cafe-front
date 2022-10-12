@@ -9,6 +9,7 @@ import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as LinkRouter} from 'react-router-dom'
+import { useNewOrderMutation } from "../Features/orderAPI";
 
 const ACCESS_TOKEN= process.env.REACT_APP_ACCESS_TOKEN
 
@@ -20,16 +21,37 @@ export default function Cart() {
   const dispatch = useDispatch();
   const userData = useSelector(state => state.auth.user)
   let totalQuantity = 0;
-  let totalPrice = 0;
+  let totalOrderPrice = 0;
   let discount = 0;
 
   const getTotal = () => {
     finalCart.forEach((item) => {
       totalQuantity += item.quantity;
-      totalPrice += item.price * item.quantity;
+      totalOrderPrice += item.price * item.quantity;
     });
-    return { totalPrice, totalQuantity };
+    return { totalOrderPrice, totalQuantity };
   };
+
+  const [addOrder] = useNewOrderMutation()
+  let todayDate = new Date()
+  let totalOrder = getTotal()
+  let orderData = {user: userData?._id, date: todayDate, total: totalOrder.totalOrderPrice }
+  
+  const createOrder = async() => {
+    let products = finalCart.map(elem => {
+      return {
+          item: elem._id,
+          name: elem.name,
+          quantity: elem.quantity,
+          photo: elem.photo,
+          price: elem.price,
+          totalPrice: elem.price*elem.quantity
+      }
+    })
+    let newOrder = ({...orderData, products})
+    await addOrder(newOrder)
+  }
+
 
   const handleRemove = () => {
     dispatch(emptyCart());
@@ -41,29 +63,29 @@ export default function Cart() {
     );
   };
 
-  getTotal()
 
   const url = "https://api.mercadopago.com/checkout/preferences";
 
   const handlePayment = async () =>{
     
     console.log("intento de pago MP")
+    createOrder()
     
     let body = {
-      payer: {
-          address: {
-            zip_code: userData.zipCode
-          },
-          email: userData.email,
-          name: userData.firstName,
-          phone: {
-            number: userData.tel
-          },
-          identification: {
-            number: userData.dni,
-            type: 'dni'
-          }
-      },
+      // payer: {
+      //     address: {
+      //       zip_code: userData.zipCode
+      //     },
+      //     email: userData.email,
+      //     name: userData.firstName,
+      //     phone: {
+      //       number: userData.tel
+      //     },
+      //     identification: {
+      //       number: userData.dni,
+      //       type: 'dni'
+      //     }
+      // },
       items: [
         {
           title: "Tienda Punto Café S.A",
@@ -71,13 +93,13 @@ export default function Cart() {
           picture_url: "http://www.myapp.com/myimage.jpg",
           category_id: "coffe001",
           quantity: totalQuantity,
-          unit_price: totalPrice
+          unit_price: totalOrderPrice
         }
       ],
       back_urls: {
         failure: "http://localhost:3000/failure",
         pending: "http://localhost:3000/pending",
-        success: "http://localhost:3000/mi-cuenta/success"
+        success: "http://localhost:3000/estado-orden/success"
       }
     };
 
@@ -113,8 +135,6 @@ export default function Cart() {
     }
   }, [finalCart])
   
-
-
 
   return (
     <>
@@ -165,7 +185,7 @@ export default function Cart() {
               <div className="purchaseValue">
                 <div className="value">
                   <h6>VALOR DE LA COMPRA</h6>
-                  <p>AR${totalPrice}</p>
+                  <p>AR${totalOrderPrice}</p>
                 </div>
                 <div className="value">
                   <h6>DESCUENTO</h6>
@@ -173,7 +193,7 @@ export default function Cart() {
                 </div>
                 <div className="value">
                   <h6>SUB-TOTAL</h6>
-                  <p>AR${totalPrice - discount}</p>
+                  <p>AR${totalOrderPrice - discount}</p>
                 </div>
                 <div className="value">
                   <h6>ENVIO</h6>
@@ -183,7 +203,7 @@ export default function Cart() {
               <div className="finishBuy">
                 <div className="priceTotal">
                   <h6>TOTAL</h6>
-                  <p>AR${totalPrice - discount}</p>
+                  <p>AR${totalOrderPrice - discount}</p>
                 </div>
                 {
                   showButtonFinishBuy ? (

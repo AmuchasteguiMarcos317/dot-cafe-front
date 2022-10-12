@@ -4,7 +4,6 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: {
         cartArray : [],
-
     },
     reducers: {
         addToCart : (state, action) =>{
@@ -35,11 +34,9 @@ const cartSlice = createSlice({
         emptyItem: (state, action) => {
             const clearCart = state.cartArray.filter((item)=> item._id !== action.payload)
             state.cartArray = clearCart
-            
         },
         emptyCart: (state, action) => {
             state.cartArray = []
-            
         }
     }
 })
