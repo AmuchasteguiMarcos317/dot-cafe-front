@@ -19,7 +19,6 @@ export default function Header({ name, ...props }) {
   const [open, setOpen] = useState(false);
   const logged = useSelector((state) => state.auth.logged);
   const [singOutUser] = useUserLogoutMutation();
- 
 
   const handleOpenMenu = () => {
     if (open === true) {

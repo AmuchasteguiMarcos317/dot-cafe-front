@@ -73,7 +73,7 @@ export default function CoffeeCard({ data }) {
           >
             <option defaultValue>Elegi una opcion </option>
             <option value={data?.pricePerCup}>
-              Vaso sustentable $ {data?.pricePerCup}
+              Tu taza $ {data?.pricePerCup}
             </option>
             <option value={data?.pricePerMug}>
               Taza Ecológica $ {data?.pricePerMug}
