@@ -120,8 +120,8 @@ export default function Cart() {
       return payment.data
     } else {
       dispatch(setMessage({
-          message: "Debes iniciar sesión antes de pagar",
-          success: true,
+          message: "Debes iniciar sesión antes de realizar tu compra",
+          success: false,
         }))
     }
   }
