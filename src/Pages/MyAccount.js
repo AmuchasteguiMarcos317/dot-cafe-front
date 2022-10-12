@@ -8,8 +8,8 @@ import '../Styles/MyAccountAndOrder.css'
 export default function MyAccount() {
     let user = useSelector(state => state.auth.user)
     const {data: orders, refetch} = useGetOrderByUserQuery(user?._id)
-    console.log(orders)
     const reloaded = useSelector(state => state.reload.reloadState)
+    let role = user?.role
 
     useEffect(() => {
         refetch()
@@ -20,7 +20,16 @@ export default function MyAccount() {
             <main>
                 <div className="MyAccountContainer">
                     <div className="MyDataContainer">
-                        <h3>Datos personales</h3>
+                        <div className='MyDataContainerRole'>
+                            <h3>Datos personales</h3>
+                            {
+                                role === 'admin'
+                                ?
+                                <p>Admin</p>
+                                :
+                                null
+                            }
+                        </div>
                         <div className="MyLoginData">
                             <h4>Datos de cuenta</h4>
                             <img src={user?.photo} alt="user" />
