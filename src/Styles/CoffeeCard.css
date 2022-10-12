@@ -67,6 +67,14 @@
     gap: 2rem;
     align-self: flex-end;
 }
+
+.mcx {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .coffeePrice{
     display: flex;
     flex-direction: column;
@@ -75,7 +83,7 @@
 .coffeeForm{
     margin-bottom: 8px !important ;
     border-radius: 10px !important;
-    background-color: #204d48 !important;
+    background-color: #a3bbad !important;
     color: #faffd8 !important;
     border: none !important;
 }
@@ -124,6 +132,13 @@
     color: #45230f;
     font-weight: 600;
 }
+
+.containerSPinner {
+    display: flex;
+    justify-content: center;
+    padding-top: 10em;
+}
+
 @media (max-width: 1720px){
     .coffeeH6{
         width: 100%;

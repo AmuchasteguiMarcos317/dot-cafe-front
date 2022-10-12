@@ -4,6 +4,7 @@ import { useGetMachineByFieldMutation } from '../Features/coffeeMachinesAPI'
 import { useGetFiltersByFieldMutation } from '../Features/filtersAPI'
 import { useGetKitsByFieldMutation } from '../Features/kitsAPI'
 import ProductCard from './ProductCard'
+import Spinner from './Spinner.js/Spinner'
 
 function Products() {
   const [products, setProducts] = useState([])
@@ -58,19 +59,22 @@ function Products() {
 
   return (
     <>
-      <div className='container-search'>
-        <input type="text" onChange={handleChange} placeholder='Busca tu producto'/>
-      </div>
       {products.length > 0
         ?
-        <div className='container-all-products'>  
-          {products && products.map(item => 
-            <ProductCard data={item} key={item._id}/>
-          )}
-      </div>
+        <>
+          <h2 className="allProduct">Todos los productos</h2>
+          <div className='container-search'>
+            <input type="text" onChange={handleChange} placeholder='Busca tu producto'/>
+          </div>
+          <div className='container-all-products'>  
+            {products && products.map(item => 
+              <ProductCard data={item} key={item._id}/>
+            )}
+          </div>
+        </>
       :
-      <div>
-        <h2>Cargando....</h2>
+      <div className='containerSpinner'>
+          <Spinner/>
       </div>
       }
     </>

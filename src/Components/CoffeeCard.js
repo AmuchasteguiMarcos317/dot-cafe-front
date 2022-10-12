@@ -64,7 +64,7 @@ export default function CoffeeCard({ data }) {
           </div>
         </div>
       </div>
-      <div className=",mcx">
+      <div className="mcx">
         <div className="coffeePrice">
           <Form.Select
             onChange={handleChange}
