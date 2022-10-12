@@ -1,21 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link as LinkRouter, useLocation, useParams } from 'react-router-dom'
 import OrderNroCard from '../Components/OrderNroCard'
-import { useGetAllOrdersQuery } from '../Features/orderAPI'
+import { useGetAllOrdersQuery, useGetOrderByUserQuery } from '../Features/orderAPI'
 import '../Styles/MyAccountAndOrder.css'
 
 export default function MyAccount() {
     let user = useSelector(state => state.auth.user)
-    const {data: orders} = useGetAllOrdersQuery()
-    const reload = useSelector(state => state.reload.reloadState)
-    let params = useParams()
-    const location = useLocation()
-    console.log(location.search)
-    // console.log(params)
+    const {data: orders, refetch} = useGetOrderByUserQuery(user?._id)
+    console.log(orders)
+    const reloaded = useSelector(state => state.reload.reloadState)
 
     useEffect(() => {
-    },[reload])
+        refetch()
+    },[reloaded])
 
     return (
         <>
