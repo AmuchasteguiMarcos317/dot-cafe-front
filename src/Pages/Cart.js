@@ -18,6 +18,7 @@ export default function Cart() {
   const handleShow = () => setShow(true);
   const finalCart = useSelector((state) => state.cart.cartArray);
   const dispatch = useDispatch();
+  const userData = useSelector(state => state.auth.user)
   let totalQuantity = 0;
   let totalPrice = 0;
   let discount = 0;
@@ -49,6 +50,20 @@ export default function Cart() {
     console.log("intento de pago MP")
     
     let body = {
+      payer: {
+          address: {
+            zip_code: userData.zipCode
+          },
+          email: userData.email,
+          name: userData.firstName,
+          phone: {
+            number: userData.tel
+          },
+          identification: {
+            number: userData.dni,
+            type: 'dni'
+          }
+      },
       items: [
         {
           title: "Tienda Punto Café S.A",
