@@ -29,7 +29,7 @@ import MyAccount from './Pages/MyAccount';
 import MyOrder from './Pages/MyOrder';
 import Contact from './Pages/Contact';
 import EditProfile from './Pages/EditProfile';
-import { reload } from './Features/reloadSlice';
+import OrderStatus from './Pages/OrderStatus';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
@@ -67,7 +67,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/mi-cuenta/:id' element={<MyAccount />} />
               <Route path='/mi-orden/:id' element={<MyOrder />} />
-              <Route path='/details' element={<Details />} />
+              <Route path='/producto/:id' element={<Details />} />
               <Route path='/cafes' element={<Coffees />} />
               <Route path='/granel/peso' element={<CoffeeByKilo />} />
               <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
@@ -80,13 +80,13 @@ function App() {
               <Route path='/login' element={<LoginUser />} />
               <Route path='/ver-todo' element={<SeeAll />} />
               <Route path='/cart' element={<Cart />} />
-              <Route path='/notfound' element={<NotFound />} />
+              <Route path='/*' element={<NotFound />} />
               <Route path='/economia-circular' element={< CircularEconomy />} />
               <Route path= '/suscriptores' element={<NewLetter />} />
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
               <Route path='/editar-perfil' element={<EditProfile/>} />
-              <Route path='/mi-cuenta/success/*' element={<MyAccount />} />
+              <Route path='/estado-orden/success/*' element={<OrderStatus />} />
             </Routes>
           <Alerts/>
         </CafeLayout>

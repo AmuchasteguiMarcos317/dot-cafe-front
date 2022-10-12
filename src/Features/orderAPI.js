@@ -18,16 +18,17 @@ export const orderAPI = createApi({
         getOrderByUser: builder.query({
             query: (user) =>'/orders?user='+user
         }),
-        // getOrderByUser: builder.mutation({
-        //     query(id){
-        //         return{
-        //             url: '/orders?user=' +id,
-        //             method: 'GET'
-        //         }
-        //     }
-        // }),
+        newOrder: builder.mutation({
+            query(order){
+                return{
+                    url: '/orders',
+                    method: 'POST',
+                    body: order
+                }
+            }
+        }),
     })
 })
 
 export default orderAPI;
-export const { useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery } = orderAPI
+export const { useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery, useNewOrderMutation } = orderAPI
