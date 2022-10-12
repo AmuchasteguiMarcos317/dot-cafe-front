@@ -10,7 +10,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as LinkRouter} from 'react-router-dom'
 
-const ACCESS_TOKEN= 'TEST-6581106291893003-101020-ce992fb3ac71fe99275ecbc4e3089e2b-1142649826'
+const ACCESS_TOKEN= process.env.REACT_APP_ACCESS_TOKEN
+
 export default function Cart() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -76,6 +77,7 @@ export default function Cart() {
       });
 
       window.open(`${payment.data.init_point}`)
+      console.log(payment.data)
       dispatch(emptyCart());
   
       return payment.data
