@@ -176,7 +176,10 @@ export default function Cart() {
                   </div>
                 </>
               ) : (
-                <p>El carrito está vacio</p>
+                <div className="carContainer">
+                  <img className='imgCar' src='carrovacio1.png' alt="logo" />
+                <h3 className="textCar">El carrito está vacio</h3>
+                </div>
               )}
             </div>
           </div>
