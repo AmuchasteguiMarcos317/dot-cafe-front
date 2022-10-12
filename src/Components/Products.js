@@ -3,6 +3,7 @@ import { useGetCaffeeByFieldMutation } from '../Features/coffeeByKiloAPI'
 import { useGetMachineByFieldMutation } from '../Features/coffeeMachinesAPI'
 import { useGetFiltersByFieldMutation } from '../Features/filtersAPI'
 import { useGetKitsByFieldMutation } from '../Features/kitsAPI'
+import { useGetMugsMutation } from '../Features/mugsAPI'
 import ProductCard from './ProductCard'
 import Spinner from './Spinner.js/Spinner'
 
@@ -12,11 +13,14 @@ function Products() {
   const [coffes] = useGetCaffeeByFieldMutation()
   const [filters] = useGetFiltersByFieldMutation()
   const [kits] = useGetKitsByFieldMutation()
+  const [mugs] = useGetMugsMutation()
   const [reload, setReload] = useState(false)
+
   let mach;
   let coff;
   let fill;
   let kit;
+  let mug;
 
   async function loadingData() {
     try {
@@ -31,8 +35,11 @@ function Products() {
       
       let resKits = await kits()
       if(resKits.data.success){kit = resKits.data?.response}
+
+      let resMugs = await mugs()
+      if(resMugs.data.success){mug = resMugs.data?.response}
       
-      setProducts([...mach, ...coff, ...fill, ...kit])
+      setProducts([...mach, ...coff, ...fill, ...kit, ...mug])
     } catch (error) {
       console.log(error)
     }

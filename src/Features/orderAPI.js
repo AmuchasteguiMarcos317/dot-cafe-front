@@ -27,8 +27,16 @@ export const orderAPI = createApi({
                 }
             }
         }),
+        deleteOrder: builder.mutation({
+            query(id){
+                return{
+                    url: `/orders/delete-order/${id}`,
+                    method: 'DELETE'
+                }
+            }
+        })
     })
 })
 
 export default orderAPI;
-export const { useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery, useNewOrderMutation } = orderAPI
+export const { useDeleteOrderMutation ,useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery, useNewOrderMutation } = orderAPI

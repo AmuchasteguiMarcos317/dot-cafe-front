@@ -12,8 +12,14 @@ export const mugsAPI = createApi({
         getAllMugs: builder.query({
             query: () => '/mugs'
         }),
+        getMugs: builder.mutation({
+            query: () => ({
+                url: `/mugs/all`,
+                method: 'GET'
+            })
+        })
     })
 })
 
 export default mugsAPI;
-export const { useGetAllMugsQuery } = mugsAPI
+export const { useGetMugsMutation ,useGetAllMugsQuery } = mugsAPI
