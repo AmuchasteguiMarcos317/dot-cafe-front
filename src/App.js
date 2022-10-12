@@ -85,6 +85,7 @@ function App() {
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
               <Route path='/editar-perfil' element={<EditProfile/>} />
+              <Route path='/mi-cuenta/success/*' element={<MyAccount/>} />
             </Routes>
           <Alerts/>
         </CafeLayout>
