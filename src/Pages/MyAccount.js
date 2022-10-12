@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link as LinkRouter } from 'react-router-dom'
+import { Link as LinkRouter, useLocation, useParams } from 'react-router-dom'
 import OrderNroCard from '../Components/OrderNroCard'
 import { useGetAllOrdersQuery } from '../Features/orderAPI'
 import '../Styles/MyAccountAndOrder.css'
@@ -9,6 +9,10 @@ export default function MyAccount() {
     let user = useSelector(state => state.auth.user)
     const {data: orders} = useGetAllOrdersQuery()
     const reload = useSelector(state => state.reload.reloadState)
+    let params = useParams()
+    const location = useLocation()
+    console.log(location.search)
+    // console.log(params)
 
     useEffect(() => {
     },[reload])
