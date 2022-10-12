@@ -14,7 +14,6 @@ import { setMessage } from "../Features/AlertsSlice";
 
 export default function Header({ name, ...props }) {
   const userData = useSelector((state) => state.auth.user);
-  let myaccount = '/mi-cuenta/'+ userData?.id
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -81,7 +80,7 @@ export default function Header({ name, ...props }) {
           {logged ? (
             open ? (
               <div className="headerPrueba">
-                <LinkRouter to={myaccount}>{userData.firstName}</LinkRouter>
+                <LinkRouter to={`/mi-cuenta/${userData?._id}`}>{userData.firstName}</LinkRouter>
                 <LinkRouter to="/" onClick={handleClick}>
                   Salir
                 </LinkRouter>

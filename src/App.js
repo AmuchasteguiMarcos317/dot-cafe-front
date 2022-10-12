@@ -29,11 +29,12 @@ import MyAccount from './Pages/MyAccount';
 import MyOrder from './Pages/MyOrder';
 import Contact from './Pages/Contact';
 import EditProfile from './Pages/EditProfile';
+import { reload } from './Features/reloadSlice';
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation()
   const dispatch = useDispatch()
-  const reload = useSelector(state => state.reload.reloadState)
+  const reloaded = useSelector(state => state.reload.reloadState)
 
 
   const loginAgain = async () => {
@@ -55,7 +56,7 @@ function App() {
     if(localStorage.getItem('token')){
       loginAgain()
     }
-  }, [reload])
+  }, [reloaded])
   
   return (
     <>
@@ -85,7 +86,7 @@ function App() {
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
               <Route path='/editar-perfil' element={<EditProfile/>} />
-              <Route path='/mi-cuenta/success/*' element={<MyAccount/>} />
+              <Route path='/mi-cuenta/success/*' element={<MyAccount />} />
             </Routes>
           <Alerts/>
         </CafeLayout>

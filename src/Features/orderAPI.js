@@ -14,9 +14,20 @@ export const orderAPI = createApi({
         }),
         getOrderById: builder.query({
             query: (id) => '/orders/' + id
-        })
+        }),
+        getOrderByUser: builder.query({
+            query: (user) =>'/orders?user='+user
+        }),
+        // getOrderByUser: builder.mutation({
+        //     query(id){
+        //         return{
+        //             url: '/orders?user=' +id,
+        //             method: 'GET'
+        //         }
+        //     }
+        // }),
     })
 })
 
 export default orderAPI;
-export const { useGetAllOrdersQuery, useGetOrderByIdQuery } = orderAPI
+export const { useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery } = orderAPI

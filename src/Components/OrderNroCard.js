@@ -15,7 +15,7 @@ export default function OrderNroCard({order}) {
                 </div>
                 <div className="OrderLink">
                     <p>{date}</p>
-                    <LinkRouter to={myorder}><img src="/view-files.png" alt="order" /></LinkRouter>
+                    <LinkRouter to={`/mi-orden/${order?._id}`}><img src="/view-files.png" alt="order" /></LinkRouter>
                 </div>
             </div>
         </>
