@@ -58,7 +58,7 @@ export default function MyAccount() {
                         <h3>Mis órdenes de compra</h3>
                         <div className="AllMyOrders">
                             {
-                                orders.length > 0 
+                                orders?.length > 0 
                                 ?
                                     orders?.response.map(order => <OrderNroCard key={order._id} order={order} />)
                                 :

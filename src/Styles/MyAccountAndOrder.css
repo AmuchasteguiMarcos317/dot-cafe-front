@@ -12,6 +12,9 @@
     padding: 1rem;
     align-items: center;
 }
+.MyOrdersContainer h3 {
+    border-bottom: 1px solid lightgrey;
+}
 
 .containerEmpty a {
     background-color: #a3bbad;
