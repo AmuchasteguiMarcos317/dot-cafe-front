@@ -10,6 +10,8 @@ export default function MyOrder() {
     const user = useSelector(state => state.auth.user)
     const {data: items} = useGetOrderByIdQuery(id)
     const keys = items?.response
+    let newDate = new Date(keys?.date)
+    newDate = newDate.toLocaleDateString("es-MX", { weekday:'long', day:'numeric', month:'long', year:'numeric' })
 
     return (
         <>
@@ -30,7 +32,7 @@ export default function MyOrder() {
                             <p className="lineCross"></p>
                             <p><span>Pago: </span>{keys?.payment ? "Pagado" : "Pendiente de pago"}</p>
                             <p><span>Estado: </span>{keys?.state}</p>
-                            <p><span>Fecha: </span>{keys?.date}</p>
+                            <p><span>Fecha: </span>{newDate}</p>
                         </div>
                     </div>
                     <div className="MyOrderDetails">

@@ -46,4 +46,11 @@
     align-items: center;
     width: 100%;
     padding-top: 5em;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.containerSpinner p {
+    font-weight: bold;
+    letter-spacing: 1px;
 }

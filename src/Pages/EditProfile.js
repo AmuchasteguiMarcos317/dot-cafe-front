@@ -46,7 +46,7 @@ function EditProfile() {
         const values = Object.fromEntries(dataform)
         const {address, zipCode, city, province, dni, tel } = values
         if(address !== "" && zipCode !== "" && city !== "" && province !== "" && dni !== "" && tel !== "" ){
-            values.id = userId.id
+            values.id = userId._id
             updateDataUser(values)
         }else {
             dispatch(setMessage({
@@ -66,7 +66,7 @@ function EditProfile() {
                     success: true
                 }))
                 dispatch(setCredentials(data))
-                navigate(`/mi-cuenta/${userId.id}`, {replace: true})
+                navigate(`/mi-cuenta/${userId._id}`, {replace: true})
             }else {
                 console.log(res)
             }

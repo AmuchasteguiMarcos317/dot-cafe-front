@@ -136,7 +136,16 @@
 .containerSPinner {
     display: flex;
     justify-content: center;
-    padding-top: 10em;
+    align-items: center;
+    width: 100%;
+    padding-top: 5em;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.containerSPinner p {
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 1720px){
