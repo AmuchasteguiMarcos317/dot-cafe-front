@@ -124,6 +124,9 @@ button{
         flex-direction: column;
         gap:1rem;
     }
+    .footerIcon{
+        padding-right: 0;
+    }
 }
 
 
