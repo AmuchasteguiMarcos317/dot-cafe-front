@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import "../Styles/BasketCart.css";
 import { Link as LinkRouter } from "react-router-dom";
 
-function BasketCart() {
+function BasketCart({stateShow}) {
   const basket = useSelector((state) => state.cart.cartArray);
   let totalQuantity = 0;
   let totalPrice = 0;
@@ -31,7 +31,7 @@ function BasketCart() {
                   <p className="pBasketItemName"> {item.name} </p>
                   <p>{item.quantity} U.</p>
                   <p>
-                    <strong>AR$ {item.price * item.quantity}</strong>
+                    <strong>AR$ {(item.price * item.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</strong>
                   </p>
                 </div>
                 <hr />
@@ -43,9 +43,9 @@ function BasketCart() {
             <strong> Cantidad de productos: {getTotal().totalQuantity} </strong>
           </p>
           <p>
-            <strong> Total: $ {totalPrice} </strong>
+            <strong> Total: $ {totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} </strong>
           </p>
-          <LinkRouter className="navAll" to="/cart">
+          <LinkRouter className="navAll" onClick={() => stateShow(false)} to="/carrito">
             IR AL CARRITO
           </LinkRouter>
         </div>

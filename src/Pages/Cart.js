@@ -52,7 +52,6 @@ export default function Cart() {
     await addOrder(newOrder)
   }
 
-
   const handleRemove = () => {
     dispatch(emptyCart());
     dispatch(
@@ -62,7 +61,6 @@ export default function Cart() {
       })
     );
   };
-
 
   const url = "https://api.mercadopago.com/checkout/preferences";
 
@@ -129,12 +127,10 @@ export default function Cart() {
   const [showButtonFinishBuy, setshowButtonFinishBuy] = useState(false)
 
   useEffect(() => {
-  
     if(finalCart.length > 0) {
       setshowButtonFinishBuy(!showButtonFinishBuy)
     }
   }, [finalCart])
-  
 
   return (
     <>
@@ -188,7 +184,7 @@ export default function Cart() {
               <div className="purchaseValue">
                 <div className="value">
                   <h6>VALOR DE LA COMPRA</h6>
-                  <p>AR${totalOrderPrice}</p>
+                  <p>AR${totalOrderPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
                 <div className="value">
                   <h6>DESCUENTO</h6>
@@ -196,7 +192,7 @@ export default function Cart() {
                 </div>
                 <div className="value">
                   <h6>SUB-TOTAL</h6>
-                  <p>AR${totalOrderPrice - discount}</p>
+                  <p>AR${(totalOrderPrice - discount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
                 <div className="value">
                   <h6>ENVIO</h6>
@@ -206,7 +202,7 @@ export default function Cart() {
               <div className="finishBuy">
                 <div className="priceTotal">
                   <h6>TOTAL</h6>
-                  <p>AR${totalOrderPrice - discount}</p>
+                  <p>AR${(totalOrderPrice - discount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
                 {
                   showButtonFinishBuy ? (
@@ -219,7 +215,6 @@ export default function Cart() {
                   </LinkRouter>
                   )
                 }
-
               </div>
             </div>
           </div>

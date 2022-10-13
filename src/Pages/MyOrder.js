@@ -44,7 +44,7 @@ export default function MyOrder() {
                             </div>
                             {keys?.products?.map(product => <ProductOrderCard product={product} />)}
                             <div className="MyOrderFinalPrice">
-                                <h6>TOTAL: AR$<strong>{keys?.total}</strong></h6>
+                                <h6>TOTAL: AR$<strong>{keys ? (keys.total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') : null}</strong></h6>
                             </div>
                         </div>
                     </div>
