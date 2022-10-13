@@ -35,6 +35,7 @@ export default function Coffees() {
                         </div>
                         :
                         <div className='containerSPinner'>
+                            <p>No se encontraron productos</p>
                             <Spinner />
                         </div>
                     }

@@ -51,7 +51,7 @@ function Products() {
     if(buscadosArray.length > 0){
       setProducts(buscadosArray)
     }else{
-      console.log('No hay de ese producto tarado')
+      setProducts(buscadosArray)
     }
     if(e.target.value == ''){
       loadingData()
@@ -66,24 +66,24 @@ function Products() {
 
   return (
     <>
-      {products.length > 0
-        ?
-        <>
-          <h2 className="allProduct">Todos los productos</h2>
-          <div className='container-search'>
-            <input type="text" onChange={handleChange} placeholder='Busca tu producto'/>
-          </div>
-          <div className='container-all-products'>  
-            {products && products.map(item => 
-              <ProductCard data={item} key={item._id}/>
-            )}
-          </div>
-        </>
-      :
-      <div className='containerSpinner'>
-          <Spinner/>
+      <h2 className="allProduct">Todos los productos</h2>
+      <div className='container-search'>
+        <input type="text" onChange={handleChange} placeholder='Busca tu producto'/>
       </div>
-      }
+      <div className='container-all-products'>  
+        {
+          products.length > 0
+          ?
+          products && products.map(item => 
+            <ProductCard data={item} key={item._id}/>
+          )
+          :
+          <div className='containerSpinner'>
+              <p>No se encontraron productos</p>
+              <Spinner/>
+          </div>
+        }
+      </div>
     </>
   )
 }

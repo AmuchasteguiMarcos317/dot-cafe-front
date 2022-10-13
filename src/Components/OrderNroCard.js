@@ -11,6 +11,7 @@ export default function OrderNroCard({ order }) {
   let myorder = "/mi-orden/" + order?._id;
   const [removeOrder] = useDeleteOrderMutation();
   const dispatch = useDispatch()
+  
 
   const handleRemoveItem = async (id) => {
     try {
