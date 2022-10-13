@@ -83,41 +83,18 @@ function App() {
             <Route path="/producto/:id" element={<Details />} />
             <Route path="/verification-mail" element={<VerificationMail />} />
 
-            <Route
-              path="/mi-cuenta/:id"
-              element={logged ? <MyAccount /> : <NotFound />}
-            />
+            <Route path="/mi-cuenta/:id" element={<MyAccount />}/>
 
-            <Route
-              path="/mi-orden/:id"
-              element={logged ? <MyOrder /> : <NotFound />}
-            />
+            <Route path="/mi-orden/:id" element={<MyOrder />}/>
 
-            <Route
-              path="/editar-perfil"
-              element={logged ? <EditProfile /> : <NotFound />}
-            />
+            <Route path="/editar-perfil"element={<EditProfile />}/>
 
-            <Route
-              path="/estado-orden/success/*"
-              element={logged ? <OrderStatus /> : <NotFound />}
-            />
-            <Route
-              path="/estado-orden/failure/*"
-              element={logged ? <OrderStatus /> : <NotFound />}
-            />
-            <Route
-              path="/estado-orden/pending/*"
-              element={logged ? <OrderStatus /> : <NotFound />}
-            />
+            <Route path="/estado-orden/success/*" element={<OrderStatus />}/>
+            <Route path="/estado-orden/failure/*" element={<OrderStatus />}/>
+            <Route path="/estado-orden/pending/*" element={<OrderStatus />}/>
 
-            <Route
-              path="/signup"
-              element={logged ? <NotFound /> : <SignUp />}
-            />
-            <Route
-              path="/login"
-              element={logged ? <NotFound /> : <LoginUser />}
+            <Route path="/signup" element={<SignUp />}/>
+            <Route path="/login" element={<LoginUser />}
             />
           </Routes>
           <Alerts />
