@@ -45,7 +45,7 @@ export const usersAPI = createApi({
         }),
         userEditProfile: builder.mutation({
             query: ({id, ...payload}) => ({
-                url : `http://localhost:4012/auth/update/${id}`,
+                url : `/auth/update/${id}`,
                 method: 'PATCH',
                 body: payload
             })
