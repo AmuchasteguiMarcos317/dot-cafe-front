@@ -20,9 +20,15 @@ export const coffeeMachinesAPI = createApi({
                 url: '/coffee-machine/all',
                 method: 'GET'
             })
+        }),
+        getMachineById: builder.mutation({
+            query: (id) => ({
+                url: `/coffee-machine/${id}`,
+                method: 'GET',
+            })
         })
     })
 })
 
 export default coffeeMachinesAPI;
-export const { useGetAllCoffeeMachinesQuery, useGetTypeCoffeeMachinesQuery, useGetMachineByFieldMutation } = coffeeMachinesAPI
+export const { useGetAllCoffeeMachinesQuery, useGetTypeCoffeeMachinesQuery, useGetMachineByFieldMutation, useGetMachineByIdMutation } = coffeeMachinesAPI

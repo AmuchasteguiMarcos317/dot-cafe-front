@@ -34,6 +34,23 @@
     text-align: center;
     color: #204D48;
 }
+.btnView{
+    background-color: #45230f8f;
+    border-radius: .5rem;
+    color: #FAFFD8;
+    padding: .3rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+.btnView:hover{
+    background-color: #45230f;
+    border-radius: .5rem;
+    color: #FAFFD8;
+    padding: .3rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+    transition: .6s;
+}
 .bottonCard{
     width: 17rem;
     height: 3rem;
