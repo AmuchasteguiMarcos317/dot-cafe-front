@@ -1,0 +1,69 @@
+.OrderCardContainer{
+    width: 49%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EFF9F0;
+    padding: .6rem;
+    margin: .5rem 0;
+    border-radius: .5rem;
+}
+
+.containerBtnOrder {
+    display: flex;
+}
+.containerBtnOrder button {
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: #a3bbad;
+    border-radius: .4rem;
+    margin-left: .2rem;
+    font-weight: 600;
+    padding: .2rem;
+}
+
+.deleteBtn img {
+    width: 1.3rem !important;
+}
+
+.OrderCardContainer > div{
+    display: flex;
+    flex-direction: column;
+}
+.OrderNumber p{
+    font-size: .8rem;
+    padding: 0 .2em;
+    margin: 0 !important;
+}
+.OrderCardContainer a{
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: #a3bbad;
+    border-radius: .4rem;
+    margin-left: .2rem;
+    font-weight: 600;
+    padding: .2rem;
+}
+.OrderCardContainer img {
+    width: 1.3rem;
+    border-radius: .6rem;
+}
+.OrderLink p{
+    font-size: .7rem;
+}
+
+@media screen and (max-width: 1200px){
+    .OrderCardContainer {
+       width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .OrderCardContainer {
+       width: 95%;
+    }
+}

@@ -42,9 +42,16 @@ export const usersAPI = createApi({
                 method: 'POST',
                 body: user
             })
+        }),
+        userEditProfile: builder.mutation({
+            query: ({id, ...payload}) => ({
+                url : `/auth/update/${id}`,
+                method: 'PATCH',
+                body: payload
+            })
         })
     })
 })
 
 export default usersAPI;
-export const { useGetUserMailQuery, useGetUserIdQuery, useUserSignupMutation, useUserLoginMutation, useUserLoginTokenMutation, useUserLogoutMutation } = usersAPI
+export const { useUserEditProfileMutation ,useGetUserMailQuery, useGetUserIdQuery, useUserSignupMutation, useUserLoginMutation, useUserLoginTokenMutation, useUserLogoutMutation } = usersAPI

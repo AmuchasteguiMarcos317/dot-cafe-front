@@ -1,8 +1,9 @@
 .newLetterContainer{
     display: flex;
-    justify-content: flex-end;
-    width: 70%;
-    margin:1rem 0;
+    justify-content: center;
+    padding: 2em 0 2em 0;
+    background-color: #e4f5eb;
+    width: 100%;
 }
 .newLetterContainer h4{
     width: 80%;
@@ -12,8 +13,8 @@
 }
 .newLetterContainer h4 span{
     color: #204d48;
-    font-size: 3rem;
-    text-shadow: -1px 2px 5px black;
+    font-size: 2.5rem;
+    text-shadow: -1px 2px 4px black;
 }
 .newLetterContain{
     text-align: center;
@@ -21,30 +22,55 @@
     justify-content: flex-end;
     align-items: center;
     border-radius: 10px;
-    color: #faffd8;
-    background-color: #45230f;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px black;
+    color: #204d48;
 }
 .newLetterLabel{
     padding: 0 .5rem;
 }
 .newLetterInput{
     border-radius: 10px;
-    padding: 0 .5rem;
+    padding: .2rem 0.7rem .2rem .7rem;
+    border: none;
 }
 .newLetterBtn{
     background-color: #204d48;
-    padding: .5rem;
+    padding: .3rem;
     margin-top: 15rem;
     border: 1px solid #204d48;
-    border-radius: 15px;
-    font-size: x-large;
+    border-radius: 10px;
+    font-size: medium;
     color: #faffd8;
-    margin: 0 10px;
+    margin: 1.5rem 0 ;
 }
 .newLetterBtn:hover{
     background-color: #faffd8;
     color: #45230f;
     border: 1px solid #45230f;
+}
+
+@media (max-width: 1200px) {
+    .newLetterContain{
+        flex-direction: column;
+    }
+}
+@media (max-width: 550px) {
+    .newLetterContainer{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .newLetterSubs h4 {
+        align-self: center;
+        text-align: center;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+    .newLetterSubs{
+        display: flex;
+    }
+}
+@media (max-width: 400px) {
+    
+    .newLetterSubs{
+        flex-direction: column;
+    }
 }

@@ -1,0 +1,68 @@
+.containerAddressCart{
+    color:black
+}
+
+.containerAddressCart h5 {
+    color: aliceblue;
+    text-align: center;
+}
+
+
+.editProfileFormCart {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    gap: 0.5em;
+    padding: 2em 2em 2em 2em;
+    border-radius: .5rem;
+}
+
+.editProfileFormCart button {
+    border-radius: 1rem;
+    color: white;
+    font-size: bold;
+    padding: 8px 0 8px 0;
+    align-self: center;
+}
+
+.editProfileFormCart label {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.editProfileFormCart select {
+    border-radius: 1rem;
+    border: none;
+    padding: .5rem;
+}
+
+.editProfileFormCart label input {
+    border-radius: 1rem;
+    padding: .5rem;
+    border: none;
+}
+
+.containerAddressCart{
+    margin: 1rem;
+}
+
+
+.buttonBuyAddress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 3rem;
+    background-color: #204D48;
+    border-radius: .8rem;
+    color: #a3bbad;
+    align-self: center;
+    margin-bottom: 1rem;
+}
+.buttonBuyAddress:hover{
+    background-color: #39736c;
+    color: #FAFFD8;
+    border: #204D48 solid;
+    transition: .6s;
+}

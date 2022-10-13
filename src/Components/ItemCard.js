@@ -20,7 +20,7 @@ export default function ItemCard({data}) {
             <div className='itemCardContainer'>
                 <img className='imgItemCard' src={data.photo} alt="producto" />
                 <div className='descripCard'>
-                    <h5>{data.name}</h5>
+                    <h5>{data.weight ? data.name +' - '+ data.weight : data.name}</h5>
                 </div>
                 <div className='buttonCant'>
                     <button onClick={()=> dispatch(decrementItem(data._id)) } className='buttonleft'>-</button>
@@ -28,10 +28,10 @@ export default function ItemCard({data}) {
                     <button onClick={()=> dispatch(incrementItem(data._id)) } className='buttonright'>+</button>
                 </div>
                 <div className='priceItemCard'>
-                    <p>AR$ {data.price}</p>
+                    <p>AR$ {data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
                 <div className='totalItemCard'>
-                    <p>AR$ {data.price * data.quantity}</p>
+                    <p>AR$ {(data.price * data.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
                 <div>
                     <button onClick={()=> handleRemoveItem(data._id) } className='delete'><img className='imgDelete' src="delete-item.png" alt="delete" /></button>

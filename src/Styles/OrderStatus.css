@@ -1,0 +1,112 @@
+.orderContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.orderStatusContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70%;
+    border-radius: 2rem;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    box-shadow: .5rem .5rem 1rem #a3bbad;
+}
+.orderStatusText{
+    width: 80%;
+    text-align: center;
+    padding-top: 1rem;
+}
+.orderStatusProduct{
+    display: flex;
+}
+.orderStatusProduct p{
+    padding-left: 1rem;
+}
+.titleOrder{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.titleSpan{
+    font-weight: 700;
+}
+.btnOrder{
+    background-color: #204d48;
+    padding: .5rem;
+    border-radius: 15px;
+    font-size: x-large;
+    color: #faffd8;
+    margin-bottom: 1rem;
+    
+}
+.paymentID{
+    font-weight: 500;
+}
+.noAprovedContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.shippingDataContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid black;
+    padding-top: 1rem;
+}
+.paymentContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.btnOrder:hover{
+    background-color: #faffd8;
+    color: #45230f;
+    font-weight: 600;
+}
+@media screen and (max-width: 1024px){
+    .orderStatusContainer{
+        flex-direction: column;
+    }
+    .paymentContainer{
+        border-bottom: 1px solid black;
+        margin-bottom: 1rem;
+        width: 95%;
+    }
+    .shippingDataContainer{
+        margin-top: 1rem;
+        width: 95%;
+        border-left: none;
+    }
+    .orderStatusContainer{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 425px){
+    .orderStatusContainer{
+        width: 95%;
+    }
+    .paymentContainer{
+        width: 100%;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .shippingDataContainer{
+        width: 100%;
+        text-align: center;
+    }
+    .orderStatusText{
+        width: 90%;
+    }
+    
+}

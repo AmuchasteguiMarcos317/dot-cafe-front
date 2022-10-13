@@ -64,7 +64,7 @@ export default function CoffeeCard({ data }) {
           </div>
         </div>
       </div>
-      <div className=",mcx">
+      <div className="mcx">
         <div className="coffeePrice">
           <Form.Select
             onChange={handleChange}
@@ -73,10 +73,10 @@ export default function CoffeeCard({ data }) {
           >
             <option defaultValue>Elegi una opcion </option>
             <option value={data?.pricePerCup}>
-              Vaso sustentable $ {data?.pricePerCup}
+            Taza Eco $ {data?.pricePerCup}
             </option>
             <option value={data?.pricePerMug}>
-              Taza Ecológica $ {data?.pricePerMug}
+            Tu Taza $ {data?.pricePerMug}
             </option>
           </Form.Select>
         </div>

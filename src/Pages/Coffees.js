@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CoffeeCard from '../Components/CoffeeCard'
 import { useGetAllCoffeeForDrinkQuery, useGetCoffeeSearchQuery } from '../Features/coffeeForDrinkAPI'
 import '../Styles/CoffeeCard.css'
+import Spinner from '../Components/Spinner.js/Spinner'
 
 export default function Coffees() {
     const [paramType, setParamType] = useState("")
@@ -10,6 +11,7 @@ export default function Coffees() {
     const {data: coffeesAll} = useGetAllCoffeeForDrinkQuery()
     const {data: coffeeSearch} = useGetCoffeeSearchQuery([paramSize, paramType])
     let coffees = coffeeSearch ? coffeeSearch : coffeesAll
+
     
     return (
         <>
@@ -25,9 +27,18 @@ export default function Coffees() {
                             <label><input type="radio" name="size" value="mediano" onClick={(e) => setParamSize("")}/> Todos</label>
                         </form>
                     </div>
-                    <div className="">
-                        {coffees?.response.map(coffee => <CoffeeCard data={coffee} />)}
-                    </div>
+                    {
+                        coffees?.response.length > 0 
+                        ?
+                        <div className="">
+                            {coffees?.response.map(coffee => <CoffeeCard key={coffee._id} data={coffee} />)}
+                        </div>
+                        :
+                        <div className='containerSPinner'>
+                            <p>No se encontraron productos</p>
+                            <Spinner />
+                        </div>
+                    }
                 </div>
             </main>
         </>

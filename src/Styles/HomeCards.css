@@ -62,7 +62,7 @@
 .buyH1{
     width: 100%;
     background-color: #204d48;
-    
+    flex-wrap: wrap;
     text-align: center;
     color: #956031;
     font-weight: bold;
@@ -78,7 +78,6 @@
     text-align: center;
     padding-bottom: 2rem;
     align-items: center;
-    margin-bottom: 10px;
 }
 .buyBanner{
     width: 70%;
@@ -150,5 +149,8 @@
     .buyContainer{
         flex-direction: column;
         gap: 4rem;
+    }
+    .buyBanner{
+        width: 100%;
     }
 }

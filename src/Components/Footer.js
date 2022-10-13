@@ -15,9 +15,8 @@ export default function footer() {
             <div className='footerContainer'>
                 <div className='footer'>
                         <button className='footerLogo' onClick={scrollTopUp}>
-                            <img className='footerArrow' src='logo1.png' alt="logo" />
-                            <img className='footerArrow1' src='https://cdn-icons-png.flaticon.com/512/1174/1174588.png?w=826&t=st=1665163827~exp=1665164427~hmac=b30c3f8be88b2dac903d75336bd18ca3255a8aafd88db65df636f49ce11153f1'alt='icon'/>
-                        </button>
+                            <img className='footerArrow' src='flechaArriba.png' alt="logo" />
+                            </button>
                     <div className='footerText'>
                         <h2>PRODUCTOS</h2>
                         <LinkRouter to='/'>Home</LinkRouter>
@@ -33,7 +32,6 @@ export default function footer() {
                         <LinkRouter to='/economia-circular'>Reciclaje</LinkRouter>
                         <LinkRouter>Preguntas Frecuentes</LinkRouter>
                         <LinkRouter>Politicas de Envio</LinkRouter>
-
                     </div>
                     <div className='footerText'>
                         <h2>CLIENTE</h2>

@@ -13,7 +13,7 @@ function CircularEconomy() {
 
     return (
         <>
-            <div className='bannerCoffeeEconomy'>
+            <div className='bannerCoffeeEconomyDiv'>
                 <div className='divLogoBanner'>
                     <div className='divLogoEcoFriendly' >
                         <img className='logoEcoFriendly' src="http://drive.google.com/uc?export=view&id=1W5Xn2yPSVGVWcJ0UI4Olm84jaLnjgTPr" alt="ecoFriendly" />
@@ -33,7 +33,7 @@ function CircularEconomy() {
                             <div className="homeCardInfo">
                                 <h3>{card.title}</h3>
                                 <div className="homeCardTextContainer">
-                                    {(card.info).map(text => (<p>{text}</p>))}
+                                    {(card.info).map(text => (<p key={new Date().getSeconds}>{text}</p>))}
                                 </div>
                             </div>
                         </div>

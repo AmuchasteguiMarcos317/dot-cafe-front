@@ -71,8 +71,23 @@
     padding: .5rem;
     border-radius: 5px;
 }
+.headerMiCuenta{
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    z-index: 2;
+    top: 3.5rem;
+    right: 18.5rem;
+    background-color: whitesmoke ;
+    padding: 10px 2rem;
+    border-radius: 5px;
+    gap: .5rem;
+}
+.headerMiCuenta a{
+    width: 90%;
+}
 .headerSesion{
-    color:#45230f;
+    color:#204d48;
     font-weight: 700;
 }
 .headerSesion:hover{
@@ -178,7 +193,12 @@ header span{
     letter-spacing: 0px;
     margin-left: -.7em;
 }
-
+@media (max-width: 1500px) {
+    .headerMiCuenta{
+        top: 3.5rem;
+        right: 15.5rem;
+    } 
+}
 @media (max-width: 1200px) {
     .dropdown{
         justify-content: end !important;
@@ -199,6 +219,16 @@ header span{
     .navDrop:hover{
         background-color: #a3bbad !important;
     }
+    .headerMiCuenta{
+        top: 3.5rem;
+        right: 13.5rem;
+    } 
+}
+@media (max-width: 1050px) {
+    .headerMiCuenta{
+        top: 3.5rem;
+        right: 11.5rem;
+    } 
 }
 @media (max-width:730px){
     .navDrop {
@@ -213,6 +243,10 @@ header span{
     .headerPrueba{
         top: 3.5rem;
         right: 11rem;
+    }
+    .headerMiCuenta{
+        top: 3.5rem;
+        right: 9rem;
     } 
 }
 @media (max-width: 650px) {
@@ -234,6 +268,10 @@ header span{
         height: 20px;
         align-self: center;
     }
+    .headerMiCuenta{
+        top: 3.5rem;
+        right: 7.5rem;
+    } 
 }
 @media (max-width: 550px) {
     .navDrop{
@@ -271,7 +309,12 @@ header span{
     }
     .headerPedi{
         font-size: .7rem;
-    }   
+    }
+    .headerMiCuenta{
+        top: 3.5rem;
+        right: 6rem;
+        padding: 8px 1rem;
+    }    
 }
 @media (max-width: 400px) {
     .navText{
@@ -289,6 +332,10 @@ header span{
         top: 7.5rem;
         width: 80px !important;
         height: 80px !important;
+    }
+    .headerMiCuenta{
+        top: 4rem;
+        right: 5rem;
     }
 }
 

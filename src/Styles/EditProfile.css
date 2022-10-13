@@ -1,0 +1,43 @@
+.containerEditProfile {
+    display: flex;
+    min-height: 60vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 3em 0 3em 0;
+}
+
+.editProfileForm {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    gap: 2em;
+    padding: 2em 2em 2em 2em;
+    border-radius: .5rem;
+}
+
+.editProfileForm button {
+    border-radius: 1rem;
+    color: white;
+    font-size: bold;
+    padding: 8px 0 8px 0;
+}
+
+.editProfileForm label {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.editProfileForm select {
+    border-radius: 1rem;
+    border: none;
+    padding: .5rem;
+}
+
+.editProfileForm label input {
+    border-radius: 1rem;
+    padding: .5rem;
+    border: none;
+}
