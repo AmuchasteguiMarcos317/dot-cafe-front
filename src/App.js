@@ -79,10 +79,10 @@ function App() {
               <Route path='/signup' element={<SignUp />} />
               <Route path='/login' element={<LoginUser />} />
               <Route path='/ver-todo' element={<SeeAll />} />
-              <Route path='/cart' element={<Cart />} />
+              <Route path='/carrito' element={<Cart />} />
               <Route path='/*' element={<NotFound />} />
               <Route path='/economia-circular' element={< CircularEconomy />} />
-              <Route path= '/suscriptores' element={<NewLetter />} />
+              <Route path='/suscriptores' element={<NewLetter />} />
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
               <Route path='/editar-perfil' element={<EditProfile/>} />

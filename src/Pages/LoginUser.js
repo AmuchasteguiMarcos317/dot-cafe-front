@@ -37,7 +37,7 @@ function LoginUser() {
                 let data = res.data.response.user
                 dispatch(setCredentials(data))
                 dispatch(setMessage({
-                    message: `Bienvenido ${data.firstName} ${data.lastName}`,
+                    message: `Bienvenidx ${data.firstName} ${data.lastName}`,
                     success: res.data?.success
                 }))
                 dispatch(reload())

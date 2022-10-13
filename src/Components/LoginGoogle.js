@@ -27,7 +27,7 @@ export default function LoginGoogle() {
             dispatch(setCredentials(response?.data?.response.user))
             localStorage.setItem('token', response?.data?.response.token)
             dispatch(setMessage({
-                message: `Bienvendio ${data.firstName}`,
+                message: `Bienvenidx ${data.firstName}`,
                 success: true
             }))
             navigate("/", {replace:true})

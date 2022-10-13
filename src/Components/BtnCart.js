@@ -5,12 +5,15 @@ import BasketCart from "./BasketCart";
 import { Link as LinkRouter } from "react-router-dom";
 import "../Styles/BtnCart.css";
 
-
 function BtnCart({ name, ...props }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const cart = useSelector(state => state.cart.cartArray)
+
+    const stateShow = (falseState) => {
+      setShow(falseState)
+    }
 
   return (
     <>
@@ -36,7 +39,7 @@ function BtnCart({ name, ...props }) {
           {
             cart.length > 0
             ?
-            <BasketCart />
+            <BasketCart stateShow={stateShow}/>
             :
             <div className="btnContainer">
               <img className='imgBtn' src='carrovacio1.png' alt="logo" />
