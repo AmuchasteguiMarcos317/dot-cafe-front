@@ -34,9 +34,18 @@ export const orderAPI = createApi({
                     method: 'DELETE'
                 }
             }
+        }),
+        updateOrder: builder.mutation({
+            query({id, ...paid}){
+                return{
+                    url: `/orders/update-order/${id}`,
+                    method: 'PATCH',
+                    body: paid
+                }
+            }
         })
     })
 })
 
 export default orderAPI;
-export const { useDeleteOrderMutation ,useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery, useNewOrderMutation } = orderAPI
+export const { useDeleteOrderMutation ,useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery, useNewOrderMutation, useUpdateOrderMutation } = orderAPI

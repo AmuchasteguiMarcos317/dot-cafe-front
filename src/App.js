@@ -87,6 +87,8 @@ function App() {
               <Route path='/contacto' element={< Contact />} />
               <Route path='/editar-perfil' element={<EditProfile/>} />
               <Route path='/estado-orden/success/*' element={<OrderStatus />} />
+              <Route path='/estado-orden/failure/*' element={<OrderStatus />} />
+              <Route path='/estado-orden/pending/*' element={<OrderStatus />} />
             </Routes>
           <Alerts/>
         </CafeLayout>
