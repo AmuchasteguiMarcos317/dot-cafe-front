@@ -92,13 +92,13 @@ export default function Cart() {
           description: "Mi Carrito de Compras",
           picture_url: "http://www.myapp.com/myimage.jpg",
           category_id: "coffe001",
-          quantity: totalQuantity,
+          quantity: 1,
           unit_price: totalOrderPrice
         }
       ],
       back_urls: {
-        failure: "http://localhost:3000/failure",
-        pending: "http://localhost:3000/pending",
+        failure: "http://localhost:3000/estado-orden/failure",
+        pending: "http://localhost:3000/estado-orden/pending",
         success: "http://localhost:3000/estado-orden/success"
       }
     };
@@ -114,7 +114,7 @@ export default function Cart() {
       });
 
       window.open(`${payment.data.init_point}`)
-      console.log(payment.data)
+
       dispatch(emptyCart());
   
       return payment.data
