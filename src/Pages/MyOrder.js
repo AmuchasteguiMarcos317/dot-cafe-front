@@ -4,7 +4,7 @@ import ProductOrderCard from '../Components/ProductOrderCard'
 import '../Styles/MyAccountAndOrder.css'
 import { useParams } from "react-router-dom";
 import { useGetOrderByIdQuery } from '../Features/orderAPI';
-
+import {Link as LinkRouter} from 'react-router-dom'
 export default function MyOrder() {
     const { id } = useParams()
     const user = useSelector(state => state.auth.user)
@@ -12,6 +12,7 @@ export default function MyOrder() {
     const keys = items?.response
     let newDate = new Date(keys?.date)
     newDate = newDate.toLocaleDateString("es-MX", { weekday:'long', day:'numeric', month:'long', year:'numeric' })
+
 
     return (
         <>
@@ -50,7 +51,15 @@ export default function MyOrder() {
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <div>
+                <LinkRouter to={`/mi-cuenta/${user?._id}`} className="navAll">
+                        ir atrás
+                </LinkRouter>
+                <hr/>
+                </div>
+
             </main>
         </>
     )

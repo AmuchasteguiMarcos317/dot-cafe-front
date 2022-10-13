@@ -10,6 +10,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as LinkRouter} from 'react-router-dom'
 import { useNewOrderMutation } from "../Features/orderAPI";
+import AddAdressToCart from "../Components/AddAddressToCart";
 
 const ACCESS_TOKEN= process.env.REACT_APP_ACCESS_TOKEN
 
@@ -66,24 +67,9 @@ export default function Cart() {
 
   const handlePayment = async () =>{
     
-    console.log("intento de pago MP")
     createOrder()
     
     let body = {
-      // payer: {
-      //     address: {
-      //       zip_code: userData.zipCode
-      //     },
-      //     email: userData.email,
-      //     name: userData.firstName,
-      //     phone: {
-      //       number: userData.tel
-      //     },
-      //     identification: {
-      //       number: userData.dni,
-      //       type: 'dni'
-      //     }
-      // },
       items: [
         {
           title: "Tienda Punto Café S.A",
@@ -100,8 +86,6 @@ export default function Cart() {
         success: "http://localhost:3000/estado-orden/success"
       }
     };
-
-    // let body = JSON.stringify(preferenceMP)
 
     if(localStorage.getItem('token') ){
       const payment = await axios.post(url, body, {
@@ -131,6 +115,12 @@ export default function Cart() {
       setshowButtonFinishBuy(!showButtonFinishBuy)
     }
   }, [finalCart])
+
+  const [showFormAddress, setShowFormAddress] = useState(false)
+
+  const handleShowFormEdit = () =>{
+    setShowFormAddress(!showFormAddress)
+  }
 
   return (
     <>
@@ -175,6 +165,10 @@ export default function Cart() {
                 <div className="carContainer">
                   <img className='imgCar' src='carrovacio1.png' alt="logo" />
                 <h3 className="textCar">El carrito está vacio</h3>
+
+                <LinkRouter className="buttonBuy" to={'/ver-todo'}>
+                    <p>IR A COMPRAR</p>
+                  </LinkRouter>
                 </div>
               )}
             </div>
@@ -182,6 +176,11 @@ export default function Cart() {
           <div className="additionContainer">
             <div className="total">
               <div className="purchaseValue">
+              <button className="buttonBuyAddress" onClick={handleShowFormEdit}  >Agregar Datos de envio</button>
+              {
+                showFormAddress ? <AddAdressToCart/> : null
+              }
+                
                 <div className="value">
                   <h6>VALOR DE LA COMPRA</h6>
                   <p>AR${totalOrderPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
@@ -204,17 +203,10 @@ export default function Cart() {
                   <h6>TOTAL</h6>
                   <p>AR${(totalOrderPrice - discount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
-                {
-                  showButtonFinishBuy ? (
+
                     <button className="buttonBuy" onClick={handlePayment}>
                     <p>FINALIZAR COMPRA</p>
                   </button>
-                  ) : (
-                    <LinkRouter className="buttonBuy" to={'/ver-todo'}>
-                    <p>IR A COMPRAR</p>
-                  </LinkRouter>
-                  )
-                }
               </div>
             </div>
           </div>

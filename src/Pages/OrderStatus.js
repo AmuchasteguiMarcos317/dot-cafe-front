@@ -104,7 +104,7 @@ export default function OrderStatus() {
                                 return (
                                     <div className='orderStatusProduct' key={item.item}>
                                         <p><span className="titleSpan">{item.name}</span> - Cantidad: {item.quantity}  </p>
-                                        <p>- AR$ {item.totalPrice} </p>
+                                        <p>- AR$ {item.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} </p>
                                         <hr />
                                     </div>
 
@@ -115,7 +115,7 @@ export default function OrderStatus() {
                         {
                             status === "approved" ?
                                 (<div className='orderStatusText'>
-                                    <p>Su pago por: <strong>AR$ {lastOrderDetail?.total}</strong> ha sido generado por el siguiente ticket:</p>
+                                    <p>Su pago por: <strong>AR$ {lastOrderDetail?.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</strong> ha sido generado por el siguiente ticket:</p>
                                     <p className="paymentID">#{paymentID}</p>
                                     <p>Se enviará un resumen a:<span className="titleSpan"> {lastOrderDetail?.user.email} </span></p>
                                 </div>) : null
