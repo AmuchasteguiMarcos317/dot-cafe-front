@@ -43,9 +43,18 @@ export const orderAPI = createApi({
                     body: paid
                 }
             }
+        }),
+        sendResume: builder.mutation({
+            query({id, ...cart}){
+                return{
+                    url: `/orders//mailto/${id}`,
+                    method: 'POST',
+                    body: cart
+                }
+            }
         })
     })
 })
 
 export default orderAPI;
-export const { useDeleteOrderMutation ,useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery, useNewOrderMutation, useUpdateOrderMutation } = orderAPI
+export const { useDeleteOrderMutation ,useGetAllOrdersQuery, useGetOrderByIdQuery, useGetOrderByUserQuery, useNewOrderMutation, useUpdateOrderMutation, useSendResumeMutation } = orderAPI
