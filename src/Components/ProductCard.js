@@ -7,7 +7,6 @@ import { Link as LinkRouter } from 'react-router-dom'
 
 export default function ProductCard({ data }) {
 
-
     const dispatch = useDispatch()
     let photoProduct = typeof (data?.photo) == "string" ? data.photo : data.photo[0]
 
@@ -46,6 +45,10 @@ export default function ProductCard({ data }) {
                     {
                         data?.description  &&
                         <LinkRouter className='btnView' to={`/producto/${data._id}`}>VER MAS</LinkRouter>
+                    }
+                    {
+                        data?.weight && 
+                        <p>{`Peso: ${data?.weight} Grs`}</p>
                     }
                     <button onClick={() => { handleAddToCart(data) }} className='bottonCard'>AGREGAR AL CARRITO</button>
                 </div>
