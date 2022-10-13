@@ -82,17 +82,12 @@ function App() {
             <Route path="/*" element={<NotFound />} />
             <Route path="/producto/:id" element={<Details />} />
             <Route path="/verification-mail" element={<VerificationMail />} />
-
             <Route path="/mi-cuenta/:id" element={<MyAccount />}/>
-
             <Route path="/mi-orden/:id" element={<MyOrder />}/>
-
             <Route path="/editar-perfil"element={<EditProfile />}/>
-
             <Route path="/estado-orden/success/*" element={<OrderStatus />}/>
             <Route path="/estado-orden/failure/*" element={<OrderStatus />}/>
             <Route path="/estado-orden/pending/*" element={<OrderStatus />}/>
-
             <Route path="/signup" element={<SignUp />}/>
             <Route path="/login" element={<LoginUser />}
             />
