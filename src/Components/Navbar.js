@@ -167,7 +167,8 @@ export default function navbar() {
                                 </NavDropdown.Item>
                             </LinkRouter>
                         </NavDropdown>
-                        <NavDropdown title="Reciclaje" id="basic-nav-dropdown">
+                        <NavDropdown title="Eco Friendly" id="basic-nav-dropdown">
+                        <LinkRouter to="/eco-arte">
                             <NavDropdown.Item className="navDrop" href="#action/3.1">
                                 <img
                                     className="headerIcon"
@@ -175,9 +176,10 @@ export default function navbar() {
                                     alt="icon"
                                 />
                                 <div className="navText">
-                                    <p>Punto de reciclaje</p>
+                                    <p>Eco Art</p>
                                 </div>
                             </NavDropdown.Item>
+                            </LinkRouter>
                             <LinkRouter to="/economia-circular">
                                 <NavDropdown.Item className="navDrop" href="#action/3.2">
                                     <img

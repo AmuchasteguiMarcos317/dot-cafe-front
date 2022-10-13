@@ -73,10 +73,10 @@ export default function CoffeeCard({ data }) {
           >
             <option defaultValue>Elegi una opcion </option>
             <option value={data?.pricePerCup}>
-              Tu taza $ {data?.pricePerCup}
+            Taza Eco $ {data?.pricePerCup}
             </option>
             <option value={data?.pricePerMug}>
-              Taza Ecológica $ {data?.pricePerMug}
+            Tu Taza $ {data?.pricePerMug}
             </option>
           </Form.Select>
         </div>
