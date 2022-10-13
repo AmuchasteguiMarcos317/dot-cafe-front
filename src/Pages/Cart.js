@@ -81,9 +81,9 @@ export default function Cart() {
         }
       ],
       back_urls: {
-        failure: "http://localhost:3000/estado-orden/failure",
-        pending: "http://localhost:3000/estado-orden/pending",
-        success: "http://localhost:3000/estado-orden/success"
+        failure: "https://astounding-praline-262f6f.netlify.app/estado-orden/failure",
+        pending: "https://astounding-praline-262f6f.netlify.app/estado-orden/pending",
+        success: "https://astounding-praline-262f6f.netlify.app/estado-orden/success"
       }
     };
 
