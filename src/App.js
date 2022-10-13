@@ -35,6 +35,8 @@ function App() {
   const [loginToken] = useUserLoginTokenMutation()
   const dispatch = useDispatch()
   const reloaded = useSelector(state => state.reload.reloadState)
+  const logged = useSelector(state => state.auth.logged)
+  console.log(logged)
 
 
   const loginAgain = async () => {
