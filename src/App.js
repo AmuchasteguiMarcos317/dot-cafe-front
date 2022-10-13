@@ -30,6 +30,7 @@ import MyOrder from "./Pages/MyOrder";
 import Contact from "./Pages/Contact";
 import EditProfile from "./Pages/EditProfile";
 import OrderStatus from "./Pages/OrderStatus";
+import EcoArt from "./Pages/EcoArt";
 
 function App() {
   const [loginToken] = useUserLoginTokenMutation();
@@ -75,6 +76,7 @@ function App() {
             <Route path="/ver-todo" element={<SeeAll />} />
             <Route path="/carrito" element={<Cart />} />
             <Route path="/economia-circular" element={<CircularEconomy />} />
+            <Route path="/eco-arte" element={<EcoArt />} />
             <Route path="/sobre-nosotros" element={<AboutUs />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/*" element={<NotFound />} />
