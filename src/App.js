@@ -77,7 +77,6 @@ function App() {
               <Route path='/economia-circular' element={< CircularEconomy />} />
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
-              <Route path='/*' element={<NotFound />} />
               {
                 logged
                 ?
@@ -97,6 +96,7 @@ function App() {
                   <Route path='/login' element={<LoginUser />} />
                 </>
               }
+              <Route path='/*' element={<NotFound />} />
             </Routes>
           <Alerts/>
         </CafeLayout>

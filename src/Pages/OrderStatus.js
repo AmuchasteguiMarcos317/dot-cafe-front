@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as LinkRouter, useLocation } from "react-router-dom";
-import { useGetOrderByUserQuery, useUpdateOrderMutation } from "../Features/orderAPI";
+import { useGetOrderByUserQuery, useSendResumeMutation, useUpdateOrderMutation } from "../Features/orderAPI";
 import '../Styles/OrderStatus.css'
 import { reload } from '../Features/reloadSlice'
 
@@ -17,11 +17,17 @@ export default function OrderStatus() {
     let lastOrder = arrayCarrito?.[indexArray]._id
     let lastOrderDetail = arrayCarrito?.[indexArray]
     const [updateOrderAfterPay] = useUpdateOrderMutation()
+    const [sendResumeCart] = useSendResumeMutation()
+    const dispatch = useDispatch()
 
     let user = useSelector(state => state.auth.user)
-    let role = user?.role
+    let arrayProductsResume = []
 
-    const dispatch = useDispatch()
+    let productsCart = lastOrderDetail?.products.map((item)=> arrayProductsResume.push(`${item.name} - cantidad ${item.quantity} - AR$ ${item.totalPrice} `))
+
+    let myResumeCart = arrayProductsResume.join("\n")
+
+    
 
     const updateOrder = async () => {
         let orderApprove
@@ -31,12 +37,34 @@ export default function OrderStatus() {
                 payment: true
             }
 
-            await updateOrderAfterPay(orderApprove)
-                .then((res) => {
+        let resumeCart = {
+            id:lastOrder,
+            email:lastOrderDetail?.user.email,
+            firstName:lastOrderDetail?.user.firstName,
+            lastName:lastOrderDetail?.user.lastName,
+            total:lastOrderDetail?.total,
+            statusPayment: "Pagado con Mercadopago",
+            products: myResumeCart
+
+        }
+
+            sendResumeCart(resumeCart).then((res)=>{
+                console.log(res)
+            }).catch((error)=>{
+                console.log(error)
+            })
+
+            try {
+                let res = await updateOrderAfterPay(orderApprove)
+                if(res.data.success){
                     dispatch(reload())
                     console.log(res)
-                })
-                .catch((error) => console.log(error))
+                }else{
+                    console.log(res)
+                }
+            } catch (error) {
+                console.log(error)
+            }
 
         } else {
             console.log("error")
@@ -75,9 +103,8 @@ export default function OrderStatus() {
                             lastOrderDetail?.products.map((item) => {
                                 return (
                                     <div className='orderStatusProduct' key={item.item}>
-
-                                        <p><span className="titleSpan">Producto:</span> {item.name} </p>
-                                        <p>AR$ {item.totalPrice} </p>
+                                        <p><span className="titleSpan">{item.name}</span> - Cantidad: {item.quantity}  </p>
+                                        <p>- AR$ {item.totalPrice} </p>
                                         <hr />
                                     </div>
 
@@ -88,7 +115,7 @@ export default function OrderStatus() {
                         {
                             status === "approved" ?
                                 (<div className='orderStatusText'>
-                                    <p>Su pago ha sido generado por el siguiente ticket:</p>
+                                    <p>Su pago por: <strong>AR$ {lastOrderDetail?.total}</strong> ha sido generado por el siguiente ticket:</p>
                                     <p className="paymentID">#{paymentID}</p>
                                     <p>Se enviará un resumen a:<span className="titleSpan"> {lastOrderDetail?.user.email} </span></p>
                                 </div>) : null
