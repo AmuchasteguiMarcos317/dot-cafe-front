@@ -67,9 +67,6 @@ function App() {
           <CafeLayout>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/mi-cuenta/:id' element={<MyAccount />} />
-              <Route path='/mi-orden/:id' element={<MyOrder />} />
-              <Route path='/producto/:id' element={<Details />} />
               <Route path='/cafes' element={<Coffees />} />
               <Route path='/granel/peso' element={<CoffeeByKilo />} />
               <Route path='/maquinas-cafe/tipo' element={<CoffeeMachines />} />
@@ -77,20 +74,31 @@ function App() {
               <Route path='/filtros-sustentables' element={<Filters />} />
               <Route path='/tazas' element={<Mugs />} />
               <Route path='/giftcards' element={<GiftCards />} />
-              <Route path='/verification-mail' element={<VerificationMail />} />
-              <Route path='/signup' element={<SignUp />} />
-              <Route path='/login' element={<LoginUser />} />
               <Route path='/ver-todo' element={<SeeAll />} />
               <Route path='/carrito' element={<Cart />} />
-              <Route path='/*' element={<NotFound />} />
               <Route path='/economia-circular' element={< CircularEconomy />} />
-              <Route path='/suscriptores' element={<NewLetter />} />
               <Route path='/sobre-nosotros' element={< AboutUs />} />
               <Route path='/contacto' element={< Contact />} />
-              <Route path='/editar-perfil' element={<EditProfile/>} />
-              <Route path='/estado-orden/success/*' element={<OrderStatus />} />
-              <Route path='/estado-orden/failure/*' element={<OrderStatus />} />
-              <Route path='/estado-orden/pending/*' element={<OrderStatus />} />
+              <Route path='/*' element={<NotFound />} />
+              {
+                logged
+                ?
+                <>
+                  <Route path='/mi-cuenta/:id' element={<MyAccount />} />
+                  <Route path='/mi-orden/:id' element={<MyOrder />} />
+                  <Route path='/producto/:id' element={<Details />} />
+                  <Route path='/verification-mail' element={<VerificationMail />} />
+                  <Route path='/editar-perfil' element={<EditProfile/>} />
+                  <Route path='/estado-orden/success/*' element={<OrderStatus />} />
+                  <Route path='/estado-orden/failure/*' element={<OrderStatus />} />
+                  <Route path='/estado-orden/pending/*' element={<OrderStatus />} />
+                </>
+                :
+                <>
+                  <Route path='/signup' element={<SignUp />} />
+                  <Route path='/login' element={<LoginUser />} />
+                </>
+              }
             </Routes>
           <Alerts/>
         </CafeLayout>
