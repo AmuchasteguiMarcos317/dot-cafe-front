@@ -20,7 +20,7 @@ export default function ItemCard({data}) {
             <div className='itemCardContainer'>
                 <img className='imgItemCard' src={data.photo} alt="producto" />
                 <div className='descripCard'>
-                    <h5>{data.name}</h5>
+                    <h5>{data.weight ? data.name +' - '+ data.weight : data.name}</h5>
                 </div>
                 <div className='buttonCant'>
                     <button onClick={()=> dispatch(decrementItem(data._id)) } className='buttonleft'>-</button>
