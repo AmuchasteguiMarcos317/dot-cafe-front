@@ -79,10 +79,12 @@
     margin: .5rem 0;
     gap: .4rem
 }
+.MyOrderProducts{
+    padding: 1rem;
+}
 .MyAccountData-btn h4 {
     border-bottom: none;
 }
-
 .MyAccountData-btn {
     display: flex;
     justify-content: space-between;
@@ -90,8 +92,6 @@
     align-items: center;
     border-bottom: 1px solid lightgrey;
 }
-
-
 .MyAccountData-btn  a {
     background-color: transparent !important;
     border-radius: 1rem;
@@ -99,11 +99,9 @@
     font-size: .8rem;
     font-weight: bold;
 }
-
 .MyAccountData-btn  button:hover {
     transform: scale(1.1);
 }
-
 .AllMyOrders{
     flex-direction: row;
     flex-wrap: wrap;
