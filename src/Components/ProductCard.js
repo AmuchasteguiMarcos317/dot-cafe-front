@@ -39,7 +39,7 @@ const handleAddToCart =  async (data) =>{
                     </div>
                     <div className='cardPriceContainer'>
                         <h4>Precio:</h4>
-                        <h5>${data?.price}</h5>
+                        <h5>${data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</h5>
                     </div>
                     <button onClick={ ()=>{handleAddToCart(data)} } className='bottonCard'>AGREGAR AL CARRITO</button>
                 </div>
