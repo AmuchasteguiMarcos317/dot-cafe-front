@@ -9,6 +9,19 @@
     justify-content: flex-end;
 }
 
+
+
+.bannerCoffeeEconomyDiv {
+    background-image: url(http://drive.google.com/uc?export=view&id=1nuCy4xHuM2QjmFKleCDtmFkiuUpavHiA);
+    min-height: 40vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: initial;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .divLogoBanner {
     display: flex;
     flex-direction: column;

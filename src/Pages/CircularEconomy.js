@@ -13,7 +13,7 @@ function CircularEconomy() {
 
     return (
         <>
-            <div className='bannerCoffeeEconomy'>
+            <div className='bannerCoffeeEconomyDiv'>
                 <div className='divLogoBanner'>
                     <div className='divLogoEcoFriendly' >
                         <img className='logoEcoFriendly' src="http://drive.google.com/uc?export=view&id=1W5Xn2yPSVGVWcJ0UI4Olm84jaLnjgTPr" alt="ecoFriendly" />
