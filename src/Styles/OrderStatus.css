@@ -7,8 +7,8 @@
 .orderStatusContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 60%;
+    align-items: flex-start;
+    width: 70%;
     border-radius: 2rem;
     background-color: #fff;
     padding: 1rem;
@@ -54,10 +54,9 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
     border-left: 1px solid black;
+    padding-top: 1rem;
 }
 .paymentContainer{
     width: 50%;
@@ -99,9 +98,15 @@
     }
     .paymentContainer{
         width: 100%;
+        text-align: center;
+        padding-bottom: 2rem;
     }
     .shippingDataContainer{
         width: 100%;
+        text-align: center;
+    }
+    .orderStatusText{
+        width: 90%;
     }
     
 }
