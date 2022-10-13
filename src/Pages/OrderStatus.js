@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as LinkRouter, useLocation } from "react-router-dom";
 import { useGetOrderByUserQuery, useUpdateOrderMutation } from "../Features/orderAPI";
-import '../Styles/NotFound.css'
+import '../Styles/OrderStatus.css'
 import { reload } from '../Features/reloadSlice'
 
 export default function OrderStatus() {
@@ -18,6 +18,9 @@ export default function OrderStatus() {
     let lastOrderDetail = arrayCarrito?.[indexArray]
     const [updateOrderAfterPay] = useUpdateOrderMutation()
 
+    let user = useSelector(state => state.auth.user)
+    let role = user?.role
+
     const dispatch = useDispatch()
 
     const updateOrder = async () => {
@@ -27,8 +30,8 @@ export default function OrderStatus() {
                 id: lastOrder,
                 payment: true
             }
-            
-           await updateOrderAfterPay(orderApprove)
+
+            await updateOrderAfterPay(orderApprove)
                 .then((res) => {
                     dispatch(reload())
                     console.log(res)
@@ -50,43 +53,58 @@ export default function OrderStatus() {
     return (
 
         <>
-            <div className='notFound-contain'>
-                <div className='NotFound-text'>
+            <div className="orderContainer">
+                <div className='orderStatusContainer'>
+                    <div className="paymentContainer">
+                    <div className='orderStatusText'>
+                        {
+                            status === "approved" ?
+                                (<div>
+                                    <p className="titleOrder">Pago Aprobado</p>
+                                    <p><span className="titleSpan">Orden de compra:</span> #{lastOrderDetail?._id} </p>
+                                </div>
+
+                                ) : (<div>
+                                    <img src="http://drive.google.com/uc?export=view&id=1k4nHfXIUKxPJ91g8-SrD8Can6mXHB2yb" />
+                                    <p className="notFound-404">Pago Rechazado</p>
+                                </div>)
+                        }
+                    </div>
+                    {status === "approved" ?
+                        lastOrderDetail?.products.map((item) => {
+                            return (
+                                <div className='orderStatusProduct' key={item.item}>
+
+                                    <p><span className="titleSpan">Producto:</span> {item.name} </p>
+                                    <p>AR$ {item.totalPrice} </p>
+                                    <hr />
+                                </div>
+                            )
+                        }) : null
+
+                    }
                     {
                         status === "approved" ?
-                         (<div>
-                            <p>Pago Aprobado</p>
-                            <p>Orden de compra: #{lastOrderDetail?._id} </p>
-                         </div>
-                         
-                            ) : (<div>
-                                <img src="http://drive.google.com/uc?export=view&id=1k4nHfXIUKxPJ91g8-SrD8Can6mXHB2yb" />
-                                <p className="notFound-404">Pago Rechazado</p>
-                            </div>)
+                            (<div className='orderStatusText'>
+                                <p>Su pago ha sido generado por el siguiente ticket:</p>
+                                <p className="paymentID">#{paymentID}</p>
+                                <p>Se enviará un resumen a:<span className="titleSpan"> {lastOrderDetail?.user.email} </span></p>
+                            </div>) : null
                     }
+                    </div>
+                <div className="shippingDataContainer">
+                <p className="titleOrder">Datos de Envio</p>
+                    <p><span className="titleSpan">Nombre:</span> {user?.firstName +" "+ user?.lastName}</p>
+                    <p><span className="titleSpan">Email:</span> {user?.email}</p>
+                    <p><span className="titleSpan">DNI:</span> {user?.dni}</p>
+                    <p><span className="titleSpan">Tel:</span> {user?.tel}</p>
+                    <p><span className="titleSpan">Dirección:</span> {user?.address}</p>
+                    <p><span className="titleSpan">CP:</span> {user?.zipCode}</p>
+                    <p><span className="titleSpan">Ciudad:</span> {user?.city}</p>
+                    <p><span className="titleSpan">Provincia:</span> {user?.province}</p>
                 </div>
-                {status === "approved" ?
-                    lastOrderDetail?.products.map((item)=>{
-                        return (
-                            <div className='NotFound-text' key={item.item}>
-                            
-                            <p>producto: {item.name} </p>
-                            <p> {item.totalPrice} </p>
-                            <hr/> 
-                            </div>
-                        )
-                    }) : null
-
-                }
-                {
-                    status === "approved" ?
-                    (<div className='NotFound-text'>
-                    <p className="notFound-404">Su pago ha sido generado por el siguiente ticket:</p>
-                    <p className="notFound-404">#{paymentID}</p>
-                    <p>Se ha enviado un resumen a: {lastOrderDetail?.user.email} </p>
-                    </div>) : null
-                }
-                <LinkRouter className="notFound-btn" onClick={updateOrder} to={`/mi-cuenta/${userData?._id}`} >ir a mi cuenta</LinkRouter>
+                </div>
+                    <LinkRouter className="btnOrder" onClick={updateOrder} to={`/mi-cuenta/${userData?._id}`} >ir a mi cuenta</LinkRouter>
             </div>
         </>
     )

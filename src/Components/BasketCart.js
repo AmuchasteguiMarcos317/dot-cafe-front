@@ -7,6 +7,7 @@ function BasketCart({stateShow}) {
   let totalQuantity = 0;
   let totalPrice = 0;
 
+
   const getTotal = () => {
     basket.forEach((item) => {
       totalQuantity += item.quantity;
@@ -28,7 +29,7 @@ function BasketCart({stateShow}) {
                     src={item.photo}
                     alt={item.name}
                   />
-                  <p className="pBasketItemName"> {item.name} </p>
+                  <p className="pBasketItemName">{item.weight ? item.name +' - '+ item.weight : item.name}</p>
                   <p>{item.quantity} U.</p>
                   <p>
                     <strong>AR$ {(item.price * item.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</strong>
