@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useGetCaffeeByFieldMutation } from '../Features/coffeeByKiloAPI'
 import { useGetMachineByFieldMutation } from '../Features/coffeeMachinesAPI'
 import { useGetFiltersByFieldMutation } from '../Features/filtersAPI'
@@ -14,7 +15,8 @@ function Products() {
   const [filters] = useGetFiltersByFieldMutation()
   const [kits] = useGetKitsByFieldMutation()
   const [mugs] = useGetMugsMutation()
-  const [reload, setReload] = useState(false)
+  const reloaded = useSelector((state) => state.reload.reloadState);
+
 
   let mach;
   let coff;
@@ -55,26 +57,46 @@ function Products() {
     }
     if(e.target.value == ''){
       loadingData()
-      // setReload(!false)
     }
   }
 
   useEffect(() => {
     loadingData()
-  }, [reload])
+  }, [reloaded])
+
+  const handleSelect = e => {
+    let value = e.target.value
+    if(value == '1'){
+      let lowProducts = products.sort( (a, b ) => b.price - a.price)
+      setProducts([...lowProducts])
+    }else if (value == '0') {
+      let highProducts = products.sort( (a, b ) => a.price - b.price)
+      setProducts([...highProducts])
+    }
+    if(value === "2"){loadingData()}
+  }
 
 
   return (
     <>
       <h2 className="allProduct">Todos los productos</h2>
       <div className='container-search'>
-        <input type="text" onChange={handleChange} placeholder='Busca tu producto'/>
+        <div className='inputSearch'>
+          <input type="text" onChange={handleChange} placeholder='Busca tu producto'/>
+        </div>
+        <div className='selects'>
+          <select onChange={handleSelect}>
+            <option value="2">Seleccionar</option>
+            <option value="1" >Mayor precio</option>
+            <option value="0" >Menor precio</option>
+          </select>
+        </div>
       </div>
       <div className='container-all-products'>  
         {
           products.length > 0
           ?
-          products && products.map(item => 
+          products?.map(item => 
             <ProductCard data={item} key={item._id}/>
           )
           :

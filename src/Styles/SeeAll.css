@@ -16,7 +16,10 @@
 
 .container-search {
     padding: 2em;
-    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-search input{
@@ -26,6 +29,26 @@
     padding: .5em 2em .5em 1em;
     width: 350px;
 }
+
+.inputSearch{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.selects {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.selects select {
+    border-radius: 1rem;
+    border: none;
+    background-color: #eee;
+    padding: .5em .5em .5em .5em;
+}
+
 .allProductContain{
     width: 75%;
     padding: 2rem 0 0;
