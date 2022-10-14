@@ -15,7 +15,7 @@ export default function footer() {
             <div className='footerContainer'>
                 <div className='footer'>
                         <button className='footerLogo' onClick={scrollTopUp}>
-                            <img className='footerArrow' src='flechaArriba.png' alt="logo" />
+                            <img className='footerArrow' src='http://drive.google.com/uc?export=view&id=1lUo1e3NbgIEdlAHHTuMDGq-pmTXeyTt7' alt="logo" />
                             </button>
                     <div className='footerText'>
                         <h2>PRODUCTOS</h2>
