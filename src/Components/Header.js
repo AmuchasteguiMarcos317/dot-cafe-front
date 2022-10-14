@@ -54,7 +54,7 @@ export default function Header({ name, ...props }) {
       <Container fluid className="headerContain">
         <Container fluid className="header">
           <LinkRouter className="headerLogo" to="/">
-            <img className="headerLogoCafe" src="logo1.png" alt="image" />
+            <img className="headerLogoCafe" src="http://drive.google.com/uc?export=view&id=1jdGTym3iPoqyhmptOBgGXctGup3su3hz" alt="image" />
           </LinkRouter>
           <div className="headerLogged">
             <LinkRouter className="headerPedi" to="/cafes">

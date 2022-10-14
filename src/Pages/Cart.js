@@ -12,7 +12,8 @@ import { Link as LinkRouter} from 'react-router-dom'
 import { useNewOrderMutation } from "../Features/orderAPI";
 import AddAdressToCart from "../Components/AddAddressToCart";
 
-const ACCESS_TOKEN= process.env.REACT_APP_ACCESS_TOKEN
+//const ACCESS_TOKEN= process.env.REACT_APP_ACCESS_TOKEN
+const ACCESS_TOKEN= "TEST-6581106291893003-101020-ce992fb3ac71fe99275ecbc4e3089e2b-1142649826"
 
 export default function Cart() {
   const [show, setShow] = useState(false);
@@ -81,9 +82,9 @@ export default function Cart() {
         }
       ],
       back_urls: {
-        failure: "https://astounding-praline-262f6f.netlify.app/estado-orden/failure",
-        pending: "https://astounding-praline-262f6f.netlify.app/estado-orden/pending",
-        success: "https://astounding-praline-262f6f.netlify.app/estado-orden/success"
+        failure: "https://dot-cafe-frontend.herokuapp.com/estado-orden/failure",
+        pending: "https://dot-cafe-frontend.herokuapp.com/estado-orden/pending",
+        success: "https://dot-cafe-frontend.herokuapp.com/estado-orden/success"
       }
     };
 
